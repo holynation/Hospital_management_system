@@ -1,0 +1,33 @@
+<!-- global js -->
+<div id="qn"></div>
+<script src="<?php echo base_url(); ?>assets/js/ajax_jquery.js"></script><!-- end of global js -->
+<script src="https://cdn.jsdelivr.net/g/bootstrap@3.3.7,bootstrap.switch@3.3.2,jquery.nicescroll@3.6.0"></script> 
+<script src="<?php echo base_url(); ?>assets/js/app.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
+
+<!-- begining of page level js -->
+<!--Sparkline Chart-->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/custom_js/sparkline/jquery.flot.spline.js.pagespeed.jm.WKpum5VedR.js"></script>
+ <!-- flip  -->
+<script src="<?php echo base_url(); ?>assets/vendors/flip%2c_js%2c_jquery.flip.min.js%2blcswitch%2c_js%2c_lc_switch.min.js.pagespeed.jc.Tz7eDyzUHh.js"></script><script>eval(mod_pagespeed_dNAQF5M$8Q);</script>
+<script>eval(mod_pagespeed_ki9mfqSOAt);</script>
+<!--flot chart -->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/flotchart/js/jquery.flot.js.pagespeed.jm.hHfD9hFnFD.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendors/flotchart%2c_js%2c_jquery.flot.resize.js%2bflotchart%2c_js%2c_jquery.flot.stack.js%2bflotspline%2c_js%2c_jquery.flot.spline.min.js%2bflot.tooltip%2c_js%2c_jquery.flot.tooltip.js.pages"></script><script>eval(mod_pagespeed_b2fw5Nbkzi);</script>
+<script>eval(mod_pagespeed_LFOD4eve9O);</script>
+<script>eval(mod_pagespeed_hq2QZWjPmC);</script>
+<script>eval(mod_pagespeed_LQBf$oJ3gh);</script>
+<!--swiper-->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/swiper/js/swiper.min.js.pagespeed.jm.uWUVrhZ8Lq.js"></script>
+<!--chartjs-->
+<script src="<?php echo base_url(); ?>assets/vendors/chartjs/js/Chart.js.pagespeed.jm.hX7NoqWHf-.js"></script>
+<!--nvd3 chart-->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/nvd3/d3.v3.min.js.pagespeed.jm.hcZ4wO0QRk.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/nvd3/js/nv.d3.min.js.pagespeed.jm.wn9Z5Gr8vs.js"></script>
+<script src="<?php echo base_url(); ?>assets/vendors/moment%2c_js%2c_moment.min.js%2badvanced_newsTicker%2c_js%2c_newsTicker.js.pagespeed.jc.DwRFlJ9gU2.js"></script><script>eval(mod_pagespeed_lyKP6XoRMM);</script>
+<script>eval(mod_pagespeed_Xt7vQBy9oO);</script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/dashboard1.js.pagespeed.jm.lfA0pultre.js"></script>
+<!-- end of page level js -->
+
+</body>
+</html>

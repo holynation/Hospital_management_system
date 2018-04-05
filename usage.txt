@@ -1,0 +1,9 @@
+******* http://localhost/ca%20pack/dark/image_magnifier.html  (we wanna use this is in lab section).
+********  calender too. (http://localhost/ca%20pack/dark/calendar.html)
+
+sending reminder to patient and the doctor who have appointment
+i wanna design a system whereby the role they creted, they will assign their permission themselves not us...
+
+email : oalatise@technodesolutuions.com
+pass:sincefeb20.. (year of inception for programming)
+
