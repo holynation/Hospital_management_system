@@ -280,7 +280,7 @@ class Welcome extends CI_Controller {
 				$this->session->set_userdata('attempts', 0);
 			}
 
-			if($this->session->userdata('attempts') < 5){
+			if($this->session->userdata('attempts') < 4){
 				switch ($result) {
 					case 1:
 						// logged in to the dashboard page
@@ -332,14 +332,18 @@ class Welcome extends CI_Controller {
 			// $data['title'] = 'Reset Password';
 			$this->load->view('forget/forgot_password');
 		}else{
-			// send reset mssage to user email
+			// send reset message to user email
 
 			$email = trim($this->input->post('email')); 
 			$result = $this->Model_staff->email_exists($email);
 
 			if($result){
-				$this->send_reset_password_email($email, $result);
-				$this->load->view('forget/view_password_sent', array('email' => $email));
+				$process_email = $this->send_reset_password_email($email, $result);
+				if($process_email){
+					$this->load->view('forget/view_password_sent', array('email' => $email));
+				}else{
+					$this->load->view('forget/forgot_password', array('error' => 'Mail not sent.Check your smtp settings...'));
+				}
 			}else{
 				// $data['title'] = 'Error|page';
 				$this->load->view('forget/forgot_password', array('error' => 'Email address does not exists...!'));
@@ -347,10 +351,11 @@ class Welcome extends CI_Controller {
 		}
 	}
 
-	public function reset_password_form($email, $email_code){
-
+	public function reset_password_form($email = 'holynationdevelopment@gmail.com', $email_code='0549653f8074be6448bd09d1d5ece14d'){
+		// echo md5($this->config->item('salt') . 'Alatise');
 		if(isset($email, $email_code)){
 			$email = trim($email);
+			$email_code = trim($email_code);
 			$email_hash = sha1($email . $email_code);
 			$verified = $this->Model_staff->verify_reset_password_code($email, $email_code);
 
@@ -358,36 +363,51 @@ class Welcome extends CI_Controller {
 				$this->load->view('forget/reset_password', array('email_hash' => $email_hash,'email_code' => $email_code, 'email' => $email));
 			}else{
 				// send back to reset_password page, not update_password, if there was a problem
-				$this->load->view('forget/forget_password', array('error' => 'There was a problem with your link. Please click it again or resend to reset your password again!','email' => $email));
+				$this->load->view('forget/forgot_password', array('error' => 'There was a problem with your link. Please click it again or resend to reset your password again!','email' => $email));
 			}
+		}else{
+			$this->load->view('restriction/block');
 		}
+		
+		
 	}
 
 	public function update_password(){
-		if(isset($_POST['email'], $_POST['email_hash']) || $_POST['email_hash'] !== sha1($_POST['email'] . $_POST['email_code']))
+		if(isset($_POST['email'], $_POST['email_hash']))
 		{
-			// either a hacker or they changed their mail in the mail field, just die
-			die('Error updating your password');
+			if($_POST['email_hash'] !== sha1($_POST['email'] . $_POST['email_code'])){
+				// either a hacker or they changed their mail in the mail field, just die
+				echo '<a href="javascript:history.go(-1)"> Go Back </a>';
+				die('Error updating your password');
+			}
+			
 		}
 
-		$this->form_validation->set_rules('email_hash', 'Email Hash','trim');
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|xss_clean');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]|max_length[50]|matches[password_confirm]|xss_clean');
-		$this->form_validation->set_rules('password_confirm', 'Confirm Password', 'trim|required|min_length[6]|max_length[50]|xss_clean');
+		// $this->form_validation->set_rules('email_hash', 'Email Hash','trim');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[3]|max_length[50]|matches[password_confirm]');
+		$this->form_validation->set_rules('password_confirm', 'Confirm Password', 'trim|required|min_length[3]|max_length[50]');
 
 		 if($this->form_validation->run() === false){
 		 	// user didn't validate, send back to update password form and show error
 		 	$this->load->view('forget/reset_password');
+
 		 }else{
 		 	 // successful update
 		 	// return users name if successful
-		 	$result = $this->Model_staff->update_password();
+		 	$email = $this->input->post('email');
+			$password = $this->hash_created->encode_password($this->input->post('password'));
+		 	$result = $this->Model_staff->update_password($email,$password);
 
 		 	if($result){
 		 		// here delete the login_attempt from the db
 		 		$delete = $this->delete_attempt();
-		 		if(!$delete){
-		 			echo 'Sorry,there is an error deleting the attempt...';
+		 		if($this->session->userdata('attempts') == 0){
+		 			// do nothing for now
+		 		}
+		 		else if(!$delete){
+		 			echo '<a href="javascript:history.go(-1)"> Go Back </a>';
+		 			die('Sorry,there is an error clearing the attempt or it has been cleared already...');
 		 		}
 		 		$this->load->view('forget/view_update_password_success');
 		 	}else{
@@ -395,6 +415,7 @@ class Welcome extends CI_Controller {
 		 		$this->load->view('forget/reset_password', array('error' => 'Problem updating your password. Please contact ' . $this->config->item('admin_email')));
 		 	}
 		 }
+		 // echo '<a href="javascript:history.go(-1)"> Go Back </a>';
 	}
 
 	public function send_reset_password_email($email,$name){
@@ -403,24 +424,19 @@ class Welcome extends CI_Controller {
 
 		$to = $email;
 		$sub = 'Reset your password!';
-		$message = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- 		 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html>
- 		 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
- 		 </head><body>';
- 		 $message .= '<p>Dear ' . $name . ",</p>";
- 		 	// the link we send will look like /login/reset_password_form/john@doe.com/d27c56Dajbwgwuh8y38un
- 		 $message .= '<p>We want to help you reset your password! Please <strong><a href="' . base_url() . 'welcome/reset_password_form/' . $email . '/' . $email_code . '">click here</a></strong> to reset your password.</p>';
- 		 $message .= '<p>Thank you!</p>';
- 		 $message .= '<p>The Team at EHM</p>';
- 		 $message .= '</body></html>';
 
- 		 $response = $this->Model_staff->send_mail($to,$sub,$message);
+ 		$response = $this->Model_staff->custom_template_mail($to,$sub,$name,$email,$email_code);
  		 if($response != 'success'){
- 		 	echo "mail_smtp_incorrect";
-			exit;
+ 		 	return false;
+ 		 }else{
+ 		 	return true;
  		 }
 
 	}
+
+	// public function email_view(){
+	// 	$this->load->view('templates/email');
+	// }
 
 	public function delete_attempt(){
 		$res = $this->Model_staff->delete_login_attempt();

@@ -1,5 +1,4 @@
 <?php
-ob_start();
 class Model_staff extends CI_Model{
 
 	private $_data;
@@ -171,13 +170,12 @@ class Model_staff extends CI_Model{
 		}
 	}
 
-	function update_password(){
-		$email = $this->input->post('email');
-		$password = $this->hash_created->encode_password($this->input->post('password'));
+	function update_password($email,$password){
 
 		$data = array(
 				'password' => $password
 			);
+
 		$this->db->where('email', $email);
 		$this->db->update('staff', $data);
 
@@ -199,6 +197,7 @@ class Model_staff extends CI_Model{
 		$ip = $this->input->ip_address();
 		$user_agent = $this->input->user_agent();
 		$this->db->where('ip_address', $ip);
+    $this->db->or_where('user_agent =', $user_agent);
 		$this->db->delete('login_attempt');
 
 		if($this->db->affected_rows()){
@@ -314,16 +313,55 @@ class Model_staff extends CI_Model{
     return $this->db->get_where('patient', array('id' => $id));
   }
 
-  	function send_mail($to,$sub, $msg){
+  	function custom_template_mail($to,$sub,$name,$email,$code){
+    // $this->db->order_by("id","desc");
+      // require('includes/PHPMailer-master/src/PHPMailer.php');
+        $row = $this->db->get('settings')->row();
+
+        $this->load->library('PHPMailer','mailer');
+        $mailer->IsSMTP();
+
+        $mailer->Host = "smtp.gmail.com:587";
+
+        $mailer->SMTPAuth = TRUE;
+        $mailer->Username = "holynationdevelopment@gmail.com";  // Change this to your gmail adress
+        $mailer->Password = "jesus12345678";  // Change this to your gmail password
+        $mailer->From = $this->config->item('hot_email');  // This HAVE TO be your gmail adress
+        $mailer->FromName = $this->config->item('hot_email'); // This is the from name in the email, you can put anything you like here
+
+        $data = array(
+          'name' => $name,
+          'email' => $email,
+          'email_code' => $code
+        );
+
+        $body = $this->load->view('templates/email', $data,TRUE);
+
+        $mailer->Body = $body;
+        $mailer->Subject = $sub;
+        $mailer->AddAddress($to);  // This is where you put the email adress of the person you want to mail
+        if(!$mailer->Send())
+        {
+          
+          echo "Mailer Error: " . $mailer->ErrorInfo;
+          return 1;
+        }
+        else
+        {
+          return "success";
+        }
+  }
+
+  function send_mail($to,$sub, $msg){
 		// $this->db->order_by("id","desc");
-		// $row = $this->db->get('settings')->row();
+		    $row = $this->db->get('settings')->row();
         $this->load->library('email');
         $config = Array(
                 'protocol' => 'smtp',
-                'smtp_host' => 'ssl://smtp.gmail.com',//'',
-                'smtp_port' => 465,
-                'smtp_user' => 	$this->config->item('admin_email'),//'', // change it to yours
-                'smtp_pass' =>  $this->config->item('admin_pass'),//'', // change it to yours
+                'smtp_host' => $row->smtp_host,//'',
+                'smtp_port' => 25,
+                'smtp_user' => 	$row->smtp_username,//'', // change it to yours
+                'smtp_pass' =>  $row->smtp_password,//'', // change it to yours
                 'smtp_timeout'=>  20,
                 'mailtype' => 'html',
                 'charset' => 'iso-8859-1',
@@ -331,11 +369,18 @@ class Model_staff extends CI_Model{
                );
 
         $this->email->initialize($config);// add this line
+        $this->email->set_newline("\r\n");
+        $data = array(
+          'name' => $name,
+          'email' => $email,
+          'email_code' => $code
+        );
+        $body = $this->load->view('templates/email', $data,TRUE);
 
         $this->email->from($this->config->item('hot_email'), $this->config->item('hot_email'));
         $this->email->to($to);
         $this->email->subject($sub);
-        $this->email->message($msg);  
+        $this->email->message($body);  
         if($this->email->send()){
         	return "success";
         } else {

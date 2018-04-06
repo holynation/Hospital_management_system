@@ -1,3 +1,6 @@
+<?php
+$get_settings = getsettingsdetails();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -22,7 +25,8 @@
     <div class="row">
         <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 login-form">
                 <h2 class="text-center">
-                    <img src="<?php echo base_url(); ?>assets/img/pages/xclear_black.png.pagespeed.ic.aWoM-UtxIO.png" alt="Logo">
+                    <img src="<?php echo base_url($get_settings->logo); ?>" alt="Logo" width="40px" height="40px">
+                    <p style="font-weight: bolder;color: #428bca;">E<b style="color:red;">H</b>M</p>
                 </h2>
                 <div class="row">
                     <div class="col-xs-12">
@@ -35,6 +39,12 @@
                             <?php echo $error; ?>
                         </div>  
                      <?php  }  ?>
+
+                     <?php //  this is for the validation page
+                        if(validation_errors()){ ?>
+                            <?php echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
+                        <?php } ?>
+                <br />
                     <div class="col-xs-12">
                         <form action="<?php echo base_url('welcome/update_password'); ?>" id="authentication" method="post" class="reset_validator">
                             <?php if(isset($email_hash, $email_code)) { ?>
@@ -53,9 +63,9 @@
                                     <label for="confirm-password" class="sr-only">Password</label>
                                     <input type="password" class="form-control form-control-lg" id="confirm-password" name="password_confirm" placeholder="Confirm Password">
                                 </div>
-                            <div class="form-group">
-                                <input type="submit" value="Reset Password" class="btn btn-primary center-block"/>
-                            </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Reset Password" class="btn btn-primary center-block"/>
+                                </div>
                         </form>
                     </div>
                 </div>
@@ -63,8 +73,9 @@
     </div>
 </div>
 <!-- global js -->
-<script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/ajax_jquery.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
+
 <!-- end of global js -->
 <!-- page level js -->
 <script src="<?php echo base_url(); ?>assets/vendors/bootstrapvalidator/js/bootstrapValidator.min.js" type="text/javascript"></script>

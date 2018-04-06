@@ -1,3 +1,6 @@
+<?php
+$get_settings = getsettingsdetails();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +28,7 @@
         <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 login-form">
             <div class="panel-header">
                 <h2 class="text-center">
-                    <img src="<?php echo base_url(); ?>assets/img/pages/ehm.png" alt="Logo" width="40px" height="40px">
+                    <img src="<?php echo base_url($get_settings->logo); ?>" alt="Logo" width="40px" height="40px">
                     <p style="font-weight: bolder;color: #428bca;">E<b style="color:red;">H</b>M</p>
                 </h2>
             </div>
@@ -46,11 +49,11 @@
 
                             <div class="form-group">
                                 <label for="staff_username" class="sr-only"> Username</label>
-                                <input type="text" class="form-control  form-control-lg" id="staff_username" name="staff_username" placeholder="Username">
+                                <input type="text" class="form-control  form-control-lg" id="staff_username" name="staff_username" placeholder="Username" autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <label for="password" class="sr-only">Password</label>
-                                <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Password">
+                                <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Password" autocomplete="off">
                             </div>
                             <div class="form-group checkbox">
                                 <label for="remember">
@@ -60,7 +63,7 @@
                             <div class="form-group">
                                 <input type="submit" value="Sign In" name="log_show" id="log_show" class="btn btn-primary btn-block"/>
                             </div>
-                            <a href="#" id="forgot" class="forgot"> Reset Password ? </a>
+                            <a href="<?php echo base_url('welcome/reset'); ?>" id="forgot" class="forgot"> Reset Password ? </a>
                         </form>
                     </div>
                 </div>

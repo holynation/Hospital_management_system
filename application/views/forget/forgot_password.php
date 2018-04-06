@@ -1,3 +1,6 @@
+<?php
+$get_settings = getsettingsdetails();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +25,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 box animated fadeInUp">
-            <div class="text-center"><img src="<?php echo base_url(); ?>assets/img/xlogo.png.pagespeed.ic.P45DkOxbPh.png" alt="Clear logo"></div>
+            <h2 class="text-center">
+                <img src="<?php echo base_url($get_settings->logo); ?>" alt="Logo" width="40px" height="40px">
+                <p style="font-weight: bolder;color: #428bca;">E<b style="color:red;">H</b>M</p>
+            </h2>
             <!-- an error message for reasons -->
             <?php
                 if($this->session->flashdata('reset')){ ?>
@@ -56,10 +62,10 @@
                 <div class="form-group">
                     <input type="email" class="form-control email" name="email" id="email" placeholder="Email">
                 </div>
-                <button type="submit" value="Reset Your Password" class="btn submit-btn">
+                <button type="submit" value="Reset Your Password" class="btn submit-btn btn-primary">
                     Retrieve Password
                 </button>
-                <a href="<?php echo base_url('welcome/login'); ?>" class="btn submit-btn">Return to login page</a>
+                <a href="<?php echo base_url('welcome/login'); ?>" class="btn submit-btn btn-primary">Return to login page</a>
             </form>
             
         </div>
