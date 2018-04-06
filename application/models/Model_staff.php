@@ -130,7 +130,7 @@ class Model_staff extends CI_Model{
 
   	function check_attempt(){
   		$ip = $this->input->ip_address();
-		$user_agent = $this->input->user_agent();
+		  $user_agent = $this->input->user_agent();
   		$query = "Select * from login_attempt where ip_address = '".$ip."' OR user_agent = '".$user_agent."' ";
   		$result = $this->db->query($query);
   		if($result->num_rows() > 0){

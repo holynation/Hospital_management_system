@@ -245,9 +245,18 @@ class Welcome extends CI_Controller {
     }
 
 	public function check_attempt(){
-		$res = $this->Model_staff->check_attempt();
-		if($res){
-			redirect('/welcome/reset/');
+		if($this->session->has_userdata('attempts')){
+			if($this->session->userdata('attempts') == 4){
+				redirect('/welcome/reset/');
+			}else{
+				$this->session->set_userdata('attempts', $this->session->userdata('attempts'));
+			}
+			
+		}else{
+			$res = $this->Model_staff->check_attempt();
+			if($res){
+				redirect('/welcome/reset/');
+			}
 		}
 	
 	}
