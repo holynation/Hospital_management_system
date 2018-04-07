@@ -551,28 +551,47 @@ class Welcome extends CI_Controller {
 			$img_name = 'ehm-logo';
 
 			if(isset($_FILES['pic_file'])){
-				imageCreate::$pathImage = 'assets/img/upload';
-                $image = imageCreate::uploadImage('pic_file', $img_name);
-                if (!$image)
-                {
-                    echo 'File cannot be uploaded';
-                    exit;
-                }else{
-                    $upload_path = imageCreate::getImageFullPath();   
-                }
-			}else{
+				if(!empty($_FILES['pic_file'])){
+					imageCreate::$pathImage = 'assets/img/upload';
+	                $image = imageCreate::uploadImage('pic_file', $img_name);
+	                if (!$image)
+	                {
+	                    echo 'File cannot be uploaded';
+	                    exit;
+	                }else{
+	                    $upload_path = imageCreate::getImageFullPath();   
+	                }
+            	}else{
+            		$upload_path = ' ';
+            	}
+			}
+			else{
 				$upload_path = 'assets/img/upload/ehm.png';
 			}
 
-			$data = array(
-                'title' => $this->input->post('system_title'),
-                'logo' => $upload_path,	
-                'smtp_host' => $this->input->post('smtp_host'),
-                'smtp_username' => $this->input->post('smtp_username'),
-                'smtp_password' => $this->input->post('smtp_password'),
-                'email' => $this->input->post('email'),
-                'date_created' => date('Y-m-d H:i:s')
-            );
+			if(empty($upload_path)){
+				$data = array(
+	                'title' => $this->input->post('system_title'),
+	                // 'logo' => $upload_path,	
+	                'smtp_host' => $this->input->post('smtp_host'),
+	                'smtp_username' => $this->input->post('smtp_username'),
+	                'smtp_password' => $this->input->post('smtp_password'),
+	                'email' => $this->input->post('email'),
+	                'date_created' => date('Y-m-d H:i:s')
+	            );
+			}else{
+				$data = array(
+	                'title' => $this->input->post('system_title'),
+	                'logo' => $upload_path,	
+	                'smtp_host' => $this->input->post('smtp_host'),
+	                'smtp_username' => $this->input->post('smtp_username'),
+	                'smtp_password' => $this->input->post('smtp_password'),
+	                'email' => $this->input->post('email'),
+	                'date_created' => date('Y-m-d H:i:s')
+	            );
+			}
+
+			
 
 			$update = $this->Model_staff->update_settings($data);
 			if(!$update){

@@ -16,7 +16,7 @@ $get_settings = getsettingsdetails();
                 <div class="col-lg-6 col-md-6 col-sm-5 col-xs-8">
                     <div class="header-element">
                         <h3>EHM /
-                            <small><?php echo $user_data->role; ?> Dashboard</small>
+                            <small><?php echo get_user_role($user_data); ?> Dashboard</small>
                         </h3>
                     </div>
                 </div>
