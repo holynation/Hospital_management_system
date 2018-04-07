@@ -107,7 +107,7 @@ $get_settings = getsettingsdetails();
                                     </div>
                                     <div class="form-group">
                                         <label for="pic" class="col-sm-4 control-label">System Logo</label>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                             <div class="fileinput fileinput-new" data-provides="fileinput">
                                                 <div class="fileinput-new thumbnail" style="width: 200px; height: 200px;">
                                                     <img src="" alt="Logo" class="profile_pic">
@@ -122,6 +122,14 @@ $get_settings = getsettingsdetails();
                                                     <a href="#" class="btn btn-danger fileinput-exists" data-dismiss="fileinput">Remove</a>
                                                 </div>
                                             </div>
+                                            
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <label>Current Image</label>
+                                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 200px;">
+                                                <img src="<?php echo base_url($settings->logo); ?>" class="img-responsive" />
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="form-group">

@@ -40,54 +40,56 @@
  		// }
 
  		//file settings setup
- 		$file = $_FILES[$field_name]['name'];
- 		$file_tmp = $_FILES[$field_name]['tmp_name'];
- 		$file_size = $_FILES[$field_name]['size'];
- 		$file_ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-	
- 		if($rename_character != NULL)
- 		{
- 			$file_name = $rename_character. "_" . rand(0, 99999). '_' . uniqid(' ') .'.'.$file_ext;
- 		}
- 		else
- 		{
- 			$file_name = $file;
- 		}
- 		
- 		// path for real image
- 		$upload_image = self::$pathImage . "/" . $file_name;
+ 		// if(empty($_FILES[$field_name]['name'])){
+	 		$file = $_FILES[$field_name]['name'];
+	 		$file_tmp = $_FILES[$field_name]['tmp_name'];
+	 		$file_size = $_FILES[$field_name]['size'];
+	 		$file_ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+		
+	 		if($rename_character != NULL)
+	 		{
+	 			$file_name = $rename_character. "_" . rand(0, 99999). '_' . uniqid(' ') .'.'.$file_ext;
+	 		}
+	 		else
+	 		{
+	 			$file_name = $file;
+	 		}
+	 		
+	 		// path for real image
+	 		$upload_image = self::$pathImage . "/" . $file_name;
 
- 		// check image extension to upload
- 		$allowed = array('jpg', 'jpeg', 'gif', 'png');
- 		
- 		if(in_array($file_ext, $allowed) === TRUE)
- 		{
- 			if($file_size < 5242880) // check image size
- 			{
- 				if(move_uploaded_file($file_tmp, $upload_image))
- 				{
+	 		// check image extension to upload
+	 		$allowed = array('jpg', 'jpeg', 'gif', 'png');
+	 		
+	 		if(in_array($file_ext, $allowed) === TRUE)
+	 		{
+	 			if($file_size < 5242880) // check image size
+	 			{
+	 				if(move_uploaded_file($file_tmp, $upload_image))
+	 				{
 
- 					// setting the image properties
- 				
- 					self::$imgFullPath = $upload_image;
- 				
- 					return $file_name;
- 				}
+	 					// setting the image properties
+	 				
+	 					self::$imgFullPath = $upload_image;
+	 				
+	 					return $file_name;
+	 				}
 
- 				else
- 				{
- 					echo"There is an error in uploading the image!";
- 				}
- 			}
- 			else
- 			{
- 			  echo"{$file} is too large";
- 			}
- 		}
- 		else
- 		{
- 			echo"{$file} extension '{$file_ext}' is not allowed. ";
- 		}
+	 				else
+	 				{
+	 					echo"There is an error in uploading the image!";
+	 				}
+	 			}
+	 			else
+	 			{
+	 			  echo"{$file} is too large";
+	 			}
+	 		}
+	 		else
+	 		{
+	 			echo"{$file} extension '{$file_ext}' is not allowed. ";
+	 		}
+ 		// }
  	}
 
     public static function getImageFullPath(){

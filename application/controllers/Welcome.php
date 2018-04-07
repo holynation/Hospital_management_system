@@ -550,7 +550,9 @@ class Welcome extends CI_Controller {
 			$upload_path = '';
 			$img_name = 'ehm-logo';
 
-			if(isset($_FILES['pic_file'])){
+			if(empty($_FILES['pic_file']['name'])){
+				$upload_path = '';
+			}else if(isset($_FILES['pic_file'])){
 				if(!empty($_FILES['pic_file'])){
 					imageCreate::$pathImage = 'assets/img/upload';
 	                $image = imageCreate::uploadImage('pic_file', $img_name);
@@ -559,11 +561,9 @@ class Welcome extends CI_Controller {
 	                    echo 'File cannot be uploaded';
 	                    exit;
 	                }else{
-	                    $upload_path = imageCreate::getImageFullPath();   
+	                    $upload_path = imageCreate::getImageFullPath();  
 	                }
-            	}else{
-            		$upload_path = ' ';
-            	}
+	            }
 			}
 			else{
 				$upload_path = 'assets/img/upload/ehm.png';
