@@ -74,9 +74,10 @@ $get_settings = getsettingsdetails();
                             <div class="alert alert-success col-sm-offset-3" style="padding-left:4.45%;width:50%;"><?php echo $this->session->flashdata('success') ?></div>
                             <?php } ?>
                         <div class="panel-body">
-                            <table id="table4" data-toolbar="#toolbar" data-search="true" data-show-refresh="false" data-show-toggle="true" data-show-columns="true" data-show-export="true" data-detail-view="true" data-detail-formatter="detailFormatter" data-minimum-count-columns="2" data-show-pagination-switch="true" data-pagination="true" data-id-field="id" data-page-list="[10,20,40,ALL]" data-show-footer="false" data-height="700" data-side-pagination="client">
+                            <table id="table4" data-toolbar="#toolbar" data-search="true" data-show-refresh="false" data-show-toggle="true" data-show-columns="true" data-show-export="true" data-detail-view="false" data-detail-formatter="detailFormatter" data-minimum-count-columns="2" data-show-pagination-switch="true" data-pagination="true" data-id-field="id" data-page-list="[10,20,40,ALL]" data-show-footer="false" data-height="700" data-side-pagination="client">
                                 <thead>
                                 <tr>
+                                    <th>S/N</th>
                                     <th data-field="Patient Id" data-sortable="true">Patient Id</th>
                                     <th data-field="Patient image" data-sortable="true">Patient image</th>
                                     <th data-field="First name" data-sortable="true">First name</th>
@@ -100,9 +101,11 @@ $get_settings = getsettingsdetails();
 
                                 <tbody>
                                 	<?php
+                                        $i = 1;
                                         foreach($data_patient as $patient):
                                     ?>
                                 <tr>
+                                    <td><?php echo $i;$i++; ?></td>
                                     <td><?php echo $patient->patient_id; ?></td>
                                     <td><img src="<?php echo base_url($patient->picture_path); ?>" class="img-responsive" style="height: 85px;"></td>
                                     <td><?php echo $patient->first_name; ?></td>

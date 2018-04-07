@@ -84,6 +84,11 @@
                                         $i = 1;
                                             foreach($data_staff as $staff):
                                         ?>
+                                        <?php
+                                            if($staff->status == 'Inactive' && $permission != 'admin'){ ?>
+                                        <tr></tr>
+                                           <?php }else{
+                                        ?>
                                     <tr>
                                         <td><?php echo $i;$i++; ?></td>
                                         <td><?php echo $staff->staff_id; ?></td>
@@ -123,24 +128,26 @@
                                         <td><?php echo $staff->date_modified; ?></td>
                                         <td>
                                             <p>
-                                            <a href="<?php echo base_url('staff/edit_staff/'. $staff->id); ?>">
-                                                <button class="btn btn-primary btn-xs" data-placement="top"><span class="fa fa-fw ti-pencil"></span></button>
-                                            </a></p>
+                                                <a href="<?php echo base_url('staff/edit_staff/'. $staff->id); ?>" class="btn btn-primary">
+                                                    <span class="fa fa-fw ti-pencil"></span> Edit
+                                                </a>
+                                            </p>
                                             <p>
-                                                <a href="<?php echo base_url('staff/detail_staff/' . $staff->id); ?>">
-                                                    <button class="btn btn-primary btn-xs" data-placement="top"><span class="fa fa-fw ti-eye"></span></button>
+                                                <a href="<?php echo base_url('staff/detail_staff/' . $staff->id); ?>" class="btn btn-primary">
+                                                    <span class="fa fa-fw ti-eye"></span> View Staff
                                                 </a>
                                             </p>
                                             <?php 
                                             if($permission == 'admin'){
                                                 if($staff->status == 'Active'){ ?>
-                                                <button class="btn btn-icon btn-danger btn-xs" data-toggle="modal" data-target="#status_<?php echo $staff->id; ?>" data-placement="top" title="Disable Staff"><i class="icon fa fa-fw ti-trash" aria-hidden="true"></i></button>
+                                                <button class="btn btn-icon btn-warning btn-xs" data-toggle="modal" data-target="#status_<?php echo $staff->id; ?>" data-placement="top" title="Disable Staff"><i class="icon fa fa-fw ti-na" aria-hidden="true"></i> Disable Staff</button>
                                           <?php  }else{ ?>
-                                                  <button class="btn btn-icon btn-success btn-xs" data-toggle="modal" data-target="#status2_<?php echo $staff->id; ?>" data-placement="top" title="Enable Staff"><i class="icon fa fa-fw ti-check-box" aria-hidden="true"></i></button>
+                                                  <button class="btn btn-icon btn-success btn-xs" data-toggle="modal" data-target="#status2_<?php echo $staff->id; ?>" data-placement="top" title="Enable Staff"><i class="icon fa fa-fw ti-check-box" aria-hidden="true"></i> Enable Staff</button>
                                               <?php  } }
                                             ?>
                                         </td>
                                     </tr>
+                                    <?php } ?>
                                     <div class="modal fade" id="status_<?php echo $staff->id; ?>" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -197,7 +204,7 @@
                                         </div>
                                         <!-- /.modal-dialog -->
                                     </div>
-                                    <?php endforeach; } ?>
+                                    <?php endforeach; }  ?>
                                     </tbody>
                                     <script type="text/javascript">
                                         function updateStaff(id){

@@ -226,9 +226,10 @@ class Model_staff extends CI_Model{
      $curr_date = $date->format('Y-m-d ');
 
      $this->db->select('*');
-     $this->db->from($from); 
-     $this->db->where('DATE(date_created)',$curr_date);//use date function
-     $this->db->where('role', 'Doctor');
+     $this->db->from('role'); 
+     $this->db->join($from, $from .'.'.'role = role.id'); 
+     // $this->db->where('DATE(date_created)',$curr_date);//use date function
+     $this->db->where('role_name', 'Doctor');
      $result = $this->db->get();
      $count_today_appoint = $result->num_rows();
       return ($result->num_rows() > 0) ? $count_today_appoint : 'no result';
@@ -247,9 +248,10 @@ class Model_staff extends CI_Model{
  	function view_staff(){
  		// $sql = 'SELECT * FROM staff';
     $this->db->select();
-    $this->db->from('staff');
-    $this->db->where('role !=', 'Admin');
-    $this->db->order_by('id','DESC');
+    $this->db->from('role');
+    $this->db->join('staff', 'staff.role = role.id');
+    $this->db->where('role_name !=', 'Admin');
+    $this->db->order_by('staff.id','DESC');
 		$result = $this->db->get();
 		$row = $result->result();
 
@@ -491,5 +493,15 @@ class Model_staff extends CI_Model{
       $this->db->where('id', 1);
       $update = $this->db->update('settings', $fields);
       return ($update) ? true : false; 
+    }
+
+    function get_settings(){
+      $this->db->select('*');
+      $this->db->from('settings');
+      $this->db->where('id', 1);
+      $result = $this->db->get();
+      $row = $result->row();
+
+      return ($result->num_rows() > 0) ? $row : 'no result';
     }
 }

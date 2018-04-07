@@ -4,7 +4,11 @@ $get_settings = getsettingsdetails();
 ?>
 <div class="wrapper row-offcanvas row-offcanvas-left">
     <!-- Left side column. contains the logo and sidebar -->
-    <?php $this->load->view('navigation/admin_nav'); ?>
+
+    <?php 
+    include (APPPATH.'views/navigation/admin_nav.php');
+    // $this->load->view('navigation/admin_nav');
+     ?>
 
     <aside class="right-side">
            <section class="content-header">
@@ -105,9 +109,10 @@ $get_settings = getsettingsdetails();
                             <div class="text-right">
                                 <h3><b id="widget_count3">
                                     <?php
-                                        $this->db->select();
-                                        $this->db->from('staff');
-                                        $this->db->where('role', 'Doctor');
+                                        $this->db->select('*');
+                                        $this->db->from('role');
+                                        $this->db->join('staff', 'staff.role = role.id');
+                                        $this->db->where('role_name', 'Doctor');
                                         $result = $this->db->get();
                                         $count_doctor = $result->num_rows();
                                         if($result->num_rows() > 0){

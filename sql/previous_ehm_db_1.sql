@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 07, 2018 at 04:11 PM
+-- Generation Time: Apr 07, 2018 at 06:43 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.0.27
 
@@ -1086,8 +1086,7 @@ CREATE TABLE `permission` (
 
 INSERT INTO `permission` (`id`, `staff_id`, `role_id`, `permissions`) VALUES
 (1, 8, 4, 'r'),
-(2, 1, 1, 'w'),
-(3, 9, 7, 'w');
+(2, 1, 1, 'w');
 
 -- --------------------------------------------------------
 
@@ -1213,9 +1212,8 @@ INSERT INTO `staff` (`id`, `staff_id`, `staff_username`, `password`, `title`, `f
 (4, 'UCH-20186881', 'abike', '$2y$12$FaEu/1elNI0lxNiV22XByebVeaZsuIucV8EomCuUU1gsfdQ/OCGYi', 'Mrs', 'Abike', 'Ayo', 'Shade', '1990-05-17', 'Female', 'Married', '+2347055448855', 'Shade@gmail.com', '10', 'Oshimili North', 'Ojurin Akobo', 'Abike', 'Oyindamola', 'Olamide', 'Siblings', '+2347055448855', 'Ojurin Akobo', '6', '4', 'assets/img/upload/staff/default.jpg', 'Active', '2018-03-03 12:56:28', '0000-00-00 00:00:00'),
 (5, 'UCH-20185137', 'dazzy', '$2y$12$DpBzhCAE8QECL6/W1KUmjO6YPr13BB8XMlX2aJ7CPba33qBbkCZVW', 'Mrs', 'Babatunde', 'Kenny', 'Dasola', '2018-03-20', 'Female', 'Single', '+2347055448855', 'Dasola@gmail.com', '7', 'Logo', 'No 10, Ojo-road, Ibadan.', 'Babatunde', 'Ayobami', 'Oluwaseun', 'Siblings', '+2347055448855', 'No 10, Ojo-road, Ibadan.', '4', '2', 'assets/img/upload/staff/default.jpg', 'Active', '2018-03-03 13:00:09', '0000-00-00 00:00:00'),
 (6, 'UCH-20183674', 'lewa', '$2y$12$MUGX7xbEU5jTBDA/CJkNJ.uc4asVKLxJ9TcXFjKIY8jdXTeZrL8IC', 'Mr', 'Omolewa', 'Ayobami', 'Steven', '1995-11-14', 'Male', 'Single', '+2347055448855', 'Steven@gmail.com', '30', 'Ilesa East', 'Ikorodu Lagos', 'Omolewa', 'Kunle', 'Olamide', 'Siblings', '+2347055448855', 'Ikorodu Lagos', '6', '7', 'assets/img/upload/staff/avatar.jpg', 'Active', '2018-03-06 03:28:27', '0000-00-00 00:00:00'),
-(7, 'UCH-20181564', 'slim', '$2y$12$aop5SH3E7elmRoFkKinJPO4INY4kkcliBxo/PGUlyGybCW8LvPfLG', 'Mr', 'Alatise change', '', 'Steven', '2018-03-01', 'Female', 'Single', '+2347055448855', 'Adenike@gmail.com', '10', 'Ndokwa West', 'Lagos', 'Omolewa', '', 'Oluwaseun', 'Mother', '+2347055448855', 'Lagos', '7', '3', 'assets/img/upload/staff/default.jpg', 'Active', '2018-03-06 03:58:46', '0000-00-00 00:00:00'),
-(8, 'UCH-20185482', 'Sockokid', '$2y$12$EYbr0iVNmf../R7gtT/xXeAW7xIikjBAK/mnX4trWJoF2XtNJUAg6', 'Mr', 'Akintola', 'Ayo', 'Sodiq', '2016-03-16', 'Male', 'Single', '+2347055448855', 'Sodiq@gmail.com', '31', 'Ibadan North-East', 'Aperin Ibadan', 'Akintola', '', 'Rasaq', 'Siblings', '+2347055448855', 'Aperin Ibadan', '9', '4', 'assets/img/upload/staff/ehm_46194_ 5a9e996de2b49.jpg', 'Active', '2018-03-06 14:36:45', '0000-00-00 00:00:00'),
-(9, 'UCH-20183247', 'test', '$2y$12$8RGJVRvyd1JyE5kzUsIAtu1vG9sofl.p1rflq8.Wp2qbciugwfNg6', 'Mrs', 'sasas', '', 'assasas', '2018/04/18', 'Female', 'Single', '+2347064625478', 'sasasa@gmail.com', '10', 'Oshimili South', 'scscsc', 'scsc', '', 'sccscscs', 'Mother', '+2347055448855', 'scscscsc', '4', '7', 'assets/img/upload/staff/ehm_56985_ 5ac8ba3899192.jpg', 'Inactive', '2018-04-07 14:31:52', '0000-00-00 00:00:00');
+(7, 'UCH-20181564', 'slim', '$2y$12$aop5SH3E7elmRoFkKinJPO4INY4kkcliBxo/PGUlyGybCW8LvPfLG', 'Mr', 'Alatise change', '', 'Steven', '2018-03-01', 'Female', 'Single', '+2347055448855', 'Adenike@gmail.com', '10', 'Ndokwa West', 'Lagos', 'Omolewa', '', 'Oluwaseun', 'Mother', '+2347055448855', 'Lagos', '7', '3', 'assets/img/upload/staff/default.jpg', 'Inactive', '2018-03-06 03:58:46', '0000-00-00 00:00:00'),
+(8, 'UCH-20185482', 'Sockokid', '$2y$12$EYbr0iVNmf../R7gtT/xXeAW7xIikjBAK/mnX4trWJoF2XtNJUAg6', 'Mr', 'Akintola', 'Ayo', 'Sodiq', '2016-03-16', 'Male', 'Single', '+2347055448855', 'Sodiq@gmail.com', '31', 'Ibadan North-East', 'Aperin Ibadan', 'Akintola', '', 'Rasaq', 'Siblings', '+2347055448855', 'Aperin Ibadan', '9', '4', 'assets/img/upload/staff/ehm_46194_ 5a9e996de2b49.jpg', 'Active', '2018-03-06 14:36:45', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -1550,7 +1548,7 @@ ALTER TABLE `patient`
 -- AUTO_INCREMENT for table `permission`
 --
 ALTER TABLE `permission`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -1574,7 +1572,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `states`

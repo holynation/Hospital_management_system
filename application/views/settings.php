@@ -1,5 +1,8 @@
 <?php
 $user_data = is_logged();
+if(!$user_data){
+    redirect('/welcome/');
+}
 $get_settings = getsettingsdetails();
 ?>
 <!DOCTYPE html>
@@ -84,23 +87,22 @@ $get_settings = getsettingsdetails();
                             if(validation_errors()){ ?>
                                 <?php echo validation_errors('<div class="alert alert-danger" style="padding-left:40%;">','</div>'); ?>
                          <?php } ?>
-                        <div class="panel-body text-center">
+                        <div class="panel-body">
                             <div class="col-md-10 ">
                                 <form id="settings_form" action="<?php echo base_url('welcome/settings'); ?>" method="post" class="form-horizontal" enctype="multipart/form-data">
                                       <hr>
                                       <b class="text-center">
                                         <h3 class="panel-title"> 
-                                           <i class="fa fa-fw ti-pencil"></i> Create Settings
+                                           <i class="fa fa-fw ti-pencil-alt"></i> Update Settings
                                         </h3>
                                       </b>
                                       <hr>
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="system_title">
                                             System Title
-                                            <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-md-6">
-                                            <input type="text" id="system_title" name="system_title" class="form-control" placeholder="Enter System Title">
+                                            <input type="text" id="system_title" name="system_title" class="form-control" placeholder="Enter System Title" value="<?php echo $settings->title; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -122,11 +124,44 @@ $get_settings = getsettingsdetails();
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="smtp_host">
+                                            SMTP Host
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="smtp_host" name="smtp_host" class="form-control" placeholder="SMTP Host" value="<?php echo $settings->smtp_host; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="smtp_username">
+                                            SMTP Username
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="smtp_username" name="smtp_username" class="form-control" placeholder="SMTP Host" value="<?php echo $settings->smtp_username; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="smtp_password">
+                                            SMTP Password
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="password" id="smtp_password" name="smtp_password" class="form-control" placeholder="SMTP Password" value="<?php echo $settings->smtp_password; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="email">
+                                            System Email
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="email" id="email" name="email" class="form-control" placeholder="SMTP Email" value="<?php echo $settings->email; ?>">
+                                        </div>
+                                    </div>
+
                                     <div class="row">
                                         <br><br>
                                         <div class="form-group form-actions">
-                                            <div class="col-md-8 col-md-offset-2">
-                                                <button type="submit" class="btn btn-effect-ripple btn-primary" name="btnSaveSettings">Save</button>
+                                            <div class="col-md-6 col-md-offset-4">
+                                                <button type="submit" class="btn btn-effect-ripple btn-primary" name="btnSaveChanges">Change</button>
                                                 <button type="reset" class="btn btn-effect-ripple btn-default reset_btn">Reset
                                                 </button>
                                             </div>
