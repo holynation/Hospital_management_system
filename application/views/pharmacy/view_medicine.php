@@ -134,8 +134,7 @@ $get_settings = getsettingsdetails();
                                                 <button type="button" class="btn btn-icon btn-primary btn-round m-r-10" data-toggle="modal" data-target="#edit_<?php echo $medicine->id; ?>" data-placement="top" disabled><i class="icon fa fa-fw ti-pencil" aria-hidden="true"></i></button>
                                                 <button type="button" class="btn btn-icon btn-danger btn-round m-r-10" data-toggle="modal" data-target="#delete_<?php echo $medicine->id; ?>" data-placement="top" disabled><i class="icon fa fa-fw ti-trash" aria-hidden="true"></i></button>
                                           <?php  }else{ ?>
-                                          	<a href="<?php echo base_url('pharmacy/edit_medicine/'. $medicine->id); ?>">
-                                                <button type="button" class="btn btn-icon btn-primary btn-round m-r-10" data-placement="top"><i class="icon fa fa-fw ti-pencil" aria-hidden="true"></i></button></a>
+                                          	 <a href="<?php echo base_url('pharmacy/edit_medicine/'. $medicine->id); ?>" class="btn btn-primary"><i class="icon fa fa-fw ti-pencil" aria-hidden="true"></i> Edit</a>
                                                <button type="button" class="btn btn-icon btn-danger btn-round m-r-10" data-toggle="modal" data-target="#delete_<?php echo $medicine->id; ?>" data-placement="top"><i class="icon fa fa-fw ti-trash" aria-hidden="true"></i></button>
                                           <?php  }  ?>
                                             
