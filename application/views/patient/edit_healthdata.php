@@ -84,8 +84,8 @@ $get_settings = getsettingsdetails();
                                                                 <span class="text-danger">*</span>
                                                             </label>
                                                             <div class="col-md-6">
-                                                                <select id="genotype" name="genotype" class="form-control" disabled>
-                                                                    <option value="<?php echo $patient->genotype;  ?>"><?php echo $patient->genotype;  ?></option>
+                                                                <select id="genotype" name="genotype" class="form-control" >
+                                                                    <option value="<?php echo $patient->genotype;  ?>" selected="selected"><?php echo $patient->genotype;  ?></option>
                                                                     <option value=""> Please select one </option>
                                                                     <option value="AA">AA</option>
                                                                     <option value="AS">AS</option>
@@ -102,8 +102,8 @@ $get_settings = getsettingsdetails();
                                                                 <span class="text-danger">*</span>
                                                             </label>
                                                             <div class="col-md-6">
-                                                                <select id="blood_group" name="blood_group" class="form-control" disabled>
-                                                                    <option value="<?php echo $patient->blood_group;  ?>"><?php echo $patient->blood_group;  ?></option>
+                                                                <select id="blood_group" name="blood_group" class="form-control" >
+                                                                    <option value="<?php echo $patient->blood_group;  ?>" selected="selected"><?php echo $patient->blood_group;  ?></option>
                                                                     <option value=""> Please select one </option>
                                                                     <option value="A+">A+</option>
                                                                     <option value="A-">A-</option>

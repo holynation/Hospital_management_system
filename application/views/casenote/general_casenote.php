@@ -7,7 +7,7 @@ $get_settings = getsettingsdetails();
 
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="img/favicon.ico"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -93,7 +93,7 @@ $get_settings = getsettingsdetails();
 
                                                             <div class="form-group striped-col">
                                                                 <label class="col-sm-3 control-label" for="health_status">
-                                                                 Health State <span style="color: red">*</span>
+                                                                 Complaint <span style="color: red">*</span>
                                                                 </label>
                                                                 <div class="col-sm-6">
                                                                     <input type="text" id="health_status" name="health_status" class="form-control" placeholder="Enter Patient Health condition" value=""  required="required">

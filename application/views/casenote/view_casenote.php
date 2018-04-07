@@ -7,8 +7,8 @@ $get_settings = getsettingsdetails();
 
 <head>
     <meta charset="UTF-8">
-     <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
-       <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
+     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/favicon.ico"/>
   <!-- global css -->
   <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/A.app.css%2bcustom.css%2cMcc.Wh3kTlK9Vt.css.pagespeed.cf.Vq3xvtuJ3i.css"/>
@@ -78,7 +78,7 @@ $get_settings = getsettingsdetails();
                                     <tr>
                                         <th>S/N</th>
                                         <th>Patient Name</th>
-                                        <th>Health State</th>
+                                        <th>Complaint</th>
                                         <th>Prescription</th>
                                         <th>Diagnosis</th>
                                         <th>Managed by</th>

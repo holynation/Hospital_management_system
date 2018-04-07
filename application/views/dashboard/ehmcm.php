@@ -167,7 +167,7 @@ $get_settings = getsettingsdetails();
                                     <tr>
                                         <th>S/N</th>
                                         <th>Patient Name</th>
-                                        <th>Health State</th>
+                                        <th>Complaint</th>
                                         <th>Prescription</th>
                                         <th>Diagnosis</th>
                                         <th>Managed by</th>

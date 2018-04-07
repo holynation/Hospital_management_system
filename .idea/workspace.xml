@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="355e8d1b-a949-4cc8-9c4d-09c34b2d0763" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/database.php" afterPath="$PROJECT_DIR$/application/config/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/add_casenote.php" afterPath="$PROJECT_DIR$/application/views/casenote/add_casenote.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/edit_casenote.php" afterPath="$PROJECT_DIR$/application/views/casenote/edit_casenote.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/general_casenote.php" afterPath="$PROJECT_DIR$/application/views/casenote/general_casenote.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/view_casenote.php" afterPath="$PROJECT_DIR$/application/views/casenote/view_casenote.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehm.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehm.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehm1.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehm1.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehm_nurse.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehm_nurse.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehmcm.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehmcm.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehmrec.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehmrec.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/patient/edit_healthdata.php" afterPath="$PROJECT_DIR$/application/views/patient/edit_healthdata.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,21 +22,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="edit_healthdata.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/patient/edit_healthdata.php">
+      <file leaf-file-name="add_casenote.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/casenote/add_casenote.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="104" column="107" lean-forward="false" selection-start-line="104" selection-start-column="107" selection-end-line="104" selection-end-column="107" />
+            <state relative-caret-position="109">
+              <caret line="250" column="65" lean-forward="false" selection-start-line="250" selection-start-column="65" selection-end-line="250" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/config/database.php">
+      <file leaf-file-name="edit_casenote.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/casenote/edit_casenote.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="109">
+              <caret line="89" column="61" lean-forward="false" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="general_casenote.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/casenote/general_casenote.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="95" column="74" lean-forward="false" selection-start-line="95" selection-start-column="74" selection-end-line="95" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_casenote.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/casenote/view_casenote.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="80" column="53" lean-forward="false" selection-start-line="80" selection-start-column="53" selection-end-line="80" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -42,18 +65,8 @@
       <file leaf-file-name="ehm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="331" column="83" lean-forward="false" selection-start-line="331" selection-start-column="83" selection-end-line="331" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ehm1.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehm1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="356" column="66" lean-forward="true" selection-start-line="356" selection-start-column="66" selection-end-line="356" selection-end-column="66" />
+            <state relative-caret-position="99">
+              <caret line="302" column="57" lean-forward="false" selection-start-line="302" selection-start-column="57" selection-end-line="302" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -63,17 +76,17 @@
         <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehm_nurse.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="79">
-              <caret line="220" column="41" lean-forward="true" selection-start-line="220" selection-start-column="41" selection-end-line="222" selection-end-column="62" />
+              <caret line="220" column="57" lean-forward="false" selection-start-line="220" selection-start-column="57" selection-end-line="220" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ehmrec.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehmrec.php">
+      <file leaf-file-name="ehm1.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehm1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="222" column="62" lean-forward="false" selection-start-line="222" selection-start-column="62" selection-end-line="222" selection-end-column="62" />
+            <state relative-caret-position="109">
+              <caret line="354" column="61" lean-forward="false" selection-start-line="354" selection-start-column="61" selection-end-line="354" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -82,43 +95,19 @@
       <file leaf-file-name="ehmcm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehmcm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="113">
-              <caret line="199" column="79" lean-forward="false" selection-start-line="199" selection-start-column="79" selection-end-line="199" selection-end-column="79" />
+            <state relative-caret-position="150">
+              <caret line="169" column="53" lean-forward="false" selection-start-line="169" selection-start-column="53" selection-end-line="169" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="view_casenote.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/casenote/view_casenote.php">
+      <file leaf-file-name="ehmrec.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehmrec.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="108" column="38" lean-forward="true" selection-start-line="108" selection-start-column="38" selection-end-line="110" selection-end-column="79" />
+            <state relative-caret-position="141">
+              <caret line="220" column="57" lean-forward="false" selection-start-line="220" selection-start-column="57" selection-end-line="220" selection-end-column="57" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="patient.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/patient.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="395" column="59" lean-forward="false" selection-start-line="395" selection-start-column="45" selection-end-line="395" selection-end-column="59" />
-              <folding>
-                <element signature="n#update_patient#0;n#Patient#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Model_patient.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Model_patient.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="27" />
-              <folding>
-                <marker date="1523108232000" expanded="true" signature="382:420" ph="SELECT * FRO... patient" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -143,18 +132,13 @@
       <find>update_patient</find>
       <find>diag</find>
       <find>descri</find>
+      <find>health state</find>
+      <find>health cond</find>
+      <find>health</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="git pull" />
-      <command text="git status" />
-      <command text="git add ." />
-      <command text="git status" />
-      <command text="git pull" />
-      <command text="git origin" />
-      <command text="git clone https://technodesolutions@bitbucket.org/technodefam/ehm.git" />
-      <command text="git pull" />
       <command text="git log" />
       <command text="git pull origin master" />
       <command text="git commit &quot;want to pull&quot;" />
@@ -172,6 +156,14 @@
       <command text="git commit -m &quot;all ready&quot;" />
       <command text="git push --set-upstream origin master" />
       <command text="git push" />
+      <command text="git add." />
+      <command text="git add ." />
+      <command text="git commit -m &quot;dashboard tweak&quot;" />
+      <command text="git push --set-upstream origin master" />
+      <command text="git pull" />
+      <command text="git add ." />
+      <command text="git push --set-upstream origin master" />
+      <command text="git push " />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -184,19 +176,20 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Installer/allDetails.php" />
-        <option value="$PROJECT_DIR$/application/views/casenote/edit_casenote.php" />
         <option value="$PROJECT_DIR$/application/models/Model_casenote.php" />
         <option value="$PROJECT_DIR$/application/controllers/casenote.php" />
-        <option value="$PROJECT_DIR$/application/views/casenote/view_casenote.php" />
-        <option value="$PROJECT_DIR$/application/views/casenote/add_casenote.php" />
         <option value="$PROJECT_DIR$/application/controllers/patient.php" />
+        <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/application/views/patient/edit_healthdata.php" />
+        <option value="$PROJECT_DIR$/application/views/casenote/add_casenote.php" />
+        <option value="$PROJECT_DIR$/application/views/casenote/edit_casenote.php" />
+        <option value="$PROJECT_DIR$/application/views/casenote/general_casenote.php" />
+        <option value="$PROJECT_DIR$/application/views/casenote/view_casenote.php" />
         <option value="$PROJECT_DIR$/application/views/dashboard/ehm.php" />
         <option value="$PROJECT_DIR$/application/views/dashboard/ehm1.php" />
-        <option value="$PROJECT_DIR$/application/views/dashboard/ehmcm.php" />
         <option value="$PROJECT_DIR$/application/views/dashboard/ehm_nurse.php" />
+        <option value="$PROJECT_DIR$/application/views/dashboard/ehmcm.php" />
         <option value="$PROJECT_DIR$/application/views/dashboard/ehmrec.php" />
-        <option value="$PROJECT_DIR$/application/config/database.php" />
       </list>
     </option>
   </component>
@@ -347,12 +340,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523106157868</updated>
-      <workItem from="1523106159188" duration="15324000" />
+      <workItem from="1523106159188" duration="16611000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15324000" />
+    <option name="totallyTimeSpent" value="16611000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="6" />
@@ -492,14 +485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/casenote/edit_casenote.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="115" column="116" lean-forward="false" selection-start-line="115" selection-start-column="116" selection-end-line="115" selection-end-column="116" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Model_casenote.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
@@ -518,14 +503,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7">
           <caret line="217" column="48" lean-forward="false" selection-start-line="217" selection-start-column="44" selection-end-line="217" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/casenote/add_casenote.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1945">
-          <caret line="397" column="72" lean-forward="false" selection-start-line="397" selection-start-column="72" selection-end-line="397" selection-end-column="72" />
           <folding />
         </state>
       </provider>
@@ -558,14 +535,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/patient/edit_healthdata.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="104" column="107" lean-forward="false" selection-start-line="104" selection-start-column="107" selection-end-line="104" selection-end-column="107" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/appointment/view_appoint.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1183">
@@ -574,26 +543,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/appointment/add_appointment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="91" />
+          <folding>
+            <marker date="1523108232000" expanded="true" signature="4071:4088" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/patient/edit_healthdata.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="86" column="123" lean-forward="false" selection-start-line="86" selection-start-column="123" selection-end-line="86" selection-end-column="123" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/casenote/add_casenote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="250" column="65" lean-forward="false" selection-start-line="250" selection-start-column="65" selection-end-line="250" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/casenote/edit_casenote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="89" column="61" lean-forward="false" selection-start-line="89" selection-start-column="61" selection-end-line="89" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/casenote/general_casenote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="95" column="74" lean-forward="false" selection-start-line="95" selection-start-column="74" selection-end-line="95" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/casenote/view_casenote.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="108" column="38" lean-forward="true" selection-start-line="108" selection-start-column="38" selection-end-line="110" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="331" column="83" lean-forward="false" selection-start-line="331" selection-start-column="83" selection-end-line="331" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehmcm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="199" column="79" lean-forward="false" selection-start-line="199" selection-start-column="79" selection-end-line="199" selection-end-column="79" />
+        <state relative-caret-position="109">
+          <caret line="80" column="53" lean-forward="false" selection-start-line="80" selection-start-column="53" selection-end-line="80" selection-end-column="53" />
           <folding />
         </state>
       </provider>
@@ -601,31 +604,39 @@
     <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehm_nurse.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
-          <caret line="220" column="41" lean-forward="true" selection-start-line="220" selection-start-column="41" selection-end-line="222" selection-end-column="62" />
+          <caret line="220" column="57" lean-forward="false" selection-start-line="220" selection-start-column="57" selection-end-line="220" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehmrec.php">
+    <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="222" column="62" lean-forward="false" selection-start-line="222" selection-start-column="62" selection-end-line="222" selection-end-column="62" />
+        <state relative-caret-position="99">
+          <caret line="302" column="57" lean-forward="false" selection-start-line="302" selection-start-column="57" selection-end-line="302" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehm1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="356" column="66" lean-forward="true" selection-start-line="356" selection-start-column="66" selection-end-line="356" selection-end-column="66" />
+        <state relative-caret-position="109">
+          <caret line="354" column="61" lean-forward="false" selection-start-line="354" selection-start-column="61" selection-end-line="354" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/database.php">
+    <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehmcm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="169" column="53" lean-forward="false" selection-start-line="169" selection-start-column="53" selection-end-line="169" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehmrec.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="220" column="57" lean-forward="false" selection-start-line="220" selection-start-column="57" selection-end-line="220" selection-end-column="57" />
           <folding />
         </state>
       </provider>

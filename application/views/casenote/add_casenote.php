@@ -145,7 +145,7 @@ $get_settings = getsettingsdetails();
 
                                                             <div class="form-group striped-col">
                                                                 <label class="col-sm-3 control-label" for="health_status">
-                                                                 Health Condition
+                                                                 Complaint
                                                                 </label>
                                                                 <div class="col-sm-6">
                                                                     <input type="text" id="health_status" name="health_status" class="form-control" placeholder="Enter Patient Health condition" value=""  required="required">
@@ -248,7 +248,7 @@ $get_settings = getsettingsdetails();
                                                 <tr>
                                                     <th>S/N</th>
                                                     <th>Patient Name</th>
-                                                    <th>Health State</th>
+                                                    <th>Complaint</th>
                                                     <th>Prescription</th>
                                                     <th>Description</th>
                                                     <th>Managed by</th>
