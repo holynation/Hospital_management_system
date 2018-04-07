@@ -36,34 +36,13 @@ class Department extends CI_Controller{
 		}
 	}
 
-		public function get_role(){
-		if($this->checkRole->role == 'Admin'){
-			$this->roleName = 'admin';
+	public function get_role(){
+		$user_data = is_logged();
+		$role = get_user_role($user_data);
+		$role = strtolower($role);
+		if($role){
+			$this->roleName = $role;
 		}
-
-		if($this->checkRole->role == 'Doctor'){
-			$this->roleName = 'doctor';
-		}
-
-		if($this->checkRole->role == 'Nurse'){
-			$this->roleName = 'nurse';
-		}
-
-		if($this->checkRole->role == 'Accountant'){
-			$this->roleName = 'accountant';
-		}
-
-		if($this->checkRole->role == 'Laboratorist'){
-			$this->roleName = 'laboratorist';
-		}
-
-		if($this->checkRole->role == 'Receptionist'){
-			$this->roleName = 'receptionist';
-		}
-
-		if($this->checkRole->role == 'Pharmacist'){
-			$this->roleName = 'pharmacist';
-		}	
 	}
 
 	public function get_role_name(){
@@ -78,7 +57,7 @@ class Department extends CI_Controller{
 	}
 
 	public function create(){
-		$this->check_permission();
+		// $this->check_permission();
 		$config = array(
 			array(
 					'field' => 'department_name',
@@ -120,6 +99,28 @@ class Department extends CI_Controller{
 		$data['data_department'] = $result;
 		$data['permission'] = $this->get_role_name();
 		$this->load->view('department/view_department',$data);
+	}
+
+	public function edit(){
+		if(isset($_POST['edit'])){
+			$id = trim($_POST['id']);
+			$department = $_POST['department_name'];
+			$desc = $_POST['desc_info'];
+
+			$data = array(
+				'department_name' => $department,
+				'description' => $desc,
+			);
+
+			$updated = $this->Model_department->update_department($id,$data,'department');
+
+			if(!$updated){
+				echo 'Error performing the operation';
+				exit;
+			}
+
+			echo 'Updated';
+		}
 	}
 
 	public function delete($id){

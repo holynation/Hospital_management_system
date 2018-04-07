@@ -1,15 +1,12 @@
 <?php
-$user_data = is_logged();
-if(!$user_data){
-    redirect('/welcome/');
-}
+$user_data = check_all_access(); // this check all the necessary access to the system and permission
 $get_settings = getsettingsdetails();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="img/favicon.ico"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -27,6 +24,7 @@ $get_settings = getsettingsdetails();
     <link href="<?php echo base_url(); ?>assets/vendors/jasny-bootstrap/css/jasny-bootstrap.css" type="text/css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/vendors/select2/css/select2.min.css" type="text/css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/vendors/select2/css/select2-bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/vendors/bootstrap-datepicker/css/datepicker.css" type="text/css" rel="stylesheet">
 
     <style id="skin">.skin-default .sidebar a{color:#808b9c;-webkit-font-smoothing:antialiased}.skin-default .icon-list li a:hover{background:#eee}@media screen and (min-width:550px){.skin-default .navbar .navbar-right>.nav{margin-right:15px}}</style>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/custom_css/A.form2.css%2bform3.css%2cMcc.waUisHSW80.css.pagespeed.cf.U8Tkz4m-7S.css"/>
@@ -176,13 +174,14 @@ $get_settings = getsettingsdetails();
                                     </label>
                                     <div class="col-md-6">
                                         <div class="input-group">
-                                            <input type="date" class="form-control" id="datetimepicker1" name="datetimepicker1">
+                                            <input type="text" class="form-control" id="datetimepicker1" name="datetimepicker1">
                                             <span class="input-group-addon">
                                                 <i class="fa fa-fw ti-calendar"></i>
                                             </span>
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div class="form-group">
                                     <label class="col-md-4 control-label" for="marital-status">
                                         Marital Status
@@ -413,6 +412,20 @@ $get_settings = getsettingsdetails();
 <script src="<?php echo base_url(); ?>assets/js/app.js" type="text/javascript"></script>
 <!-- end of global js -->
 
+<script src="<?php echo base_url(); ?>assets/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script>
+    $(document).ready(function(){
+      var date_input=$('input[name="datetimepicker1"]'); //our date input has the name "date"
+      var container=$('.row form-group').length>0 ? $('.row form-group').parent() : "body";
+      var options={
+        format: 'yyyy/mm/dd',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
 <!-- begining of page level js -->
 <script src="<?php echo base_url(); ?>assets/vendors/moment/js/moment.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/vendors/jasny-bootstrap/js/jasny-bootstrap.js" type="text/javascript"></script>

@@ -36,34 +36,13 @@ class Role extends CI_Controller{
 		}
 	}
 
-		public function get_role(){
-		if($this->checkRole->role == 'Admin'){
-			$this->roleName = 'admin';
+	public function get_role(){
+		$user_data = is_logged();
+		$role = get_user_role($user_data);
+		$role = strtolower($role);
+		if($role){
+			$this->roleName = $role;
 		}
-
-		if($this->checkRole->role == 'Doctor'){
-			$this->roleName = 'doctor';
-		}
-
-		if($this->checkRole->role == 'Nurse'){
-			$this->roleName = 'nurse';
-		}
-
-		if($this->checkRole->role == 'Accountant'){
-			$this->roleName = 'accountant';
-		}
-
-		if($this->checkRole->role == 'Laboratorist'){
-			$this->roleName = 'laboratorist';
-		}
-
-		if($this->checkRole->role == 'Receptionist'){
-			$this->roleName = 'receptionist';
-		}
-
-		if($this->checkRole->role == 'Pharmacist'){
-			$this->roleName = 'pharmacist';
-		}	
 	}
 
 	public function get_role_name(){
@@ -78,7 +57,7 @@ class Role extends CI_Controller{
 	}
 
 	public function create(){
-		$this->check_permission();
+		// $this->check_permission();
 		$config = array(
 			array(
 					'field' => 'role_name',

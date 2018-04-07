@@ -1,8 +1,5 @@
 <?php
-$user_data = is_logged();
-if(!$user_data){
-    redirect('/welcome/');
-}
+$user_data = check_all_access(); // this check all the necessary access to the system and permission
 $get_settings = getsettingsdetails();
 ?>
 <!DOCTYPE html>
@@ -10,7 +7,7 @@ $get_settings = getsettingsdetails();
 
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/favicon.ico"/>
   <!-- global css -->
@@ -149,15 +146,6 @@ $get_settings = getsettingsdetails();
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    
-                                                    <!-- <div class="row marginTop">
-                                                        <div class="col-xs-6 col-md-6">
-                                                            <input type="submit" id="btncheck" value="Update" class="btn btn-primary btn-block btn-md btn-responsive" tabindex="7" onclick="editCategory(<?php //echo $category->id; ?>);">
-                                                        </div>
-                                                        <div class="col-xs-6 col-md-6">
-                                                            <a class="btn btn-success btn-block btn-md btn-responsive" data-dismiss="modal">No</a>
-                                                        </div>
-                                                    </div> -->
                                                 </div>
                                                 <div class="modal-footer ">
                                                     <button type="submit" class="btn btn-primary btn-block btn-md btn-responsive" tabindex="7" data-dismiss="modal" id="btnEdit<?php echo $category->id; ?>">

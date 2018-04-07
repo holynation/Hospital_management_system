@@ -33,7 +33,10 @@ $get_settings = getsettingsdetails();
 <?php include 'includes/static-header.php'; ?>
 
 <div class="wrapper row-offcanvas row-offcanvas-left">
-    <?php $this->load->view('navigation/admin_nav'); ?>
+    <?php 
+    include (APPPATH.'views/navigation/admin_nav.php');
+    //$this->load->view('navigation/admin_nav'); ?>
+
     <aside class="right-side">
         <!-- Content Header (Page header) -->
         <section class="content-header">

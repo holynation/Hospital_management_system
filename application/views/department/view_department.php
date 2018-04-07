@@ -1,8 +1,5 @@
 <?php
-$user_data = is_logged();
-if(!$user_data){
-    redirect('/welcome/');
-}
+$user_data = check_all_access(); // this check all the necessary access to the system and permission
 $get_settings = getsettingsdetails();
 ?>
 <!DOCTYPE html>
@@ -10,7 +7,7 @@ $get_settings = getsettingsdetails();
 
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/favicon.ico"/>
   <!-- global css -->
@@ -82,6 +79,7 @@ $get_settings = getsettingsdetails();
                                         <th>Department Name</th>
                                         <th>Department Description</th>
                                         <th>Date Created</th>
+                                        <th>Date Modified</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
@@ -100,18 +98,67 @@ $get_settings = getsettingsdetails();
                                         <td><?php echo $department->department_name; ?></td>
                                         <td><?php echo $department->description; ?></td>
                                         <td><?php echo $department->date_created; ?></td>
+                                        <td><?php echo $department->date_modified; ?></td>
                                         <td>
                                             <?php 
 
                                             if($permission != 'admin'){ ?>
+                                                <button type="button" class="btn btn-icon btn-primary btn-round m-r-10" data-toggle="modal" data-target="#edit_<?php echo $department->id; ?>" data-placement="top" disabled><i class="icon fa fa-fw ti-pencil" aria-hidden="true"></i></button>
                                                 <button type="button" class="btn btn-icon btn-danger btn-round m-r-10" data-toggle="modal" data-target="#delete_<?php echo $department->id; ?>" data-placement="top" disabled><i class="icon fa fa-fw ti-trash" aria-hidden="true"></i></button>
                                           <?php  }else{ ?>
+                                                <button type="button" class="btn btn-icon btn-primary btn-round m-r-10" data-toggle="modal" data-target="#edit_<?php echo $department->id; ?>" data-placement="top"><i class="icon fa fa-fw ti-pencil" aria-hidden="true"></i></button>
                                                <button type="button" class="btn btn-icon btn-danger btn-round m-r-10" data-toggle="modal" data-target="#delete_<?php echo $department->id; ?>" data-placement="top"><i class="icon fa fa-fw ti-trash" aria-hidden="true"></i></button> 
                                           <?php  }  ?>
                                             
                                         </td>
                                     </tr>
                                     </tbody>
+                                    <div class="modal fade" id="edit_<?php echo $department->id; ?>" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <form method="post" id="edit_data_form">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h4 class="modal-title custom_align" id="Heading5">Update this entry </h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3 form-group">
+                                                                <label class="col-md-4 control-label" for="department_name">
+                                                                    Department Name
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-sm-8 form-group">
+                                                                <input type="text" id="department_name<?php echo $department->id; ?>" name="department_name" class="form-control" placeholder="Enter Department Name" value="<?php echo $department->department_name; ?>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-12">
+                                                            <div class="col-sm-3 form-group">
+                                                                <label class="col-md-4 control-label" for="desc_info">
+                                                                    Descripton
+                                                                </label>
+                                                            </div>
+                                                            <div class="col-sm-8 form-group">
+                                                                <textarea id="desc_info<?php echo $department->id; ?>" name="desc_info" rows="4" class="form-control resize_vertical" placeholder="Department short info "><?php echo $department->description; ?></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer ">
+                                                    <button type="submit" class="btn btn-primary btn-block btn-md btn-responsive" tabindex="7" data-dismiss="modal" id="btnEdit<?php echo $department->id; ?>">
+                                                        <span class="glyphicon glyphicon-ok-sign"></span> Yes
+                                                    </button>
+                                                    <button type="button" class="btn btn-success btn-block btn-md btn-responsive" tabindex="7" data-dismiss="modal">
+                                                        <span class="glyphicon glyphicon-remove"></span> No
+                                                    </button>
+                                                </div>
+                                                </form>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div>
                                     <div class="modal fade" id="delete_<?php echo $department->id; ?>" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -141,6 +188,24 @@ $get_settings = getsettingsdetails();
                                         <!-- /.modal-dialog -->
                                     </div>
                                     <script>
+
+                                        $(document).ready(function(){
+                                            $('#btnEdit<?php echo $department->id; ?>').click(function(){
+
+                                                var department = $('#department_name<?php echo $department->id; ?>').val(),
+                                                    id = '<?php echo $department->id; ?>';
+                                                    desc = $('#desc_info<?php echo $department->id; ?>').val();
+
+                                                $.post('<?php echo base_url();?>department/edit/', {id: id, edit: 'editing',department_name: department,desc_info: desc },
+                                                    function(result){
+                                                    // console.log(result);
+                                                    alert(result);
+                                                    window.location.reload();
+                                                });
+                                            });
+
+                                        });
+
                                         function deleteDepartment(id){
 
                                             $.post('<?php echo base_url();?>department/delete/' + id, { delete: 'deleting' },

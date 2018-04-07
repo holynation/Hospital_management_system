@@ -1,5 +1,8 @@
 <?php
 $user_data = is_logged();
+if(!$user_data){
+    redirect('/welcome/');
+}
 $get_settings = getsettingsdetails();
 ?>
 <!DOCTYPE html>
@@ -7,7 +10,7 @@ $get_settings = getsettingsdetails();
 
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/favicon.ico"/>
  
@@ -19,6 +22,7 @@ $get_settings = getsettingsdetails();
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css/A.app.css%2bcustom.css%2cMcc.Wh3kTlK9Vt.css.pagespeed.cf.Vq3xvtuJ3i.css"/>
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css') ?>">
+    <link href="<?php echo base_url(); ?>assets/vendors/bootstrap-datepicker/css/datepicker.css" type="text/css" rel="stylesheet">
     
    <style id="skin">.skin-default .sidebar a{color:#808b9c;-webkit-font-smoothing:antialiased}.skin-default .icon-list li a:hover{background:#eee}@media screen and (min-width:550px){.skin-default .navbar .navbar-right>.nav{margin-right:15px}}</style>
 
@@ -130,7 +134,7 @@ $get_settings = getsettingsdetails();
                                                 <div class="input-group-addon">
                                                     <i class="fa fa-fw ti-calendar"></i>
                                                 </div>
-                                                <input class="form-control" id="datetime20" name="assign_date" size="40" placeholder="YYYY-MM-DD">
+                                                <input class="form-control" id="datetimepicker1" name="assign_date" size="40" placeholder="YYYY-MM-DD">
                                             </div>
                                         </div>
                                     </div>
@@ -203,13 +207,19 @@ $get_settings = getsettingsdetails();
 <script src="<?php echo base_url(); ?>assets/js/app.js" type="text/javascript"></script>
 <!-- end of global js -->
 <!-- begining of page level js -->
-<script src="<?php echo base_url(); ?>assets/vendors/moment/js/moment.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>assets/vendors/colorpicker/js/bootstrap-colorpicker.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>assets/vendors/datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>assets/vendors/bootstrap-multiselect/js/bootstrap-multiselect.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>assets/vendors/clockface/js/clockface.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>assets/vendors/bootstrap-touchspin/js/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
-<script src="<?php echo base_url(); ?>assets/vendors/toolbar/js/jquery.toolbar.min.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/custom_js/pickers.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>assets/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script>
+    $(document).ready(function(){
+      var date_input=$('input[id="datetimepicker1"]'); //our date input has the name "date"
+      var container=$('.row form-group').length>0 ? $('.row form-group').parent() : "body";
+      var options={
+        format: 'yyyy/mm/dd',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
 </body>
 </html>

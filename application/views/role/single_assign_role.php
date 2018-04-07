@@ -1,12 +1,12 @@
 <?php
-$user_data = is_logged();
+$user_data = check_all_access(); // this check all the necessary access to the system and permission
 $get_settings = getsettingsdetails();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="img/favicon.ico"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -99,15 +99,18 @@ $get_settings = getsettingsdetails();
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-6">
                                         <div class="form-group">
-                                            <label for="adult-number">Assign Role</label>
+                                            <label for="adult-number">Select Role</label>
                                             <select class="form-control" name="assign_role" id="assign_role_<?php echo $staff->id; ?>">
                                                 <?php 
                                                     $check = $staff->role;
                                                     if($check != ''):
                                                 ?>
-                                                    <option value="<?php echo $staff->role; ?>"><?php echo $staff->role; ?></option>
+                                                    <option value="<?php echo $staff->role; ?>"><?php  $role_name = $this->Model_staff->get_role_id($staff->role);
+                                                        echo ($role_name != 'no result') ? $role_name->role_name : ' ';
+                                                     ?> 
+                                                     </option>
                                                 <?php endif; ?>
                                                 <option value="">Assign role...</option>
                                                 <?php foreach($data_roles as $role): ?>
@@ -116,14 +119,34 @@ $get_settings = getsettingsdetails();
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-sm-4">
-                                        <?php
-                                        $check = $staff->role;
-                                            if($check == ''){ ?>
-                                            <span class="label label-sm label-danger" id="unassign_<?php echo $staff->id; ?>">Unassigned</span>
-                                       <?php }else{ ?>
-                                       <span class="label label-sm label-success" id="assign_<?php echo $staff->id; ?>">Assigned</span>
-                                        <?php  } ?>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="adult-number">Permission Role</label>
+                                            <?php
+                                                $check = $this->db->get_where('permission', array('staff_id' => $staff->id))->row();
+                                                if(!$check){ ?>
+                                                    <span class="label label-sm label-danger" id="unassign_<?php echo $staff->id; ?>">Unassigned</span>
+                                                <?php }else{ ?>
+                                                    <span class="label label-sm label-success" id="assign_<?php echo $staff->id; ?>">Assigned</span>
+                                                <?php  } ?>
+                                            <select class="form-control" name="assign_permission" id="assign_permission_<?php echo $staff->id; ?>">
+                                                <option value="">Assign permission...</option>
+                                                <?php 
+                                                $p_value = get_enum_value();
+                                                for($i=0; $i < count($p_value); $i++): ?>
+                                                <option value="<?php echo $p_value[$i]; ?>">
+                                                    <?php 
+                                                        if($p_value[$i] == 'r'){
+                                                            echo 'View';
+                                                        } else if($p_value[$i] == 'w'){
+                                                            echo 'Modify';
+                                                        }
+                                                    ?>
+                                                </option>
+                                                <?php endfor; ?>
+                                            </select>
+                                        </div>
+                                        <!-- /.form group -->
                                     </div>
                                 </div>
                                     
@@ -146,6 +169,25 @@ $get_settings = getsettingsdetails();
                                                         window.location.reload();
                                                     }
                                             });
+                                        });
+
+                                        $('#assign_permission_<?php echo $staff->id; ?>').on('change', function(){
+                                            var role_id = $('#assign_role_<?php echo $staff->id; ?>').val(), permission = $('#assign_permission_<?php echo $staff->id; ?>').val(),
+                                                staff_id = '<?php echo $staff->id; ?>';
+                                        // alert(role);
+                                                $.post('<?php echo base_url();?>staff/assign_permission', { staff_id: staff_id,role_id: role_id,permission: permission },
+                                                      function(result){
+                                                        // console.log(result);
+                                                        if(result == 'permitted'){
+                                                            $('#unassign_<?php echo $staff->id; ?>').hide();
+                                                            $('#assign_<?php echo $staff->id; ?>').show();
+                                                            alert(result);
+                                                            window.location.reload();
+                                                        }else{
+                                                            alert(result);
+                                                            // $('#assign_<?php //echo $staff->id; ?>').hide();
+                                                        }
+                                                });
                                         });
                                     });
                                 </script>

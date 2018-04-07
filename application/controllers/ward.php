@@ -98,8 +98,10 @@ class Ward extends CI_Controller {
 	public function view_ward(){
 		$result = $this->Model_ward->view_ward();
 		// print_r($result);
-
+		$user = is_logged();
+		$role = strtolower(get_user_role($user));
 		$data['data_ward'] = $result;
+		$data['permission'] = $role;
 		$this->load->view('ward/view_ward',$data);
 	}
 
@@ -347,8 +349,11 @@ class Ward extends CI_Controller {
 
 	public function view_bed_assign(){
 		$bed_list = $this->Model_ward->get_bed_assign_list(); 
+		$user = is_logged();
+		$role = strtolower(get_user_role($user));
 
 		$data['data_ward_list'] = $bed_list;
+		$data['permission'] = $role;
 		$this->load->view('ward/view_bed_assign', $data);
 	}
 

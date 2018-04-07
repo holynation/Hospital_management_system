@@ -1,5 +1,8 @@
 <?php
 $user_data = is_logged();
+if(!$user_data){
+    redirect('/welcome/');
+}
 $get_settings = getsettingsdetails();
 ?>
 <!DOCTYPE html>
@@ -7,7 +10,7 @@ $get_settings = getsettingsdetails();
 
 <head>
     <meta charset="UTF-8">
-     <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+     <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/favicon.ico"/>
      <!-- global css -->
@@ -161,7 +164,7 @@ $get_settings = getsettingsdetails();
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="val-username">
-                                            Appointment Date
+                                            Appointment Schedule
                                              <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-md-6">
@@ -283,7 +286,7 @@ $get_settings = getsettingsdetails();
 
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="val-username">
-                                                Appointment Date
+                                                Appointment Schedule
                                                  <span class="text-danger">*</span>
                                             </label>
                                             <div class="col-md-6">

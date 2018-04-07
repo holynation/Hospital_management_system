@@ -1,5 +1,8 @@
 <?php
 $user_data = is_logged();
+if(!$user_data){
+    redirect('/welcome/');
+}
 $get_settings = getsettingsdetails();
 ?>
 <!DOCTYPE html>
@@ -7,7 +10,7 @@ $get_settings = getsettingsdetails();
 
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="img/favicon.ico"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -75,18 +78,7 @@ $get_settings = getsettingsdetails();
                                 <div class="profile_user">
                                     <h3 class="user_name_max"><?php echo $patient->first_name, ' ', $patient->last_name; ?></h3>
                                     <p><?php echo $patient->email; ?> / <?php echo $patient->phone_no; ?></p>
-                                    <span class="fa-stack faceb fa-lg">
-                                         <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-stack-1x fa-facebook fa-inverse"></i>
-                                    </span>
-                                    <span class="fa-stack googleplus fa-lg">
-                                         <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-flag fa-stack-1x fa-google-plus fa-inverse"></i>
-                                    </span>
-                                    <span class="fa-stack tweet-btn fa-lg">
-                                         <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-flag fa-stack-1x fa-twitter fa-inverse"></i>
-                                    </span>
+                                    
                                 </div>
                                 &nbsp;&nbsp;
                                 <div class="profile_user">

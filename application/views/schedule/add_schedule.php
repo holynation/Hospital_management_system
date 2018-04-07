@@ -1,12 +1,15 @@
 <?php
 $user_data = is_logged();
+if(!$user_data){
+    redirect('/welcome/');
+}
 $get_settings = getsettingsdetails();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/favicon.ico"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -75,7 +78,7 @@ $get_settings = getsettingsdetails();
                             <h3 class="panel-title">
                                 
                                  <button class="button button-rounded button-primary-flat hvr-hang">
-                                     <i class="fa fa-fw ti-list"></i>  Schedule List
+                                     <i class="fa fa-fw ti-list"></i>  Create Schedule
                                 </button>
                             </h3>
                         </div>

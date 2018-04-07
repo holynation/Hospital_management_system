@@ -9,7 +9,7 @@ $get_settings = getsettingsdetails();
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/favicon.ico"/>
   <!-- global css -->
@@ -113,8 +113,8 @@ $get_settings = getsettingsdetails();
                                         <td><?php echo $schedule->available_time_end; ?></td>
                                         <td><?php echo $schedule->date_created; ?></td>
                                         <td>
-                                            <a href="#">
-                                            <button class="btn btn-icon btn-danger btn-xs"><i class="icon fa fa-fw ti-trash" aria-hidden="true"></i></button></a>
+                                           <!--  <a href="#">
+                                            <button class="btn btn-icon btn-danger btn-xs"><i class="icon fa fa-fw ti-trash" aria-hidden="true"></i></button></a> -->
                                             <a href="#<?php echo base_url('schedule/edit_schedule/'. $schedule->id); ?>">
                                                 <button class="btn btn-primary btn-xs" data-placement="top"><span class="fa fa-fw ti-pencil"></span></button>
                                             </a>

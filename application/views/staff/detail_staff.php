@@ -352,6 +352,7 @@ $get_settings = getsettingsdetails();
                                                                             <img class="media-object thumbnail" src="<?php echo base_url($patients->picture_path); ?>" alt="image" height="80" width="80"/>
                                                                         </a>
                                                                         <div class="media-body">
+                                                                            <i>Patient: <?php echo $patients->first_name ,' ', $patients->last_name; ?></i>
                                                                             <h4 class="event-title">
                                                                                 <a href="#"><?php echo $r->type; ?></a>
                                                                             </h4>

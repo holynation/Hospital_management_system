@@ -40,33 +40,12 @@ class Staff extends CI_Controller {
 	}
 
 	public function get_role(){
-		if($this->checkRole->role == 'Admin'){
-			$this->roleName = 'admin';
+		$user_data = is_logged();
+		$role = get_user_role($user_data);
+		$role = strtolower($role);
+		if($role){
+			$this->roleName = $role;
 		}
-
-		if($this->checkRole->role == 'Doctor'){
-			$this->roleName = 'doctor';
-		}
-
-		if($this->checkRole->role == 'Nurse'){
-			$this->roleName = 'nurse';
-		}
-
-		if($this->checkRole->role == 'Accountant'){
-			$this->roleName = 'accountant';
-		}
-
-		if($this->checkRole->role == 'Laboratorist'){
-			$this->roleName = 'laboratorist';
-		}
-
-		if($this->checkRole->role == 'Receptionist'){
-			$this->roleName = 'receptionist';
-		}
-
-		if($this->checkRole->role == 'Pharmacist'){
-			$this->roleName = 'pharmacist';
-		}	
 	}
 
 	public function get_role_name(){
@@ -90,7 +69,7 @@ class Staff extends CI_Controller {
 
 	public function add_staff(){
 		$this->check_login();
-		$this->check_permission();
+		// $this->check_permission();
 
 		$this->load->library('hash_created');
 		$config = array(
@@ -351,7 +330,7 @@ class Staff extends CI_Controller {
 	}
 
 	public function edit_staff($id){
-		$this->check_permission();
+		// $this->check_permission();
 		$id = trim($id);
 		$result = $this->Model_staff->view_staff_where($id);
 		if(!$result){
@@ -438,8 +417,8 @@ class Staff extends CI_Controller {
 	}
 
 	public function role(){
-		$this->check_login();
-		$this->check_permission();
+		// $this->check_login();
+		// $this->check_permission();
 		$result = $this->Model_staff->view_staff_in_role();
 		$roles = $this->Model_staff->get_roles();
 		// print_r($result);
@@ -449,7 +428,7 @@ class Staff extends CI_Controller {
 	}
 
 	public function assign_staff_role(){
-			$this->check_permission();
+			// $this->check_permission();
     		$result = $this->Model_staff->get_recent_staff();
     		$roles = $this->Model_staff->get_roles();
 			if(!$result){
@@ -468,13 +447,33 @@ class Staff extends CI_Controller {
 		$data = array(
 			'role' => $role
 		);
-		$update = $this->Model_staff->update_staff($id,$data);
+		$update = $this->Model_staff->update_staff($id,$data,'staff');
 		if(!$update){
 			echo 'There is an error updating...';
 			exit;
 		}
 
 		echo 'updated';
+	}
+
+	public function assign_permission(){
+		$staff_id = $_POST['staff_id'];
+		$role_id = $_POST['role_id'];
+		$permission = $_POST['permission'];
+
+		$data = array(
+			'staff_id' => $staff_id,
+			'role_id'	=> $role_id,
+			'permissions' => $permission
+		);
+
+		$create = $this->Model_staff->create_permission($data);
+		if(!$create){
+			echo 'There is an error creating a permission...';
+			exit;
+		}
+
+		echo 'permitted';
 	}
 
 	public function show_restrict(){

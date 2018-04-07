@@ -22,6 +22,12 @@ class Model_department extends CI_Model{
     return ($result->num_rows() > 0) ? $row : 'no result';
   }
 
+  function update_department($id, $data, $from){
+  		$this->db->where('id', $id);
+		$update = $this->db->update($from, $data);
+		return ($update) ? true : false;
+  	}
+
   function delete_department($id){
 		$this->db->where('id', $id);
 		$this->db->delete('department');

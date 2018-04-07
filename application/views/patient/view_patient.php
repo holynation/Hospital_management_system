@@ -9,7 +9,7 @@ $get_settings = getsettingsdetails();
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="img/favicon.ico"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -123,30 +123,16 @@ $get_settings = getsettingsdetails();
                                     <td><?php echo $patient->allergy; ?></td>
                                     <td>
                                     	<p>
-                                    	<a href="<?php echo base_url('patient/view_patient_full/'. $patient->id); ?>">
-                                            <label class="text text-primary">Edit
-                                                <button class="btn btn-primary btn-xs" data-placement="top" title="edit"><span class="fa fa-fw ti-pencil"></span></button>
-                                            </label>
-                                            
-                                        </a>
+                                            <a href="<?php echo base_url('patient/view_patient_full/'. $patient->id); ?>" class="btn btn-primary"><span class="fa fa-fw ti-pencil"></span> Edit</a>
                                         </p>
                                         <p>
-                                        <a href="<?php echo base_url('appointment/create/'. $patient->id); ?>">
-                                            <label class="text text-info">Appointment 
-                                                <button class="btn btn-info btn-xs" data-placement="top" title="Create appointment"><span class="fa fa-fw ti-pencil-alt"></span></button>
-                                            </label>
-                                        </a>
-                                        <p>
-                                            <a href="<?php echo base_url('ward/bed_assign/'. $patient->id); ?>">
-                                                <label class="text text-primary"> Assign Ward
-                                                    <button class="btn btn-primary btn-xs" data-placement="top" title="assign bed"><i class="fa fa-fw ti-notepad"></i></button>
-                                                </label>
-                                            </a>
-                                        </p>
+                                            <a href="<?php echo base_url('appointment/create/'. $patient->id); ?>" class="btn btn-primary"><span class="fa fa-fw ti-pencil-alt"></span> Appointment</a>
                                         </p>
                                         <p>
-                                            <label class="text text-primary">Details</label>
-                                            <a class="btn btn-primary btn-xs" href="<?php echo base_url('patient/single_patient/'. $patient->id) ?>"><i class="fa fa-eye text-success actions_icon" title="View patient details"></i></a>
+                                            <a href="<?php echo base_url('ward/bed_assign/'. $patient->id); ?>" class="btn btn-primary"><i class="fa fa-fw ti-notepad"></i> Assign Ward</a>
+                                        </p>
+                                        <p>
+                                            <a href="<?php echo base_url('patient/single_patient/'. $patient->id) ?>" class="btn btn-primary"><i class="fa fa-eye"></i> Details</a>
                                         </p>
                                     </td>
                                 </tr>

@@ -239,6 +239,11 @@ class Model_staff extends CI_Model{
  		return ($put) ? true : false; 
  	}
 
+  function create_permission($fields = array()){
+    $put = $this->db->insert('permission', $fields);
+    return ($put) ? true : false; 
+  }
+
  	function view_staff(){
  		// $sql = 'SELECT * FROM staff';
     $this->db->select();
@@ -301,6 +306,16 @@ class Model_staff extends CI_Model{
     $sql = 'SELECT * FROM role';
     $result = $this->db->query($sql);
     $row = $result->result();
+
+    return ($result->num_rows() > 0) ? $row : 'no result';
+  }
+
+  function get_role_id($id){
+    $this->db->select('*');
+    $this->db->from('role');
+    $this->db->where('id', $id);
+    $result = $this->db->get();
+    $row = $result->row();
 
     return ($result->num_rows() > 0) ? $row : 'no result';
   }

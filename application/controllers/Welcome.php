@@ -141,32 +141,11 @@ class Welcome extends CI_Controller {
 	}
 
 	public function get_role(){
-		if($this->checkRole->role == 'Admin'){
-			$this->roleName = 'admin';
-		}
-
-		if($this->checkRole->role == 'Doctor'){
-			$this->roleName = 'doctor';
-		}
-
-		if($this->checkRole->role == 'Nurse'){
-			$this->roleName = 'nurse';
-		}
-
-		if($this->checkRole->role == 'Accountant'){
-			$this->roleName = 'accountant';
-		}
-
-		if($this->checkRole->role == 'Laboratorist'){
-			$this->roleName = 'laboratorist';
-		}
-
-		if($this->checkRole->role == 'Receptionist'){
-			$this->roleName = 'receptionist';
-		}
-
-		if($this->checkRole->role == 'Pharmacist'){
-			$this->roleName = 'pharmacist';
+		$user_data = is_logged();
+		$role = get_user_role($user_data);
+		$role = strtolower($role);
+		if($role){
+			$this->roleName = $role;
 		}	
 	}
 
@@ -201,8 +180,7 @@ class Welcome extends CI_Controller {
 			$this->logout();
 			$this->load->view('login/login');
 		}
-
-				
+	
 	}
 
 	public function updateAppointmentStatus($id){

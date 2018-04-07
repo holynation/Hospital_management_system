@@ -4,8 +4,8 @@ if(!$user_data){
     redirect('/welcome/');
 }
 $get_settings = getsettingsdetails();
-    $name = $user_data->role . ' ' . $user_data->first_name;
-$role = user_data_role($user_data); //this is the only place where i have use this function
+$name = get_user_role($user_data) . ' ' . $user_data->first_name;
+$role = strtolower(get_user_role($user_data)); //this is the only place where i have use this function
 ?>
 <!-- <div class="wrapper row-offcanvas row-offcanvas-left"> -->
     <!-- Left side column. contains the logo and sidebar -->
@@ -53,14 +53,14 @@ $role = user_data_role($user_data); //this is the only place where i have use th
                             <span>Departments</span>
                          </a>
                         <ul class="sub-menu">
-                            <?php if($role == 'admin' || $role =='doctor'): ?>
+                            <?php //if($role == 'admin' || $role =='doctor'): ?>
                             <li>
                                 <a href="<?php echo base_url('department/create'); ?>">
                                     <i class="fa fa-fw ti-pencil-alt"></i>
                                      Add Department
                                 </a>   
                             </li>
-                            <?php endif; ?>
+                            <?php //endif; ?>
                             <li>
                                 <a href="<?php echo base_url('department/view_department'); ?>">
                                     <i class="fa fa-fw ti-eye"></i>
@@ -76,14 +76,12 @@ $role = user_data_role($user_data); //this is the only place where i have use th
                             <span>Staff Directory</span>
                          </a>
                         <ul class="sub-menu">
-                            <?php if($role =='admin' || $role =='doctor'): ?>
                             <li>
                                 <a href="<?php echo base_url('staff/add_staff'); ?>">
                                     <i class="fa fa-fw ti-pencil-alt"></i>
                                      Add New Staff
                                 </a>   
                             </li>
-                            <?php endif; ?>
                             <li>
                                 <a href="<?php echo base_url('staff/view_staff'); ?>">
                                     <i class="fa fa-fw ti-eye"></i>
@@ -306,7 +304,7 @@ $role = user_data_role($user_data); //this is the only place where i have use th
                             <span>Role</span>
                          </a>
                         <ul class="sub-menu">
-                            <?php if($role == 'admin'):  ?>
+                            <?php if(strtolower($role) == 'admin'):  ?>
                             <li>
                                 <a href="<?php echo base_url('role/create'); ?>">
                                     <i class="fa fa-fw ti-marker-alt"></i>

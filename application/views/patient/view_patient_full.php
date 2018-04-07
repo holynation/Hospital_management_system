@@ -1,12 +1,15 @@
 <?php
 $user_data = is_logged();
+if(!$user_data){
+    redirect('/welcome/');
+}
 $get_settings = getsettingsdetails();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="img/favicon.ico"/>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -18,7 +21,7 @@ $get_settings = getsettingsdetails();
     <!-- global css -->
     <link type="text/css" rel="stylesheet" href="<?php echo base_url(); ?>assets/css%2c_app.css%2bvendors%2c_bootstrap-table%2c_css%2c_bootstrap-table.min.css%2bcss%2c_custom.css.pagespeed.cc.7zClYA9zvj.css"/>
     <!-- end of global css -->
-    
+    <link href="<?php echo base_url(); ?>assets/vendors/bootstrap-datepicker/css/datepicker.css" type="text/css" rel="stylesheet">
     <style id="skin">.skin-default .sidebar a{color:#808b9c;-webkit-font-smoothing:antialiased}.skin-default .icon-list li a:hover{background:#eee}@media screen and (min-width:550px){.skin-default .navbar .navbar-right>.nav{margin-right:15px}}</style>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/custom_css/bootstrap_tables.css">
     <!--end of page level css-->
@@ -133,7 +136,7 @@ $get_settings = getsettingsdetails();
                                     </label>
                                     <div class="col-md-6">
                                         <div class="input-group">
-                                            <input type="date" class="form-control" id="datetimepicker1" name="datetimepicker1" value="<?php echo $patient->dob; ?>">
+                                            <input type="text" class="form-control" id="datetimepicker1" name="datetimepicker1" value="<?php echo $patient->dob; ?>">
                                             <span class="input-group-addon">
                                                 <i class="fa fa-fw ti-calendar"></i>
                                             </span>
@@ -422,6 +425,19 @@ $get_settings = getsettingsdetails();
 <script src="<?php echo base_url(); ?>assets/js/ajax_jquery.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/app.js" type="text/javascript"></script><!-- end of global js -->
-
+<script src="<?php echo base_url(); ?>assets/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script>
+    $(document).ready(function(){
+      var date_input=$('input[id="datetimepicker1"]'); //our date input has the name "date"
+      var container=$('.row form-group').length>0 ? $('.row form-group').parent() : "body";
+      var options={
+        format: 'yyyy/mm/dd',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
 </body>
 </html>

@@ -9,7 +9,7 @@ $get_settings = getsettingsdetails();
 <html>
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/favicon.ico"/>
   <!-- global css -->
@@ -131,8 +131,11 @@ $get_settings = getsettingsdetails();
                                                   <button class="btn btn-icon btn-success btn-xs" data-toggle="modal" data-target="#status2_<?php echo $ward->id; ?>" data-placement="top" title="Change Status"><i class="icon fa fa-fw ti-check-box" aria-hidden="true"></i></button>
                                               <?php  }
                                             ?>
-                                            
-                                            <button class="btn btn-icon btn-danger btn-xs" data-toggle="modal" data-target="#delete_<?php echo $ward->id; ?>" data-placement="top"><i class="icon fa fa-fw ti-trash" aria-hidden="true" title="Delete Ward"></i></button>
+                                            <?php if($permission != 'admin'){ ?>
+                                            <button class="btn btn-icon btn-danger btn-xs" data-placement="top" disabled><i class="icon fa fa-fw ti-trash" aria-hidden="true" title="Delete Ward"></i></button>
+                                            <?php }else{ ?>
+                                                <button class="btn btn-icon btn-danger btn-xs" data-toggle="modal" data-target="#delete_<?php echo $ward->id; ?>" data-placement="top"><i class="icon fa fa-fw ti-trash" aria-hidden="true" title="Delete Ward"></i></button>
+                                         <?php } ?>
                                         </td>
                                     </tr>
                                     <div class="modal fade" id="delete_<?php echo $ward->id; ?>" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
