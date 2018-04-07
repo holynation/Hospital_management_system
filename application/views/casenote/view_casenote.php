@@ -79,7 +79,8 @@ $get_settings = getsettingsdetails();
                                         <th>S/N</th>
                                         <th>Patient Name</th>
                                         <th>Health State</th>
-                                        <th>Description</th>
+                                        <th>Prescription</th>
+                                        <th>Diagnosis</th>
                                         <th>Managed by</th>
                                         <th>Date Created</th>
                                         <th>Modified by</th>
@@ -106,7 +107,8 @@ $get_settings = getsettingsdetails();
                                         </td>
 
                                         <td><?php echo $cn->health_status ; ?></td>
-                                        <td><?php echo $cn->description ; ?></td>
+                                        <td><?php echo $cn->prescription ; ?></td>
+                                        <td><?php echo $cn->diagnosis ; ?></td>
                                         <td> <?php 
                                             $patient_name = $this->Model_casenote->get_doctor_by_id($cn->created_by);
                                             echo "Dr. ".$patient_name->first_name;
@@ -127,46 +129,46 @@ $get_settings = getsettingsdetails();
                                         </td>
                                     </tr>
                                     </tbody>
-                                  <!--   <div class="modal fade" id="delete_<?php echo $appoint->id; ?>" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <form action="<?php echo base_url('casenote/delete'); ?>" method="post">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                    <h4 class="modal-title custom_align" id="Heading5">Delete this entry </h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="alert alert-info">
-                                                        <span class="glyphicon glyphicon-info-sign"></span>&nbsp; Are you sure you want to
-                                                        delete this record ?
+                                            <div class="modal fade" id="delete_<?php echo $cn->id; ?>" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <form action="<?php echo base_url('casenote/delete'); ?>" method="post">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                                <h4 class="modal-title custom_align" id="Heading5">Delete this entry </h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="alert alert-info">
+                                                                    <span class="glyphicon glyphicon-info-sign"></span>&nbsp; Are you sure you want to
+                                                                    delete this record ?
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer ">
+                                                                <button type="click" class="btn btn-danger" data-dismiss="modal" onclick="deleteAppoint(<?php echo $cn->id; ?>);">
+                                                                    <span class="glyphicon glyphicon-ok-sign"></span> Yes
+                                                                </button>
+                                                                <button type="button" class="btn btn-success" data-dismiss="modal">
+                                                                    <span class="glyphicon glyphicon-remove"></span> No
+                                                                </button>
+                                                            </div>
+                                                        </form>
                                                     </div>
+                                                    /.modal-content
                                                 </div>
-                                                <div class="modal-footer ">
-                                                    <button type="click" class="btn btn-danger" data-dismiss="modal" onclick="deleteAppoint(<?php echo $appoint->id; ?>);">
-                                                        <span class="glyphicon glyphicon-ok-sign"></span> Yes
-                                                    </button>
-                                                    <button type="button" class="btn btn-success" data-dismiss="modal">
-                                                        <span class="glyphicon glyphicon-remove"></span> No
-                                                    </button>
-                                                </div>
-                                                </form>
+                                                /.modal-dialog
                                             </div>
-                                            /.modal-content
-                                        </div>
-                                         /.modal-dialog 
-                                    </div>
-                                    <script>
-                                        function deleteAppoint(id){
+                                            <script>
+                                                function deleteAppoint(id){
 
-                                            $.post('<?php echo base_url();?>casenote/delete/' + id, { delete: 'deleting' },
-                                              function(result){
-                                                // console.log(result);
-                                                window.redirect = '<?php echo base_url();?>casenote/view_appoint';
-                                                alert(result);
+                                                    $.post('<?php echo base_url();?>casenote/delete/' + id, { delete: 'deleting' },
+                                                        function(result){
+                                                            // console.log(result);
+                                                            location.reload();
+                                                            alert(result);
 
-                                            });
-                                        }
-                                    </script> -->
+                                                        });
+                                                }
+                                            </script>
                                     <?php endforeach; } ?>
                                 </table>
                             </div>

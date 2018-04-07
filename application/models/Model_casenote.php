@@ -72,15 +72,20 @@ class Model_casenote extends CI_Model{
       return ($get) ? $get : false;
     }
 
- 	function update_appointment($id, $data = array()){
+    function get_casenote_by_id($id){
+        $get = $this->db->get_where('casenote', array('id' => $id), 1)->row();
+        return ($get) ? $get : false;
+    }
+
+ 	function update_casenote($id, $data = array()){
  		$this->db->where('id', $id);
-		$update = $this->db->update('appointment', $data);
+		$update = $this->db->update('casenote', $data);
 		return ($update) ? true : false;
  	}
 
- 	function delete_appointment($id){
+ 	function delete_casenote($id){
 		$this->db->where('id', $id);
-		$this->db->delete('appointment');
+		$this->db->delete('casenote');
 
 		if($this->db->affected_rows()){
 			return true;
@@ -95,7 +100,7 @@ class Model_casenote extends CI_Model{
 
 
      function view_appointment_by_id($id){
-	    $sql = " SELECT * FROM appointment WHERE id = '$id' ";
+	    $sql = " SELECT * FROM appointment WHERE id = '$id' LIMIT 2";
 	    $result = $this->db->query($sql);
 	    $row = $result->result();
 

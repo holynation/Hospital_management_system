@@ -83,7 +83,8 @@ class Casenote extends CI_Controller {
 
 				'patient_id' => $this->input->post('patient_id'),
 				'health_status ' => $this->input->post('health_status'),
-				'description' => $this->input->post('description'),
+                'prescription' => $this->input->post('prescription'),
+				'diagnosis' => $this->input->post('description'),
 				'created_by' => $this->input->post('created_by'),
 				'date_created' => date('Y-m-d H:i:s')
 
@@ -269,39 +270,39 @@ class Casenote extends CI_Controller {
 		}
 	}
 
-	public function edit_appointment($id){
+	public function edit_casenote($id){
 		$id = trim($id);
-		$result = $this->Model_appointment->get_appointment_by_id($id);
+		$result = $this->Model_casenote->get_casenote_by_id($id);
 		if(!$result){
 			echo 'There is an error with the info from the db...';
 			exit;
 		}
-		$data['departments'] = $this->Model_staff->get_department();
-		$data['data_appointment'] = $result;
-		$this->load->view('appointment/edit_appointment', $data);
+		$data['data_casenote'] = $result;
+		$this->load->view('casenote/edit_casenote', $data);
 	}
 
-	public function update_appointment(){
-			$id = $this->input->post('patient_update_id');
-			if(isset($_POST['btnAppointUpdate'])){
-				$data = array(
-					'department' => $this->input->post('department'),
-					'doctor_name' => $this->input->post('doctor_name'),
-					'appointment_date' => $this->input->post('appointment_date'),
-					'complaint' => $this->input->post('complaint'),
-					'type' => $this->input->post('type'), //will later delete this wen condition is in place
-					'date_modified' => date('Y-m-d H:i:s')
-	            );
+	public function update_casenote(){
 
-	            $updated = $this->Model_appointment->update_appointment($id, $data);
+			if(isset($_POST['Update'])){
+                $id = $this->input->post('case_id');
+                $data = array(
+                    'health_status ' => $this->input->post('health_status'),
+                    'prescription' => $this->input->post('prescription'),
+                    'diagnosis' => $this->input->post('description'),
+                    'date_updated' => date('Y-m-d H:i:s')
+
+                );
+
+
+	            $updated = $this->Model_casenote->update_casenote($id, $data);
 
 	            if(!$updated){
 	            	echo 'There is an error updating...';
 					exit;
 	            }
                    
-                $this->session->set_flashdata('success', 'You have successfully rescheduled the appointment...');
-				redirect('/appointment/view_appoint/', 'refresh');
+                $this->session->set_flashdata('success', 'You have successfully updated the case note...');
+				redirect('/casenote/view_casenote/', 'refresh');
 			}
 	}
 
@@ -311,7 +312,7 @@ class Casenote extends CI_Controller {
 
 			$id = trim($id);
 
-			$deleted = $this->Model_appointment->delete_appointment($id);
+			$deleted = $this->Model_casenote->delete_casenote($id);
 
 			if(!$deleted){
 				echo 'Error performing the operation';

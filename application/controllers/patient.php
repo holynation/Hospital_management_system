@@ -276,7 +276,22 @@ class Patient extends CI_Controller {
 		$this->load->view('patient/view_patient', $data);
 	}
 
-	public function view_patient_full($id){
+
+
+    public function edit_hd($id){
+        $id = trim($id);
+        $result = $this->Model_patient->view_patient_where($id);
+        if(!$result){
+            $data['error'] = 'There is an error with the info from the db...';
+            $this->load->view('patient/view_patient_full', $data);
+            exit;
+        }
+        $data['data_patient'] = $result;
+        $this->load->view('patient/edit_healthdata', $data);
+    }
+
+
+    public function view_patient_full($id){
 		$id = trim($id);
 		$result = $this->Model_patient->view_patient_where($id);
 		if(!$result){
@@ -350,6 +365,45 @@ class Patient extends CI_Controller {
 	public function show_restrict(){
 		$this->load->view('restriction/block');
 	}
+
+
+    public function update_patient2(){
+        if(isset($_POST['btnPatientUpdate2'])){
+            $id = $this->input->post('patient_update_id');
+
+//            if($this->checkRole){
+//                if($this->get_role_name() == 'admin'){
+//                    $name = $this->get_role_name();
+//                }else{
+//                    $name = $this->get_role_name() . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
+//                }
+//            }
+            $name = $this->get_role_name() . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
+
+            $data = array(
+
+                'genotype' => $this->input->post('genotype'),
+                'blood_group' => $this->input->post('blood_group'),
+                'blood_pressure' => $this->input->post('blood_pressure'),
+                'weight' => $this->input->post('weight'),
+                'height' => $this->input->post('height'),
+                'pulse' => $this->input->post('pulse'),
+                'body_temprature' => $this->input->post('body_temprature'),
+                'modifier' => $name,
+                'date_modified' => date('Y-m-d H:i:s')
+
+            );
+            $updated = $this->Model_patient->update_patient($id, $data);
+
+            if(!$updated){
+                echo 'There is an error updating...';
+                exit;
+            }
+
+            $this->session->set_flashdata('success', 'You have successfully updated the patient...');
+            redirect('/patient/view_patient/', 'refresh');
+        }
+    }
 
 
 
