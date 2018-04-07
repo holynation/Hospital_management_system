@@ -4,7 +4,10 @@ $get_settings = getsettingsdetails();
 ?>
 <div class="wrapper row-offcanvas row-offcanvas-left">
     <!-- Left side column. contains the logo and sidebar -->
-    <?php $this->load->view('navigation/admin_nav'); ?>
+    <?php 
+    include (APPPATH.'views/navigation/admin_nav.php');
+    // $this->load->view('navigation/admin_nav');
+     ?>
 
     <aside class="right-side">
            <section class="content-header">
@@ -163,17 +166,17 @@ $get_settings = getsettingsdetails();
                                                     <h3 class="text-dark"><b>
                                                         <?php
                                                         $this->db->select();
-                                                        $this->db->from('staff');
-                                                        $this->db->where('role', 'Doctor');
+                                                        $this->db->from('role');
+                                                        $this->db->join('staff', 'staff.role = role.id');
+                                                        $this->db->where('role_name', 'Doctor');
                                                         $result = $this->db->get();
                                                         $count_doctor = $result->num_rows();
                                                         if($result->num_rows() > 0){
                                                             echo $count_doctor;
-                                                        }else{
-                                                            echo 'No Doctor yet...';
-                                                        }
+                                                        }else{ ?>
                                                     ?>
                                                     </b></h3>
+                                                    <?php echo 'No Doctor yet...'; } ?>
                                                     <p>Doctor</p>
                                                 </div>
                                                 <div class="clearfix"></div>

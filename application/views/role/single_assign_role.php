@@ -114,7 +114,7 @@ $get_settings = getsettingsdetails();
                                                 <?php endif; ?>
                                                 <option value="">Assign role...</option>
                                                 <?php foreach($data_roles as $role): ?>
-                                                <option value="<?php echo $role->role_name; ?>"><?php echo $role->role_name; ?></option>
+                                                <option value="<?php echo $role->id; ?>"><?php echo $role->role_name; ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>

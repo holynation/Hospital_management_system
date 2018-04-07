@@ -4,7 +4,10 @@ $get_settings = getsettingsdetails();
 ?>
 <div class="wrapper row-offcanvas row-offcanvas-left">
     <!-- Left side column. contains the logo and sidebar -->
-    <?php $this->load->view('navigation/admin_nav'); ?>
+    <?php 
+    include (APPPATH.'views/navigation/admin_nav.php');
+    // $this->load->view('navigation/admin_nav');
+     ?>
 
     <aside class="right-side">
         <section class="content-header">

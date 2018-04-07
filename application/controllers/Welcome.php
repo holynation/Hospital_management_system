@@ -541,7 +541,9 @@ class Welcome extends CI_Controller {
 		);
 		$this->form_validation->set_rules($config);
 		if($this->form_validation->run() == false){
-			$this->load->view('settings');
+			$settings = $this->Model_staff->get_settings();
+			$data['settings'] = $settings;
+			$this->load->view('settings', $data);
 		}else{
 			//perform action
 
@@ -562,10 +564,13 @@ class Welcome extends CI_Controller {
 				$upload_path = 'assets/img/upload/ehm.png';
 			}
 
-
 			$data = array(
                 'title' => $this->input->post('system_title'),
                 'logo' => $upload_path,	
+                'smtp_host' => $this->input->post('smtp_host'),
+                'smtp_username' => $this->input->post('smtp_username'),
+                'smtp_password' => $this->input->post('smtp_password'),
+                'email' => $this->input->post('email'),
                 'date_created' => date('Y-m-d H:i:s')
             );
 

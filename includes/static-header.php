@@ -29,11 +29,11 @@ $get_settings = getsettingsdetails();
                         </form>
                     </div>
                 </li>
-                <li class="dropdown messages-menu">
-                    <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw ti-bell"></i>
-                        <!-- <span class="label label-success">2</span> -->
-                    </a> -->
-                </li>
+                <!-- <li class="dropdown messages-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw ti-bell"></i>
+                        <span class="label label-success">2</span>
+                    </a>
+                </li> -->
                 <!-- User Account: style can be found in dropdown-->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle padding-user" data-toggle="dropdown">
