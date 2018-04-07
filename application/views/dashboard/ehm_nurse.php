@@ -218,8 +218,9 @@ $get_settings = getsettingsdetails();
                                         <tr>
                                             <th>S/N</th>
                                             <th>Patient Name</th>
-                                            <th>Health State</th>
-                                            <th>Description</th>
+                                            <th>Health Condition</th>
+                                            <th>Prescription</th>
+                                            <th>Diagnosis</th>
                                             <th>Managed by</th>
                                             <th>Date Created</th>
                                             <th>Modified by</th>
@@ -246,7 +247,8 @@ $get_settings = getsettingsdetails();
                                             </td>
 
                                             <td><?php echo $cn->health_status ; ?></td>
-                                            <td><?php echo $cn->description ; ?></td>
+                                            <td><?php echo $cn->prescription ; ?></td>
+                                            <td><?php echo $cn->diagnosis ; ?></td>
                                             <td> <?php 
                                                 $patient_name = $this->Model_casenote->get_doctor_by_id($cn->created_by);
                                                 echo "Dr. ".$patient_name->first_name;
