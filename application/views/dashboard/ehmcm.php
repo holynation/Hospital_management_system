@@ -1,4 +1,7 @@
-
+<?php
+$user_data = is_logged();
+$get_settings = getsettingsdetails();
+?>
 <div class="wrapper row-offcanvas row-offcanvas-left">
     <!-- Left side column. contains the logo and sidebar -->
     <?php 
@@ -12,7 +15,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-5 col-xs-8">
                     <div class="header-element">
                         <h3>EHM/
-                            <small>Case Manager Dashboard</small>
+                            <small><?php echo get_user_role($user_data); ?> Dashboard</small>
                         </h3>
                     </div>
                 </div>

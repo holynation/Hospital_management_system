@@ -31,11 +31,12 @@ $role = strtolower(get_user_role($user_data)); //this is the only place where i 
                                         <i class="fa fa-fw ti-settings" title="edit user"></i>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="<?php echo base_url('staff/logout'); ?>">
-                                        <i class="fa fa-fw ti-shift-right" title="logout"></i>
+                                <!-- <li>
+                                    <a href="<?php //echo base_url('staff/logout'); ?>">
+                                        <i class="fa fa-fw ti-shift-right" title="logout"> Logout</i>
                                     </a>
-                                </li>
+                                </li> -->
+                                <a href="<?php echo base_url('staff/logout'); ?>" class="btn btn-default"><i class="fa fa-fw ti-shift-right" title="logout"></i> Logout</a>
                             </ul>
                         </div>
                     </div>
