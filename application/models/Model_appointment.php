@@ -23,9 +23,10 @@ class Model_appointment extends CI_Model{
 
  	function get_doctor_by_department($id,$doctor){
  		$this->db->select('*');
-        $this->db->from('staff');
-        $this->db->where('department_id', $id);
-        $this->db->where('role', $doctor);
+        $this->db->from('role');
+        $this->db->join('staff', 'staff.role = role.id');
+        $this->db->where('staff.department_id', $id);
+        $this->db->where('role_name', $doctor);
         $result = $this->db->get();
 
 		return ($result->num_rows() > 0 ) ? $result : 'no result';

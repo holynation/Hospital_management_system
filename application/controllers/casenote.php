@@ -281,6 +281,17 @@ class Casenote extends CI_Controller {
 		$this->load->view('casenote/edit_casenote', $data);
 	}
 
+    public function edit_casenote2($id){
+        $id = trim($id);
+        $result = $this->Model_casenote->get_casenote_by_id($id);
+        if(!$result){
+            echo 'There is an error with the info from the db...';
+            exit;
+        }
+        $data['data_casenote'] = $result;
+        $this->load->view('casenote/edit_casenote2', $data);
+    }
+
 	public function update_casenote(){
 
 			if(isset($_POST['Update'])){
@@ -305,6 +316,34 @@ class Casenote extends CI_Controller {
 				redirect('/casenote/view_casenote/', 'refresh');
 			}
 	}
+
+
+    public function update_casenote2(){
+
+        if(isset($_POST['Update'])){
+            $id = $this->input->post('case_id');
+            $data = array(
+                'health_status ' => $this->input->post('health_status'),
+                'prescription' => $this->input->post('prescription'),
+                'diagnosis' => $this->input->post('description'),
+                'date_updated' => date('Y-m-d H:i:s')
+
+            );
+
+
+            $updated = $this->Model_casenote->update_casenote($id, $data);
+
+            if(!$updated){
+                echo 'There is an error updating...';
+                exit;
+            }
+
+            $this->session->set_flashdata('success', 'You have successfully updated the case note...');
+            //redirect('/casenote/view_casenote/', 'refresh');
+            $referred_from = $this->session->userdata('referred_from');
+            redirect($referred_from, 'refresh');
+        }
+    }
 
 	public function delete($id){
 		$task = $_POST['delete'];

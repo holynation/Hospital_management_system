@@ -12,8 +12,13 @@ class Model_schedule extends CI_Model{
  	}
 
  	function get_doctors(){
- 		$sql = "SELECT * FROM staff WHERE role = 'doctor' ";
-		$result = $this->db->query($sql);
+ 		$this->db->select('*');
+ 		$this->db->from('role');
+ 		$this->db->join('staff', 'staff.role = role.id');
+ 		$this->db->where('role_name', 'Doctor');
+ 		$result = $this->db->get();
+ 		// $sql = "SELECT * FROM staff WHERE role = 'doctor' ";
+		// $result = $this->db->query($sql);
 		$row = $result->result();
 
 		return ($result->num_rows() > 0) ? $row : 'no result';
