@@ -2,14 +2,118 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="355e8d1b-a949-4cc8-9c4d-09c34b2d0763" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/casenote/edit_casenote2.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Welcome.php" afterPath="$PROJECT_DIR$/application/controllers/Welcome.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/appointment.php" afterPath="$PROJECT_DIR$/application/controllers/appointment.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/casenote.php" afterPath="$PROJECT_DIR$/application/controllers/casenote.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/department.php" afterPath="$PROJECT_DIR$/application/controllers/department.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/index.html" afterPath="$PROJECT_DIR$/application/controllers/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/insurance.php" afterPath="$PROJECT_DIR$/application/controllers/insurance.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/patient.php" afterPath="$PROJECT_DIR$/application/controllers/patient.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/pharmacy.php" afterPath="$PROJECT_DIR$/application/controllers/pharmacy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/pharmacy_each_discount.php" afterPath="$PROJECT_DIR$/application/controllers/pharmacy_each_discount.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/pharmacy_new_working.php" afterPath="$PROJECT_DIR$/application/controllers/pharmacy_new_working.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/role.php" afterPath="$PROJECT_DIR$/application/controllers/role.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/schedule.php" afterPath="$PROJECT_DIR$/application/controllers/schedule.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/staff.php" afterPath="$PROJECT_DIR$/application/controllers/staff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ward.php" afterPath="$PROJECT_DIR$/application/controllers/ward.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_appointment.php" afterPath="$PROJECT_DIR$/application/models/Model_appointment.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_casenote.php" afterPath="$PROJECT_DIR$/application/models/Model_casenote.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_department.php" afterPath="$PROJECT_DIR$/application/models/Model_department.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_insurance.php" afterPath="$PROJECT_DIR$/application/models/Model_insurance.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_patient.php" afterPath="$PROJECT_DIR$/application/models/Model_patient.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_pharmacy.php" afterPath="$PROJECT_DIR$/application/models/Model_pharmacy.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_pharmacy_working.php" afterPath="$PROJECT_DIR$/application/models/Model_pharmacy_working.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_role.php" afterPath="$PROJECT_DIR$/application/models/Model_role.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_schedule.php" afterPath="$PROJECT_DIR$/application/models/Model_schedule.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_staff.php" afterPath="$PROJECT_DIR$/application/models/Model_staff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_ward.php" afterPath="$PROJECT_DIR$/application/models/Model_ward.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/index.html" afterPath="$PROJECT_DIR$/application/models/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/appointment/add_appointment.php" afterPath="$PROJECT_DIR$/application/views/appointment/add_appointment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/appointment/edit_appointment.php" afterPath="$PROJECT_DIR$/application/views/appointment/edit_appointment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/appointment/view_appoint.php" afterPath="$PROJECT_DIR$/application/views/appointment/view_appoint.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/add_casenote.php" afterPath="$PROJECT_DIR$/application/views/casenote/add_casenote.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/edit_casenote.php" afterPath="$PROJECT_DIR$/application/views/casenote/edit_casenote.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/edit_casenote2.php" afterPath="$PROJECT_DIR$/application/views/casenote/edit_casenote2.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/general_casenote.php" afterPath="$PROJECT_DIR$/application/views/casenote/general_casenote.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/view_casenote.php" afterPath="$PROJECT_DIR$/application/views/casenote/view_casenote.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehm.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehm1.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehm1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehm_nurse.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehm_nurse.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehmcm.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehmcm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehmrec.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehmrec.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/department/add_department.php" afterPath="$PROJECT_DIR$/application/views/department/add_department.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/department/view_department.php" afterPath="$PROJECT_DIR$/application/views/department/view_department.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/edit_user.php" afterPath="$PROJECT_DIR$/application/views/edit_user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/cli/error_404.php" afterPath="$PROJECT_DIR$/application/views/errors/cli/error_404.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/cli/error_db.php" afterPath="$PROJECT_DIR$/application/views/errors/cli/error_db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/cli/error_exception.php" afterPath="$PROJECT_DIR$/application/views/errors/cli/error_exception.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/cli/error_general.php" afterPath="$PROJECT_DIR$/application/views/errors/cli/error_general.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/cli/error_php.php" afterPath="$PROJECT_DIR$/application/views/errors/cli/error_php.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/cli/index.html" afterPath="$PROJECT_DIR$/application/views/errors/cli/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/html/error_404.php" afterPath="$PROJECT_DIR$/application/views/errors/html/error_404.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/html/error_db.php" afterPath="$PROJECT_DIR$/application/views/errors/html/error_db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/html/error_exception.php" afterPath="$PROJECT_DIR$/application/views/errors/html/error_exception.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/html/error_general.php" afterPath="$PROJECT_DIR$/application/views/errors/html/error_general.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/html/error_php.php" afterPath="$PROJECT_DIR$/application/views/errors/html/error_php.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/html/index.html" afterPath="$PROJECT_DIR$/application/views/errors/html/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/index.html" afterPath="$PROJECT_DIR$/application/views/errors/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/forget/forgot_password.php" afterPath="$PROJECT_DIR$/application/views/forget/forgot_password.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/forget/reset_password.php" afterPath="$PROJECT_DIR$/application/views/forget/reset_password.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/forget/view_password_sent.php" afterPath="$PROJECT_DIR$/application/views/forget/view_password_sent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/forget/view_update_password_success.php" afterPath="$PROJECT_DIR$/application/views/forget/view_update_password_success.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/check_origin.php" afterPath="$PROJECT_DIR$/application/views/includes/check_origin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/index2.html" afterPath="$PROJECT_DIR$/application/views/index2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/insurance/nhis.php" afterPath="$PROJECT_DIR$/application/views/insurance/nhis.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/insurance/packages.php" afterPath="$PROJECT_DIR$/application/views/insurance/packages.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/insurance/view_package.php" afterPath="$PROJECT_DIR$/application/views/insurance/view_package.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/login/login.php" afterPath="$PROJECT_DIR$/application/views/login/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/navigation/admin_nav.php" afterPath="$PROJECT_DIR$/application/views/navigation/admin_nav.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/navigation/nav_general.php" afterPath="$PROJECT_DIR$/application/views/navigation/nav_general.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/noticeboard/notice.php" afterPath="$PROJECT_DIR$/application/views/noticeboard/notice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/patient/add_patient.php" afterPath="$PROJECT_DIR$/application/views/patient/add_patient.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/patient/edit_healthdata.php" afterPath="$PROJECT_DIR$/application/views/patient/edit_healthdata.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/patient/single_patient.php" afterPath="$PROJECT_DIR$/application/views/patient/single_patient.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/patient/view_patient.php" afterPath="$PROJECT_DIR$/application/views/patient/view_patient.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/patient/view_patient_full.php" afterPath="$PROJECT_DIR$/application/views/patient/view_patient_full.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/add_category.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/add_category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/add_medicine.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/add_medicine.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/administer.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/administer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/edit_medicine.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/edit_medicine.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/medicine_order_invoice.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/medicine_order_invoice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/medicine_order_invoice_each_discount.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/medicine_order_invoice_each_discount.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/pos.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/pos.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/search_result_patient.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/search_result_patient.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/view_category.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/view_category.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/view_form_medicine.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/view_form_medicine.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/view_medicine.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/view_medicine.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/view_medicine_sold.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/view_medicine_sold.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/restriction/block.php" afterPath="$PROJECT_DIR$/application/views/restriction/block.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/restriction/intrude.php" afterPath="$PROJECT_DIR$/application/views/restriction/intrude.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/role/add_role.php" afterPath="$PROJECT_DIR$/application/views/role/add_role.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/role/create.php" afterPath="$PROJECT_DIR$/application/views/role/create.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/role/single_assign_role.php" afterPath="$PROJECT_DIR$/application/views/role/single_assign_role.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/role/view_role.php" afterPath="$PROJECT_DIR$/application/views/role/view_role.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/schedule/add_schedule.php" afterPath="$PROJECT_DIR$/application/views/schedule/add_schedule.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/schedule/view_schedule.php" afterPath="$PROJECT_DIR$/application/views/schedule/view_schedule.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/search_result.php" afterPath="$PROJECT_DIR$/application/views/search_result.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/settings.php" afterPath="$PROJECT_DIR$/application/views/settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/staff/add_staff.php" afterPath="$PROJECT_DIR$/application/views/staff/add_staff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/staff/detail_staff.php" afterPath="$PROJECT_DIR$/application/views/staff/detail_staff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/staff/edit_staff.php" afterPath="$PROJECT_DIR$/application/views/staff/edit_staff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/staff/view_staff.php" afterPath="$PROJECT_DIR$/application/views/staff/view_staff.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/email.php" afterPath="$PROJECT_DIR$/application/views/templates/email.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/footer._2php" afterPath="$PROJECT_DIR$/application/views/templates/footer._2php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/footer.php" afterPath="$PROJECT_DIR$/application/views/templates/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/header.php" afterPath="$PROJECT_DIR$/application/views/templates/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/add_ward.php" afterPath="$PROJECT_DIR$/application/views/ward/add_ward.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/bed_assign.php" afterPath="$PROJECT_DIR$/application/views/ward/bed_assign.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/discharge_date.php" afterPath="$PROJECT_DIR$/application/views/ward/discharge_date.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/edit_bed_assign.php" afterPath="$PROJECT_DIR$/application/views/ward/edit_bed_assign.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/edit_ward.php" afterPath="$PROJECT_DIR$/application/views/ward/edit_ward.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/view_bed_assign.php" afterPath="$PROJECT_DIR$/application/views/ward/view_bed_assign.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/view_ward.php" afterPath="$PROJECT_DIR$/application/views/ward/view_ward.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/welcome_message.php" afterPath="$PROJECT_DIR$/application/views/welcome_message.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,7 +128,7 @@
         <entry file="file://$PROJECT_DIR$/application/views/casenote/add_casenote.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="293" column="87" lean-forward="true" selection-start-line="293" selection-start-column="87" selection-end-line="293" selection-end-column="87" />
+              <caret line="293" column="87" lean-forward="false" selection-start-line="293" selection-start-column="87" selection-end-line="293" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -56,11 +160,11 @@
             <state relative-caret-position="170">
               <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
               <folding>
-                <marker date="1523169695000" expanded="true" signature="168:327" ph="SELECT id,fi... patient" />
-                <marker date="1523169695000" expanded="true" signature="1191:1227" ph="SELECT * FRO... staff" />
-                <marker date="1523169695000" expanded="true" signature="1398:1423" ph="SELECT * FRO... appointment" />
-                <marker date="1523169695000" expanded="true" signature="2552:2602" ph="SELECT * FRO... appointment" />
-                <marker date="1523169695000" expanded="true" signature="2794:2841" ph="SELECT * FRO... casenote" />
+                <marker date="1523169694000" expanded="true" signature="168:327" ph="SELECT id,fi... patient" />
+                <marker date="1523169694000" expanded="true" signature="1191:1227" ph="SELECT * FRO... staff" />
+                <marker date="1523169694000" expanded="true" signature="1398:1423" ph="SELECT * FRO... appointment" />
+                <marker date="1523169694000" expanded="true" signature="2552:2602" ph="SELECT * FRO... appointment" />
+                <marker date="1523169694000" expanded="true" signature="2794:2841" ph="SELECT * FRO... casenote" />
               </folding>
             </state>
           </provider>
@@ -101,8 +205,8 @@
       <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -160,20 +264,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="git add ." />
-      <command text="git commit -m &quot;pull&quot;" />
-      <command text="git pull origin master" />
-      <command text="git add ." />
-      <command text="git commit -m &quot;all ready&quot;" />
-      <command text="git push" />
-      <command text="git push --set-upstream origin master" />
-      <command text="git pull" />
-      <command text="git pull origin master" />
-      <command text="git commit -m &quot;all ready&quot;" />
-      <command text="git push --set-upstream origin master" />
-      <command text="git push" />
-      <command text="git add." />
-      <command text="git add ." />
       <command text="git commit -m &quot;dashboard tweak&quot;" />
       <command text="git push --set-upstream origin master" />
       <command text="git pull" />
@@ -185,6 +275,20 @@
       <command text="git push --set-upstream origin master" />
       <command text="git push " />
       <command text="git push" />
+      <command text="git commit -m &quot;lastest updates&quot;" />
+      <command text="git add ." />
+      <command text="git push" />
+      <command text="git pull" />
+      <command text="git pull origin master" />
+      <command text="git add ." />
+      <command text="git pull origin master" />
+      <command text="git commit -m &quot;lastest updates&quot;" />
+      <command text="git pull origin master" />
+      <command text="git push" />
+      <command text="git commit &quot;now can login&quot;" />
+      <command text="git add ." />
+      <command text="git push" />
+      <command text="git pull" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -368,22 +472,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523106157868</updated>
-      <workItem from="1523106159188" duration="19466000" />
+      <workItem from="1523106159188" duration="20381000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19466000" />
+    <option name="totallyTimeSpent" value="20381000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23984376" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25993884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25993884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -618,11 +721,11 @@
         <state relative-caret-position="170">
           <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding>
-            <marker date="1523169695000" expanded="true" signature="168:327" ph="SELECT id,fi... patient" />
-            <marker date="1523169695000" expanded="true" signature="1191:1227" ph="SELECT * FRO... staff" />
-            <marker date="1523169695000" expanded="true" signature="1398:1423" ph="SELECT * FRO... appointment" />
-            <marker date="1523169695000" expanded="true" signature="2552:2602" ph="SELECT * FRO... appointment" />
-            <marker date="1523169695000" expanded="true" signature="2794:2841" ph="SELECT * FRO... casenote" />
+            <marker date="1523169694000" expanded="true" signature="168:327" ph="SELECT id,fi... patient" />
+            <marker date="1523169694000" expanded="true" signature="1191:1227" ph="SELECT * FRO... staff" />
+            <marker date="1523169694000" expanded="true" signature="1398:1423" ph="SELECT * FRO... appointment" />
+            <marker date="1523169694000" expanded="true" signature="2552:2602" ph="SELECT * FRO... appointment" />
+            <marker date="1523169694000" expanded="true" signature="2794:2841" ph="SELECT * FRO... casenote" />
           </folding>
         </state>
       </provider>
@@ -630,7 +733,7 @@
     <entry file="file://$PROJECT_DIR$/application/views/casenote/add_casenote.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
-          <caret line="293" column="87" lean-forward="true" selection-start-line="293" selection-start-column="87" selection-end-line="293" selection-end-column="87" />
+          <caret line="293" column="87" lean-forward="false" selection-start-line="293" selection-start-column="87" selection-end-line="293" selection-end-column="87" />
           <folding />
         </state>
       </provider>
@@ -679,8 +782,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
           <folding />
         </state>
       </provider>

@@ -1,5 +1,5 @@
 <?php
-$user_data = is_logged(); // this check all the necessary access to the system and permission
+$user_data = check_all_access(); // this check all the necessary access to the system and permission
 $get_settings = getsettingsdetails();
 ?>
 <!DOCTYPE html>
