@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="355e8d1b-a949-4cc8-9c4d-09c34b2d0763" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/casenote/edit_casenote2.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/casenote.php" afterPath="$PROJECT_DIR$/application/controllers/casenote.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/patient.php" afterPath="$PROJECT_DIR$/application/controllers/patient.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_appointment.php" afterPath="$PROJECT_DIR$/application/models/Model_appointment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_casenote.php" afterPath="$PROJECT_DIR$/application/models/Model_casenote.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_schedule.php" afterPath="$PROJECT_DIR$/application/models/Model_schedule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/add_casenote.php" afterPath="$PROJECT_DIR$/application/views/casenote/add_casenote.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -101,8 +94,8 @@
       <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -160,16 +153,6 @@
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="git add ." />
-      <command text="git commit -m &quot;pull&quot;" />
-      <command text="git pull origin master" />
-      <command text="git add ." />
-      <command text="git commit -m &quot;all ready&quot;" />
-      <command text="git push" />
-      <command text="git push --set-upstream origin master" />
-      <command text="git pull" />
-      <command text="git pull origin master" />
-      <command text="git commit -m &quot;all ready&quot;" />
       <command text="git push --set-upstream origin master" />
       <command text="git push" />
       <command text="git add." />
@@ -184,6 +167,16 @@
       <command text="git commit -m &quot;changed health state to complaint&quot;" />
       <command text="git push --set-upstream origin master" />
       <command text="git push " />
+      <command text="git push" />
+      <command text="git commit -m &quot;lastest updates&quot;" />
+      <command text="git add ." />
+      <command text="git push" />
+      <command text="git pull" />
+      <command text="git pull origin master" />
+      <command text="git add ." />
+      <command text="git pull origin master" />
+      <command text="git commit -m &quot;lastest updates&quot;" />
+      <command text="git pull origin master" />
       <command text="git push" />
     </commandsHistory>
   </component>
@@ -368,12 +361,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523106157868</updated>
-      <workItem from="1523106159188" duration="19466000" />
+      <workItem from="1523106159188" duration="20192000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19466000" />
+    <option name="totallyTimeSpent" value="20192000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="726" extended-state="6" />
@@ -679,8 +672,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
           <folding />
         </state>
       </provider>
