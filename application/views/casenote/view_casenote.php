@@ -122,10 +122,8 @@ $get_settings = getsettingsdetails();
                                             <?php echo base_url('casenote/edit_casenote/'. $cn->id); ?>">
                                                 <button class="btn btn-primary btn-xs" data-placement="top"><span class="fa fa-fw ti-pencil"></span></button>
                                             </a>
-                                            <button class="btn btn-icon btn-danger btn-xs" data-toggle="modal" data-target="#delete_<?php echo $cn->id; ?>" data-placement="top"><i class="icon fa fa-fw ti-trash" aria-hidden="true" title="Cancel casenote"></i></button>
+                                                    <button class="btn btn-icon btn-danger btn-xs" data-toggle="modal" data-target="#delete_<?php echo $cn->id; ?>" data-placement="top"><i class="icon fa fa-fw ti-trash" aria-hidden="true" title="Cancel casenote"></i></button>
                                             
-                                        
-
                                         </td>
                                     </tr>
                                     </tbody>
