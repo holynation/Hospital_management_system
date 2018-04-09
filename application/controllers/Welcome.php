@@ -338,7 +338,7 @@ class Welcome extends CI_Controller {
 		}
 	}
 
-	public function reset_password_form($email = 'holynationdevelopment@gmail.com', $email_code='0549653f8074be6448bd09d1d5ece14d'){
+	public function reset_password_form($email, $email_code){
 		// echo md5($this->config->item('salt') . 'Alatise');
 		if(isset($email, $email_code)){
 			$email = trim($email);

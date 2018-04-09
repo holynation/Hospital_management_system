@@ -138,7 +138,7 @@ class Ward extends CI_Controller {
 			$discharge_date = '';
 			$name = '';
 			if($this->userDataModify){
-				$name = $this->userDataModify->role . ' ' . $this->userDataModify->first_name . ' ' . $this->userDataModify->last_name;
+				$name = get_user_role($this->userDataModify) . ' ' . $this->userDataModify->first_name . ' ' . $this->userDataModify->last_name;
 			}
 
 			if(isset($_POST['discharge_date'])){
@@ -197,7 +197,7 @@ class Ward extends CI_Controller {
 			if(isset($_POST['btnWardUpdate'])){
 
 				if($this->userDataModify){
-					$name = $this->userDataModify->role . ' ' . $this->userDataModify->first_name . ' ' . $this->userDataModify->last_name;
+					$name = get_user_role($this->userDataModify) . ' ' . $this->userDataModify->first_name . ' ' . $this->userDataModify->last_name;
 				}
 				
 				$data = array(
@@ -227,7 +227,7 @@ class Ward extends CI_Controller {
 			if(isset($_POST['btnWardUpdate'])){
 
 				if($this->userDataModify){
-					$name = $this->userDataModify->role . ' ' . $this->userDataModify->first_name . ' ' . $this->userDataModify->last_name;
+					$name = get_user_role($this->userDataModify) . ' ' . $this->userDataModify->first_name . ' ' . $this->userDataModify->last_name;
 				}
 				
 				$data = array(

@@ -331,8 +331,8 @@ class Pharmacy extends CI_Controller{
 			$quantity = $_POST['medicine_quantity'];
 			$medicine_id = $_POST['medicineId'];
 			$patient_id = $_POST['patientId'];
-			$a = '';
-			$data_medicine = '';
+			$a = array();
+			$data_medicine = array();
 			$aa = array('medicine_name' => $medicine,
 			  			'price' => $price,
 						'quantity' => $quantity,
@@ -428,7 +428,7 @@ class Pharmacy extends CI_Controller{
 			}
 			
 
-			$name = $this->checkRole->role . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
+			$name = get_user_role($this->checkRole) . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
 				$data = array(
 					'patient_id' => $patient_id,
 					'medicine_id' => $each_id,
@@ -464,7 +464,7 @@ class Pharmacy extends CI_Controller{
 			$id = trim($_POST['id']);
 			$category = $_POST['category_name'];
 			$desc = $_POST['desc_info'];
-			$name = $this->checkRole->role . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
+			$name = get_user_role($this->checkRole) . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
 			$data = array(
 				'category_name' => $category,
 				'description' => $desc,
@@ -497,7 +497,7 @@ class Pharmacy extends CI_Controller{
 			$old_quantity = $result->quantity;
 			$new_quantity = $old_quantity + $quantity;
 
-			$name = $this->checkRole->role . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
+			$name = get_user_data($this->checkRole) . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
 			$data = array(
 				'quantity' => $new_quantity,
 				'date_modified' => date('Y-m-d H:i:s'),
@@ -534,7 +534,7 @@ class Pharmacy extends CI_Controller{
 	public function edit_medicine_update(){
 		if(isset($_POST['btnUpdateMedicine'])){
 			$id = $this->input->post('update_medicine_id');
-			$name = $this->checkRole->role . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
+			$name = get_user_role($this->checkRole) . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
 			$data = array(
                 'name' => $this->input->post('name'),
                 'category' => $this->input->post('medicine_category'),	
