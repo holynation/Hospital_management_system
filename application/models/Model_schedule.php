@@ -19,7 +19,7 @@ class Model_schedule extends CI_Model{
 		return ($result->num_rows() > 0) ? $row : 'no result';
  	}
 
- 	function view_schedule(){
+ 	function view_schedule(){ 
 	    $sql = 'SELECT * FROM schedule';
 	    $result = $this->db->query($sql);
 	    $row = $result->result();
