@@ -400,8 +400,11 @@ class Patient extends CI_Controller {
                 exit;
             }
 
-            $this->session->set_flashdata('success', 'You have successfully updated the patient...');
-            redirect('/patient/view_patient/', 'refresh');
+            $this->session->set_flashdata('success', 'You have successfully updated the patient data...');
+            //redirect('/patient/view_patient', 'refresh');
+           // redirect($_SERVER['HTTP_REFERER']);
+            $referred_from = $this->session->userdata('referred_from');
+            redirect($referred_from, 'refresh');
         }
     }
 

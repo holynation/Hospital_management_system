@@ -83,6 +83,8 @@ class Model_casenote extends CI_Model{
 		return ($update) ? true : false;
  	}
 
+
+
  	function delete_casenote($id){
 		$this->db->where('id', $id);
 		$this->db->delete('casenote');

@@ -1,6 +1,7 @@
 <?php
 $user_data = is_logged();
 $get_settings = getsettingsdetails();
+$this->session->set_userdata('referred_from', current_url());
 ?>
 <!DOCTYPE html>
 <html>
@@ -148,7 +149,7 @@ $get_settings = getsettingsdetails();
                                                                  Complaint
                                                                 </label>
                                                                 <div class="col-sm-6">
-                                                                    <input type="text" id="health_status" name="health_status" class="form-control" placeholder="Enter Patient Health condition" value=""  required="required">
+                                                                    <input type="text" id="health_status" name="health_status" class="form-control" placeholder="Enter Patient Complaint" value=""  required="required">
                                                                 </div>
                                                             </div>                                                        
 
