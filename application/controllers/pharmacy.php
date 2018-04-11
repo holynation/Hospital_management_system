@@ -10,6 +10,7 @@ class Pharmacy extends CI_Controller{
 		$this->load->model('Model_staff');
 		$this->load->model('Model_patient');
 		$this->load->model('Model_pharmacy');
+		// $this->load->helper('url');
 
 		if($this->session->userdata('isLoggedIn')){
 			$this->loggedIn = true;
@@ -242,7 +243,8 @@ class Pharmacy extends CI_Controller{
 				echo " ";
 			}else{ 
 				$data['search_result'] = $result;
-				$this->load->view('pharmacy/search_result_patient', $data);
+				$data['from'] = 'data_patient_pharmacy';
+				$this->load->view('search_result_patient', $data);
 				exit;
 			}
 
@@ -444,6 +446,16 @@ class Pharmacy extends CI_Controller{
 					echo "Error performing the system operation...";
 					exit;
 				}
+				$last_id = get_last_insert_id('medicine_sold');
+				if($last_id){
+					$data_id = array(
+						'medicine_sold_id' => $last_id,
+						'date_created' => date('Y-m-d H:i:s')
+					);
+					$this->Model_pharmacy->put_pharmacy('invoice_history', $data_id);
+				}else{
+					die('last insert id not found...');
+				}
 
 			$this->session->set_flashdata('success', 'You have successfully submitted the invoice.');
 			redirect('/pharmacy/view_medicine_sold/', 'refresh');
@@ -564,6 +576,11 @@ class Pharmacy extends CI_Controller{
 		}
 	}
 
+	public function print_invoice(){
+		// $id = $this->uri->segment(3, 0);
+		// echo $id;
+	}
+
 	public function delete($id){
 		$action = $_POST['delete'];
 		$task = $_POST['task'];
@@ -598,13 +615,15 @@ class Pharmacy extends CI_Controller{
 
 				$deleted = $this->Model_pharmacy->delete_pharmacy($id,'medicine_sold');
 
-				if(!$deleted){
+				if($deleted){
+					$this->Model_pharmacy->delete_dual_pharmacy('medicine_sold_id',$id,'invoice_history');
+					echo 'Deleted';
+					exit;
+				}else{
 					echo 'Error performing the operation';
 					exit;
 				}
-
-				echo 'Deleted';
-				exit;
+				
 			}
 		}
 

@@ -110,8 +110,7 @@ class Appointment extends CI_Controller {
 				'appointment_date' => $this->input->post('appointment_date'),
 				// 'complaint' => $this->input->post('complaint'),
 				'type' => $this->input->post('type'),
-				// this let us know if appointment had been checked in by doctor by sendin a checked response
-				'status' => 'false', 
+				'status' => 'false', // this let us know if appointment had been checked in by doctor by sendin a checked response
 				'date_created' => date('Y-m-d H:i:s')
 
 			);
@@ -128,6 +127,10 @@ class Appointment extends CI_Controller {
 			redirect('/appointment/view_appoint/', 'refresh');
 		}
 		
+	}
+
+	public function createOutPatient(){
+		$this->load->view('appointment/create_out_patient');
 	}
 
 	public function create_direct($id){
@@ -308,8 +311,8 @@ class Appointment extends CI_Controller {
 	}
 
 	public function search_patient(){
-		if(isset($_POST['search'])){
-			$name = $_POST['search'];
+		if(isset($_GET['search'])){
+			$name = $_GET['search'];
 			$name = trim($name);
 
 			$result = $this->Model_appointment->search_name($name);
@@ -317,25 +320,23 @@ class Appointment extends CI_Controller {
 				echo '';
 			}
 
-			if($result == 'no result'){
-				echo 'patient not found...';
-				exit;
-			}
-
 			if(!$result){
 				echo " ";
-			}else{ ?>
-				<div class="col-sm-10">
-					<ul>
-						<?php foreach($result as $r): ?>
-						<a href="" id="list-name" data="<?php echo $r->first_name, ' ', $r->last_name, ' ', $r->middle_name; ?>"><li><?php echo $r->first_name, ' ', $r->last_name, ' ', $r->middle_name; ?></li></a>
-						<input type="hidden" id="patient_id" name="patient_id" value="<?php echo $r->id; ?>" disabled />
-					<?php endforeach; ?>
-					</ul>
-				</div>
-			<?php }
-
+			}else{ 
+				$data['search_result'] = $result;
+				$this->view_search($result);
+			}
 		}
+	}
+
+	public function view_search($result){
+		if(isset($result)){
+			$data['search_result'] = $result;
+			$data['from'] = 'data_patient_appointment';
+			$this->load->view('search_result_patient', $data);
+		}
+		
+		return false;
 	}
 
 	public function edit_appointment($id){
