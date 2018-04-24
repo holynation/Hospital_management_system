@@ -331,8 +331,8 @@ class Pharmacy extends CI_Controller{
 			$quantity = $_POST['medicine_quantity'];
 			$medicine_id = $_POST['medicineId'];
 			$patient_id = $_POST['patientId'];
-			$a = '';
-			$data_medicine = '';
+			$a = array();
+			$data_medicine = array();
 			$aa = array('medicine_name' => $medicine,
 			  			'price' => $price,
 						'quantity' => $quantity,
