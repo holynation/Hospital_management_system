@@ -303,6 +303,13 @@ class Patient extends CI_Controller {
 		$this->load->view('patient/view_patient_full', $data);
 	}
 
+	public function view_patient_admitted(){
+		$result = $this->Model_patient->patient_where('category','in');
+		// print_r($result);
+		$data['data_patient'] = $result;
+		$this->load->view('patient/view_patient_admitted', $data);
+	}
+
 	public function update_patient(){
 		if(isset($_POST['btnPatientUpdate'])){
 			$id = $this->input->post('patient_update_id');

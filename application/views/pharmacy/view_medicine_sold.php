@@ -134,13 +134,17 @@ $get_settings = getsettingsdetails();
                                         <td><?php echo $sold->date_created; ?></td>
                                         <td><?php echo $sold->submitted_by; ?></td>
                                         <td>
+                                            <p>
                                             <?php 
                                             if($permission != 'admin'){ ?>
                                                 <button type="button" class="btn btn-icon btn-danger btn-round m-r-10" data-toggle="modal" data-target="#delete_<?php echo $sold->id; ?>" data-placement="top" disabled><i class="icon fa fa-fw ti-trash" aria-hidden="true"></i></button>
                                           <?php  }else{ ?>
                                                <button type="button" class="btn btn-icon btn-danger btn-round m-r-10" data-toggle="modal" data-target="#delete_<?php echo $sold->id; ?>" data-placement="top"><i class="icon fa fa-fw ti-trash" aria-hidden="true"></i></button>
                                           <?php  }  ?>
-                                            
+                                            </p>
+                                            <p>
+                                                <a href="<?php echo base_url('pharmacy/print_invoice/'. $sold->id . '/'. md5($sold->id)); ?>" class="btn btn-primary"> <i class="icon fa fa-fw ti-printer"></i> Invoice</a>
+                                            </p>
                                         </td>
                                     </tr>
                                     <div class="modal fade" id="delete_<?php echo $sold->id; ?>" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">

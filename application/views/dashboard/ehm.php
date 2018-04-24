@@ -346,6 +346,8 @@ $get_settings = getsettingsdetails();
                 </div>
             </div>
             
+            <?php include ('includes/notification_sidebar.php'); ?>
+
             <div class="background-overlay"></div>
         </section>
         <!-- /.content --> </aside>

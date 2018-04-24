@@ -110,6 +110,12 @@ $role = strtolower(get_user_role($user_data)); //this is the only place where i 
                                      View Patient
                                 </a>
                             </li>
+                            <li>
+                                <a href="<?php echo base_url('patient/view_patient_admitted'); ?>">
+                                    <i class="fa fa-fw ti-eye"></i>
+                                     Admitted Patient
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
@@ -142,12 +148,12 @@ $role = strtolower(get_user_role($user_data)); //this is the only place where i 
                             <span>Appointments</span>
                          </a>
                         <ul class="sub-menu">
-                            <!-- <li>
-                                <a href="<?php //echo base_url('appointment/create'); ?>">
+                            <li>
+                                <a href="<?php echo base_url('appointment/createOutPatient'); ?>">
                                     <i class="fa fa-fw ti-marker-alt"></i>
-                                     Add an Appointment
+                                     Create Appointment
                                 </a>   
-                            </li> -->
+                            </li>
                             <li>
                                 <a href="<?php echo base_url('appointment/view_appoint') ?>">
                                     <i class="fa fa-fw ti-eye"></i>

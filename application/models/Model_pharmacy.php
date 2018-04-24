@@ -155,15 +155,27 @@ class Model_pharmacy extends CI_Model{
     return ($result->num_rows() > 0) ? $row : 'no result';
   }
 
-  	function delete_pharmacy($id,$from){
+  	function delete_pharmacy($id,$table){
 		$this->db->where('id', $id);
-		$this->db->delete($from);
+		$this->db->delete($table);
 
 		if($this->db->affected_rows()){
 			return true;
 		}else{
 			return false;
 		}
+	}
+
+	function delete_dual_pharmacy($column,$id,$table){
+		$this->db->where($column,$id);
+		$this->db->delete($table);
+
+		if($this->db->affected_rows()){
+			return true;
+		}else{
+			return false;
+		}
+
 	}
 
 }

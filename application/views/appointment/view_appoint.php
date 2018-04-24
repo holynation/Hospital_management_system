@@ -83,7 +83,7 @@ $get_settings = getsettingsdetails();
                                         <th>Department Name</th>
                                         <th>Doctor Name</th>
                                         <th>Appointment Date</th>
-                                        <th>Complaint</th>
+                                        <!-- <th>Complaint</th> -->
                                         <th>Appointment Type</th>
                                         <th>Status</th>
                                         <th>Date Created</th>
@@ -124,15 +124,16 @@ $get_settings = getsettingsdetails();
                                         </td>
 
                                         <td><?php echo $appoint->appointment_date; ?></td>
-                                        <td><?php echo $appoint->complaint; ?></td>
+                                        <!-- <td><?php //echo $appoint->complaint; ?></td> -->
                                         <td><?php echo $appoint->type; ?></td>
                                         <td><?php echo $appoint->status; ?></td>
                                         <td><?php echo $appoint->date_created; ?></td>
                                         <td><?php echo $appoint->date_modified; ?></td>
                                         <td>
+                                            <p>
                                             <a href="<?php echo base_url('casenote/create/'. $appoint->id); ?>" class="btn btn-primary"> <span class="fa fa-fw ti-files"></span> Case manager
-                                            </a>
-
+                                            </a></p>
+                                            <p>
                                             <?php
                                                 if($appoint->type == 'Schedule appointment'){ ?>
                                                 <a href="<?php echo base_url('appointment/edit_appointment/'. $appoint->id); ?>" class="btn btn-primary"><span class="fa fa-fw ti-pencil"></span> Reschedule
@@ -140,13 +141,15 @@ $get_settings = getsettingsdetails();
                                             <?php }else{ ?>
                                                     <button class="btn btn-primary btn-xs" data-placement="top" disabled><span class="fa fa-fw ti-pencil"></span></button>
                                             <?php  }  ?>
-
+                                            </p>
+                                            <p>
                                             <?php 
                                             if($permission != 'admin'){ ?>
                                                 <button class="btn btn-icon btn-danger btn-xs" data-toggle="modal" data-target="#delete_<?php echo $appoint->id; ?>" data-placement="top" title="Cancel Appointment" disabled><i class="icon fa fa-fw ti-trash" aria-hidden="true"></i></button>
                                           <?php  }else{ ?>
                                                 <button class="btn btn-icon btn-warning btn-xs" data-toggle="modal" data-target="#delete_<?php echo $appoint->id; ?>" data-placement="top" title="Cancel Appointment"><i class="icon fa fa-fw ti-na" aria-hidden="true"></i> Cancel Appointment</button>
                                          <?php } ?>
+                                        </p>
                                         </td>
                                     </tr>
                                     <div class="modal fade" id="delete_<?php echo $appoint->id; ?>" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">

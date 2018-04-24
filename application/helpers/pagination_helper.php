@@ -12,6 +12,14 @@ function getsettingsdetails(){
 	return $s;
 }
  
+function get_last_insert_id($table){
+    $ci =& get_instance();
+    $ci->db->select('id');
+    $ci->db->from($table);
+    $ci->db->order_by('id', 'DESC');
+    $result = $ci->db->get();
+    return ($result->num_rows() > 0 ) ? $result->row()->id : false;
+}
 
 function is_logged() {
 	$obj = & get_instance();

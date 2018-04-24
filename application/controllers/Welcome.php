@@ -338,7 +338,7 @@ class Welcome extends CI_Controller {
 		}
 	}
 
-	public function reset_password_form($email = 'holynationdevelopment@gmail.com', $email_code='0549653f8074be6448bd09d1d5ece14d'){
+	public function reset_password_form($email, $email_code){
 		// echo md5($this->config->item('salt') . 'Alatise');
 		if(isset($email, $email_code)){
 			$email = trim($email);
@@ -513,21 +513,85 @@ class Welcome extends CI_Controller {
 					'field' => 'description',
 					'label' => 'description',
 					'rules' => 'trim|required'
-				),
-				array(
-					'field' => 'start_date',
-					'label' => 'start date',
-					'rules' => 'trim|required'
 				)
 		);
 		$this->form_validation->set_rules($config);
 		if($this->form_validation->run() == false){
 			$this->load->view('noticeboard/notice');
 		}else{
+			// perform operation
+			$data = array(
+				'title' => $this->input->post('title'),
+				'description' => $this->input->post('description'),
+				'start_date' => $this->input->post('start_date'),
+				'end_date' => $this->input->post('end_date'),
+				'date_created' => date('Y-m-d H:i:s')
+			);
 
+			$posted = $this->Model_staff->put_general('notice_board', $data);
+			if(!$posted){
+				$data['error'] = 'Error performing the operation...';
+				$this->load->view('noticeboard/notice');
+				exit;
+			}
+
+			redirect('welcome/view_notice/', 'refresh');
 		}
 
 		
+	}
+
+	public function view_notice(){
+		$result = $this->Model_staff->view_general('notice_board');
+		// print_r($result);
+		$data['data_notice'] = $result;
+		$data['permission'] = $this->get_role_name();
+
+		$this->load->view('noticeboard/view_notice', $data);
+	}
+
+	public function notice_edit(){
+		if(isset($_POST['edit'])){
+			$id = trim($_POST['id']);
+			$title = $_POST['title'];
+			$description = $_POST['description'];
+			$start_date = $_POST['start_date'];
+			$end_date = $_POST['end_date'];
+			$data = '';
+
+			$data = array(
+				'title' => $title,
+				'description' => $description,
+				'start_date' => $start_date,
+				'end_date' => $end_date
+			);
+
+			$updated = $this->Model_staff->update_general($id,$data,'notice_board');
+
+			if(!$updated){
+				echo 'Error performing the operation';
+				exit;
+			}
+
+			echo 'Updated';
+		}
+	}
+
+	public function delete_welcome_general($id){
+		$task = $_POST['delete'];
+		if(isset($task)){
+
+			$id = trim($id);
+
+			$deleted = $this->Model_staff->delete_general('notice_board',$id);
+
+			if(!$deleted){
+				echo 'Error performing the operation';
+				exit;
+			}
+
+			echo 'Deleted';
+		}
 	}
 
 	public function settings(){

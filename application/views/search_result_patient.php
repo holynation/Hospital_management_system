@@ -42,7 +42,15 @@
                                             <td><?php echo $result->phone_no; ?></td>
                                             <td><?php echo $result->email; ?></td>
                                             <td><?php echo $result->address; ?></td>
-                                            <td><a class="btn btn-info" href="<?php echo base_url('pharmacy/administer/'. $result->id); ?>">Administer Drug</a></td>
+                                            <td>
+                                                <?php if(isset($from)){
+                                                    if($from == 'data_patient_pharmacy'){ ?>
+                                                        <a class="btn btn-info" href="<?php echo base_url('pharmacy/administer/'. $result->id); ?>">Administer Drug</a>
+                                                <?php  }else if($from == 'data_patient_appointment'){ ?>
+                                                        <a class="btn btn-info" href="<?php echo base_url('appointment/create/'. $result->id); ?>">Create Appointment</a>
+                                                <?php   }  } ?>
+                                            </td>
+                                            
                                         </tr>
                                     </tbody>
                                     <?php endforeach; }?>

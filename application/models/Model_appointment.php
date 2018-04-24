@@ -7,14 +7,24 @@ class Model_appointment extends CI_Model{
 	}
 
  	function search_name($name){
- 		$name = trim($name);
- 		$sql = "SELECT id,first_name,middle_name,last_name FROM patient
- 				 WHERE first_name LIKE '%$name%' OR last_name LIKE '%$name%' OR middle_name LIKE '%$name%' LIMIT 5";
-		$result = $this->db->query($sql);
-		$row = $result->result();
+  		if(empty($name)){
+	      return null;
+	    }
+	    
+	    if(isset($name)){
+	 		$this->db->select('*');
+		    $this->db->from('patient');
+		    $this->db->like('first_name', $name, 'both');
+		    $this->db->or_like('last_name', $name);
+		    $this->db->or_like('middle_name', $name);
+		    $result = $this->db->get();
+		    $row = $result->result();
 
-		return ($result->num_rows() > 0) ? $row : 'no result';
- 	} 
+			return ($result->num_rows() > 0) ? $row : 'no result';
+	    }
+
+	    return false;
+ 	}
 
  	function put_appointment($fields = array()){
  		$put = $this->db->insert('appointment', $fields);

@@ -10,7 +10,7 @@ $get_settings = getsettingsdetails();
 
 <head>
     <meta charset="UTF-8">
-    <title> <?php echo $get_settings->title; ?> | <?php if($user_data->status == 'success'){ echo $user_data->role; }else{ echo ' ';} ?> Dashboard </title>
+    <title> <?php echo (get_ehm_title()) ? get_ehm_title() : 'EHM Dashboard' ; ?> </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link rel="shortcut icon" href="<?php echo base_url(); ?>assets/img/favicon.ico"/>
 
@@ -111,7 +111,6 @@ $get_settings = getsettingsdetails();
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="start_date">
                                             Start Date
-                                            <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-md-6">
                                             <div class="input-group">
@@ -119,6 +118,19 @@ $get_settings = getsettingsdetails();
                                                     <i class="fa fa-fw ti-calendar"></i>
                                                 </div>
                                                 <input class="form-control" id="datetime20" name="start_date" size="40" placeholder="YYYY-MM-DD" value="<?php echo set_value('start_date'); ?>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="end_date">
+                                            End Date
+                                        </label>
+                                        <div class="col-md-6">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-fw ti-calendar"></i>
+                                                </div>
+                                                <input class="form-control" id="datetime201" name="end_date" size="40" placeholder="YYYY-MM-DD" value="<?php echo set_value('end_date'); ?>">
                                             </div>
                                         </div>
                                     </div>

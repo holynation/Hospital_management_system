@@ -10,6 +10,7 @@ class Pharmacy extends CI_Controller{
 		$this->load->model('Model_staff');
 		$this->load->model('Model_patient');
 		$this->load->model('Model_pharmacy');
+		// $this->load->helper('url');
 
 		if($this->session->userdata('isLoggedIn')){
 			$this->loggedIn = true;
@@ -242,7 +243,8 @@ class Pharmacy extends CI_Controller{
 				echo " ";
 			}else{ 
 				$data['search_result'] = $result;
-				$this->load->view('pharmacy/search_result_patient', $data);
+				$data['from'] = 'data_patient_pharmacy';
+				$this->load->view('search_result_patient', $data);
 				exit;
 			}
 
@@ -428,7 +430,7 @@ class Pharmacy extends CI_Controller{
 			}
 			
 
-			$name = $this->checkRole->role . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
+			$name = get_user_role($this->checkRole) . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
 				$data = array(
 					'patient_id' => $patient_id,
 					'medicine_id' => $each_id,
@@ -443,6 +445,16 @@ class Pharmacy extends CI_Controller{
 				if(!$result){
 					echo "Error performing the system operation...";
 					exit;
+				}
+				$last_id = get_last_insert_id('medicine_sold');
+				if($last_id){
+					$data_id = array(
+						'medicine_sold_id' => $last_id,
+						'date_created' => date('Y-m-d H:i:s')
+					);
+					$this->Model_pharmacy->put_pharmacy('invoice_history', $data_id);
+				}else{
+					die('last insert id not found...');
 				}
 
 			$this->session->set_flashdata('success', 'You have successfully submitted the invoice.');
@@ -464,7 +476,7 @@ class Pharmacy extends CI_Controller{
 			$id = trim($_POST['id']);
 			$category = $_POST['category_name'];
 			$desc = $_POST['desc_info'];
-			$name = $this->checkRole->role . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
+			$name = get_user_role($this->checkRole) . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
 			$data = array(
 				'category_name' => $category,
 				'description' => $desc,
@@ -497,7 +509,7 @@ class Pharmacy extends CI_Controller{
 			$old_quantity = $result->quantity;
 			$new_quantity = $old_quantity + $quantity;
 
-			$name = $this->checkRole->role . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
+			$name = get_user_data($this->checkRole) . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
 			$data = array(
 				'quantity' => $new_quantity,
 				'date_modified' => date('Y-m-d H:i:s'),
@@ -534,7 +546,7 @@ class Pharmacy extends CI_Controller{
 	public function edit_medicine_update(){
 		if(isset($_POST['btnUpdateMedicine'])){
 			$id = $this->input->post('update_medicine_id');
-			$name = $this->checkRole->role . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
+			$name = get_user_role($this->checkRole) . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
 			$data = array(
                 'name' => $this->input->post('name'),
                 'category' => $this->input->post('medicine_category'),	
@@ -562,6 +574,20 @@ class Pharmacy extends CI_Controller{
             $this->session->set_flashdata('success', 'You have successfuly updated the medicine.');
             redirect('/pharmacy/view_medicine/', 'refresh');
 		}
+	}
+
+	public function print_invoice($id = null, $hash = null){
+		$id = trim($id);
+		$hash = trim($hash);
+		if(!(empty($id) && empty($hash))){
+			if(md5($id) == $hash){
+				//load the tcpdf library
+				$this->load->library('tcpdf/src/Tcpdf');
+			}else{
+				$this->show_restrict();
+			}
+		}
+		return false;
 	}
 
 	public function delete($id){
@@ -598,13 +624,15 @@ class Pharmacy extends CI_Controller{
 
 				$deleted = $this->Model_pharmacy->delete_pharmacy($id,'medicine_sold');
 
-				if(!$deleted){
+				if($deleted){
+					$this->Model_pharmacy->delete_dual_pharmacy('medicine_sold_id',$id,'invoice_history');
+					echo 'Deleted';
+					exit;
+				}else{
 					echo 'Error performing the operation';
 					exit;
 				}
-
-				echo 'Deleted';
-				exit;
+				
 			}
 		}
 

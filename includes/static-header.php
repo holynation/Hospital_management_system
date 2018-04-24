@@ -35,6 +35,12 @@ $get_settings = getsettingsdetails();
                     </a>
                 </li> -->
                 <!-- User Account: style can be found in dropdown-->
+                <li>
+                    <a href="#" class="dropdown-toggle toggle-right" data-toggle="dropdown">
+                        <i class="fa fa-fw ti-view-list black"></i>
+                        <span class="label label-danger">9</span>
+                    </a>
+                </li>
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle padding-user" data-toggle="dropdown">
                         <img src="<?php echo base_url(); ?><?php echo $user_data->img_path; ?>" width="35" class="img-circle img-responsive pull-left" height="35" alt="User Image">
