@@ -576,9 +576,18 @@ class Pharmacy extends CI_Controller{
 		}
 	}
 
-	public function print_invoice(){
-		// $id = $this->uri->segment(3, 0);
-		// echo $id;
+	public function print_invoice($id = null, $hash = null){
+		$id = trim($id);
+		$hash = trim($hash);
+		if(!(empty($id) && empty($hash))){
+			if(md5($id) == $hash){
+				//load the tcpdf library
+				$this->load->library('tcpdf/src/Tcpdf');
+			}else{
+				$this->show_restrict();
+			}
+		}
+		return false;
 	}
 
 	public function delete($id){

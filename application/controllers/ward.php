@@ -312,7 +312,7 @@ class Ward extends CI_Controller {
 				$this->load->view('ward/bed_assign',$data);
 				exit;
 			}
-
+			$this->Model_patient->update_patient($this->input->post('patient_id'), array('category' => 'in'));
 			
 			$this->session->set_flashdata('success', 'You have successfully assigned a ward/bed...');
 			redirect('/ward/view_bed_assign/', 'refresh');
@@ -379,11 +379,12 @@ class Ward extends CI_Controller {
 				);
 
 			$updated = $this->Model_ward->update_ward_discharge_status($id,$data);
-
+			$this->Model_patient->update_patient($id, array('category' => 'out'));
 			if(!$updated){
 				echo 'Error performing the operation';
 				exit;
 			}
+			
 
 			$this->session->set_flashdata('success','You have successfully updated the discharge date.');
 			redirect('/ward/view_bed_assign/', 'refresh');

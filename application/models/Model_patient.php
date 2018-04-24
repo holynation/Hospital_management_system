@@ -22,6 +22,14 @@ class Model_patient extends CI_Model{
 		return ($result->num_rows() > 0) ? $row : 'no result';
  	}
 
+ 	function patient_where($where, $value){
+ 		$sql = "SELECT * FROM patient WHERE $where = '$value' ORDER BY id DESC";
+		$result = $this->db->query($sql);
+		$row = $result->result();
+
+		return ($result->num_rows() > 0) ? $row : 'no result';
+ 	}
+
  	function view_patient_where($id){
  		$get = $this->db->get_where('patient', array('id' => $id), 1)->result();
  		return ($get) ? $get : false;

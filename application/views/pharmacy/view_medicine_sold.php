@@ -143,7 +143,7 @@ $get_settings = getsettingsdetails();
                                           <?php  }  ?>
                                             </p>
                                             <p>
-                                                <a href="<?php echo base_url('pharmacy/print_invoice/'. $sold->id); ?>" class="btn btn-primary"> <i class="icon fa fa-fw ti-printer"></i> Invoice</a>
+                                                <a href="<?php echo base_url('pharmacy/print_invoice/'. $sold->id . '/'. md5($sold->id)); ?>" class="btn btn-primary"> <i class="icon fa fa-fw ti-printer"></i> Invoice</a>
                                             </p>
                                         </td>
                                     </tr>

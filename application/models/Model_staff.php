@@ -10,6 +10,36 @@ class Model_staff extends CI_Model{
 		$this->load->helper('cookie');
 	}
 
+  function put_general($table, $fields = array()){
+    $put = $this->db->insert($table, $fields);
+    return ($put) ? true : false; 
+  }
+
+  function view_general($table){
+    $sql = "SELECT * FROM  $table ORDER BY id DESC";
+    $result = $this->db->query($sql);
+    $row = $result->result();
+
+    return ($result->num_rows() > 0) ? $row : 'no result';
+  }
+
+  function update_general($id, $data, $table){
+    $this->db->where('id', $id);
+    $update = $this->db->update($table, $data);
+    return ($update) ? true : false;
+  }
+
+  function delete_general($table,$id){
+    $this->db->where('id', $id);
+    $this->db->delete($table);
+
+    if($this->db->affected_rows()){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
 	function find($user = null){
  		if($user){
  			$field = (is_numeric($user)) ? 'id' : 'staff_username';
