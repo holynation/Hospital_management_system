@@ -38,7 +38,7 @@ $get_settings = getsettingsdetails();
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                View Patient
+                Admitted Patient
             </h1>
             <ol class="breadcrumb">
                 <li>
@@ -50,7 +50,7 @@ $get_settings = getsettingsdetails();
                     Patient
                 </li>
                 <li class="active">
-                    View Patient
+                    Admitted Patient
                 </li>
             </ol>
         </section>

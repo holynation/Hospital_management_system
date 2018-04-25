@@ -126,6 +126,21 @@ class Model_pharmacy extends CI_Model{
 		}
   	}
 
+  	function get_invoice_history($id){
+  		$this->db->select('*');
+  		$this->db->from('invoice_history');
+  		$this->db->join('medicine_sold', 'medicine_sold.id = invoice_history.medicine_sold_id');
+  		$this->db->where('invoice_history.medicine_sold_id', $id);
+  		$query = $this->db->get();
+  		$result = $query->row();
+
+  		if($query->num_rows() > 0){
+  			return $result;
+  		}else{
+  			return 'no result';
+  		}
+  	}
+
   	function search_name($name){
   		if(empty($name)){
 	      return null;

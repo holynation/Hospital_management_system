@@ -161,6 +161,19 @@ $get_settings = getsettingsdetails();
                                             </select>
                                         </div>
                                     </div>
+                                    <!-- <div class="form-group">
+                                         <label class="col-md-4 control-label" for="category">
+                                            Category 
+                                              <span class="text-danger">*</span>
+                                         </label>
+                                          <div class="col-md-6">
+                                            <select id="category" name="category" class="form-control">
+                                                <option value=""> Please select category </option>
+                                                <option value="GC">General Clinic</option>
+                                                <option value="ANC">Ante-Natal Clinic</option>
+                                            </select>
+                                          </div>
+                                    </div> -->
 
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="val-username">
@@ -283,6 +296,19 @@ $get_settings = getsettingsdetails();
                                                     <div id="feedbackschedule"></div>
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                             <label class="col-md-4 control-label" for="category">
+                                                Category 
+                                                  <span class="text-danger">*</span>
+                                             </label>
+                                              <div class="col-md-6">
+                                                <select id="category2" name="category" class="form-control">
+                                                    <option value=""> Please select category </option>
+                                                    <option value="GC">General Clinic</option>
+                                                    <option value="ANC">Ante-Natal Clinic</option>
+                                                </select>
+                                              </div>
+                                        </div>
 
                                         <div class="form-group">
                                             <label class="col-md-4 control-label" for="val-username">
@@ -318,13 +344,14 @@ $get_settings = getsettingsdetails();
                                         <script type="text/javascript">
                                             $(document).ready(function(){
                                                 $('#btnCreateAppoint').on('click', function(){
-                                                    var department = $('#department1').val();
-                                                    var doctor_name = $('#doctor_name2').val();
-                                                    var datetime1 = $('#datetime1').val();
+                                                    var department = $('#department1').val(),
+                                                        doctor_name = $('#doctor_name2').val(),
+                                                        category = $('#category2').val(),
+                                                        datetime1 = $('#datetime1').val();
                                                     // var complaint = $('#complaint1').val();
 
-                                                    if(department == '' || doctor_name == '' || datetime1 == ''){
-                                                        $('#department1,#doctor_name2,#datetime1').css({
+                                                    if(department == '' || doctor_name == '' || datetime1 == '' || category == ''){
+                                                        $('#department1,#doctor_name2,#datetime1,#category2').css({
                                                             'border-color' : 'red',
                                                             'border-style' : 'solid',
                                                             'border-width' : '0.5px'

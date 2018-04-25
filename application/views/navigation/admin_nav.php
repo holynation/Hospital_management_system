@@ -225,13 +225,13 @@ $role = strtolower(get_user_role($user_data)); //this is the only place where i 
                          <ul class="sub-menu">
                             <li>
                                 <a href="<?php echo base_url('pharmacy/pos'); ?>">
-                                    <i class="fa fa-fw ti-money"></i>
+                                    <?php echo get_local_currency(); ?>
                                     POS
                                 </a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url('pharmacy/view_medicine_sold'); ?>">
-                                    <i class="fa fa-fw ti-money"></i>
+                                    <?php echo get_local_currency(); ?>
                                     Medicine Sold 
                                 </a>
                             </li>

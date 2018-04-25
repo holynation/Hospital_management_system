@@ -641,6 +641,8 @@ class Welcome extends CI_Controller {
 	                'smtp_username' => $this->input->post('smtp_username'),
 	                'smtp_password' => $this->input->post('smtp_password'),
 	                'email' => $this->input->post('email'),
+	                'mobile' => $this->input->post('mobile'),
+	                'address' => $this->input->post('address'),
 	                'date_created' => date('Y-m-d H:i:s')
 	            );
 			}else{
@@ -651,6 +653,8 @@ class Welcome extends CI_Controller {
 	                'smtp_username' => $this->input->post('smtp_username'),
 	                'smtp_password' => $this->input->post('smtp_password'),
 	                'email' => $this->input->post('email'),
+	                'mobile' => $this->input->post('mobile'),
+	                'address' => $this->input->post('address'),
 	                'date_created' => date('Y-m-d H:i:s')
 	            );
 			}

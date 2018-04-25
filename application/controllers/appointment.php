@@ -108,7 +108,7 @@ class Appointment extends CI_Controller {
 				'department' => $this->input->post('department'),
 				'doctor_name' => $this->input->post('doctor_name'),
 				'appointment_date' => $this->input->post('appointment_date'),
-				// 'complaint' => $this->input->post('complaint'),
+				'category' => $this->input->post('category'),
 				'type' => $this->input->post('type'),
 				'status' => 'false', // this let us know if appointment had been checked in by doctor by sendin a checked response
 				'date_created' => date('Y-m-d H:i:s')
@@ -121,6 +121,11 @@ class Appointment extends CI_Controller {
 				$data['error'] = 'Problem inserting into database...';
 				$this->load->view('appointment/add_appointment',$data);
 				exit;
+			}
+
+			if($this->input->post('category') == 'ANC'){
+				$this->session->set_userdata('patient_anc_id', $this->input->post('patient_id'));
+				redirect('/casenote/ANC/', 'refresh');
 			}
 
 			$this->session->set_flashdata('success', 'You have successfully booked an appointment...');
@@ -172,7 +177,7 @@ class Appointment extends CI_Controller {
 				'department' => $this->input->post('department'),
 				'doctor_name' => $this->input->post('doctor_name'),
 				'appointment_date' => date('Y-m-d H:i:s'),
-				// 'complaint' => $this->input->post('complaint'),
+				'category' => $this->input->post('category'),
 				'type' => $this->input->post('type'),
 				'status' => 'true',
 				'date_created' => date('Y-m-d H:i:s')

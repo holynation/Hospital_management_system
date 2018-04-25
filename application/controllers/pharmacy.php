@@ -407,6 +407,7 @@ class Pharmacy extends CI_Controller{
 			$quantity = $_POST['quantity'];
 			$each_id .= implode(",", $medicine_id);
 			$each_quantity .= implode(",", $quantity);
+			$invoice_no = $_POST['invoice_no'];
 
 			for($j = 0;$j<count($medicine_id); $j++){
 				$check_result = $this->Model_pharmacy->get_pharmacy_quantity($medicine_id[$j]);
@@ -430,13 +431,14 @@ class Pharmacy extends CI_Controller{
 			}
 			
 
-			$name = get_user_role($this->checkRole) . ' ' . $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
+			$name = $this->checkRole->first_name . ' ' . $this->checkRole->last_name;
 				$data = array(
 					'patient_id' => $patient_id,
 					'medicine_id' => $each_id,
 					'quantity' => $each_quantity,
 					'discount' => $itemDiscount,
 					'total'	=> $final_total,
+					'invoice_no' => $invoice_no,
 					'date_created' => date('Y-m-d H:i:s'),
 					'submitted_by'	=> $name
 				);
@@ -581,8 +583,49 @@ class Pharmacy extends CI_Controller{
 		$hash = trim($hash);
 		if(!(empty($id) && empty($hash))){
 			if(md5($id) == $hash){
-				//load the tcpdf library
-				$this->load->library('tcpdf/src/Tcpdf');
+				$result = $this->Model_pharmacy->get_invoice_history($id);
+				// print_r($result);
+				if($result == 'no result'){
+					die("Sorry, your request can't be completed right now.Try again later...");
+				}
+				$medicine_id = explode(',',$result->medicine_id);
+				$quantity = explode(',', $result->quantity);
+				$a = array();
+				$data_medicine = array();
+
+				// this is the medicine name and the unit price for each variable
+				$each_name = array();
+				$each_price = array();
+
+				for($j=0;$j<count($medicine_id);$j++){
+					$medicine_result = $this->Model_pharmacy->get_medicine_by_id($medicine_id[$j]);
+					 $each_name[] = $medicine_result->name;
+					 $each_price[] = $medicine_result->selling_price;
+				}
+
+				$aa = array(
+						'medicine_name' => $each_name,
+						'price' => $each_price,
+						'quantity' => $quantity
+					);
+
+				for($i=0; $i<count($aa['medicine_name']); $i++){
+					$a[] = array_column($aa, $i); // using array_column to group all indexes together for each drug posted
+				}
+
+				foreach($a as $p => $k){
+					$array_result = array($each_name[$p] => $k);
+					$data_medicine[] = $array_result;
+				}
+
+				$data['data_medicine'] = $data_medicine;
+				$data['db_discount'] = $result->discount;
+				$data['db_total'] = $result->total;
+				$data['db_invoice_no'] = $result->invoice_no;
+				$data['issued_by'] = $result->submitted_by;
+				$data['db_date'] = $result->date_created;
+				$data['patient_id'] = $result->patient_id;
+				$this->load->view('print/invoice-print', $data);
 			}else{
 				$this->show_restrict();
 			}

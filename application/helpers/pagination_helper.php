@@ -116,6 +116,14 @@ function get_local_currency(){
 	echo '&#8358;'; // this is a naira currency
 }
 
+function get_date_format($posted){
+    if($posted){
+        $date = strftime("%B %d, %Y", strtotime($posted));
+        return $date;
+    }
+    return false;
+}
+
 function get_enum_value(){
     $db_obj = & get_instance();
     $sql = "SHOW COLUMNS FROM permission LIKE 'permissions'";

@@ -83,7 +83,7 @@ $get_settings = getsettingsdetails();
                                         <th>Department Name</th>
                                         <th>Doctor Name</th>
                                         <th>Appointment Date</th>
-                                        <!-- <th>Complaint</th> -->
+                                        <th>Category</th>
                                         <th>Appointment Type</th>
                                         <th>Status</th>
                                         <th>Date Created</th>
@@ -124,7 +124,7 @@ $get_settings = getsettingsdetails();
                                         </td>
 
                                         <td><?php echo $appoint->appointment_date; ?></td>
-                                        <!-- <td><?php //echo $appoint->complaint; ?></td> -->
+                                        <td><?php echo $appoint->category; ?></td>
                                         <td><?php echo $appoint->type; ?></td>
                                         <td><?php echo $appoint->status; ?></td>
                                         <td><?php echo $appoint->date_created; ?></td>
@@ -133,6 +133,11 @@ $get_settings = getsettingsdetails();
                                             <p>
                                             <a href="<?php echo base_url('casenote/create/'. $appoint->id); ?>" class="btn btn-primary"> <span class="fa fa-fw ti-files"></span> Case manager
                                             </a></p>
+                                            <p>
+                                            <?php if($appoint->category == 'ANC'): ?>
+                                            <a href="<?php echo base_url('casenote/anc/'. $appoint->patient_id); ?>" class="btn btn-primary"> <span class="fa fa-fw ti-support"></span> ANC
+                                            </a></p>
+                                            <?php endif; ?>
                                             <p>
                                             <?php
                                                 if($appoint->type == 'Schedule appointment'){ ?>
