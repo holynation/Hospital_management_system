@@ -29,6 +29,38 @@ class Model_staff extends CI_Model{
     return ($update) ? true : false;
   }
 
+  function get_general_by_id($table,$id){
+    $this->db->select('*');
+    $this->db->from($table);
+    $this->db->where('id', $id);
+    $this->db->order_by('id', 'desc');
+    $query = $this->db->get();
+    $result = $query->result();
+
+    return ($query->num_rows() > 0) ? $result : 'no result';
+
+  }
+
+  function get_notify(){
+    $this->db->select('*');
+    $this->db->from('notification');
+    // $this->db->where('status', 'false');
+    $this->db->order_by('id', 'desc');
+    $query = $this->db->get();
+    $result = $query->result();
+    return ($query->num_rows() > 0) ? $result : 'no result';
+  }
+
+  function get_notify_where(){
+    $this->db->select('*');
+    $this->db->from('notification');
+    $this->db->where('status', 'false');
+    $this->db->order_by('id', 'desc');
+    $query = $this->db->get();
+    $result = $query->result();
+    return ($query->num_rows() > 0) ? $result : 'no result';
+  }
+
   function delete_general($table,$id){
     $this->db->where('id', $id);
     $this->db->delete($table);

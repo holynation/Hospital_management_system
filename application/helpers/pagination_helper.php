@@ -21,6 +21,33 @@ function get_last_insert_id($table){
     return ($result->num_rows() > 0 ) ? $result->row()->id : false;
 }
 
+// this should only be used when you've inserted the data you wanna notify
+// so has to get the last insert id of the data in the table...
+function put_notification_json($table, $desc){
+    if($table){
+        $last_insert_id = get_last_insert_id($table);
+        // $json_data = array($table => $last_insert_id);
+        $json_data = array(
+                'table' => $table,
+                'id'    => $last_insert_id
+        );
+        $json_data = json_encode($json_data);
+        $obj = & get_instance();
+
+        $data = array(
+            'foreign_table_id' => $json_data,
+            'description' => $desc
+        );
+
+        $result = $obj->db->insert('notification',$data);
+        if($result){
+            return true;
+        } 
+    }
+    
+    return false;
+}
+
 function is_logged() {
 	$obj = & get_instance();
     $sessionData = $obj->session->userdata('staff_db_id');

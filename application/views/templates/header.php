@@ -26,6 +26,6 @@ $get_settings = getsettingsdetails();
     <!--end of page level css-->
     <script src="<?php echo base_url(); ?>assets/js/ajax_jquery.js"></script>
 </head>
-<body class="skin-default">
+<body class="skin-default" onload="checkNotification();">
  --><!-- header logo: style can be found in header-->
 <?php include 'includes/static-header.php'; ?>
