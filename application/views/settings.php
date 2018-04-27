@@ -164,6 +164,22 @@ $get_settings = getsettingsdetails();
                                             <input type="email" id="email" name="email" class="form-control" placeholder="SMTP Email" value="<?php echo $settings->email; ?>">
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="mobile">
+                                             Mobile
+                                        </label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="mobile" name="mobile" class="form-control" placeholder="mobile" value="<?php echo $settings->mobile; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="address">
+                                             Address
+                                        </label>
+                                        <div class="col-md-6">
+                                            <textarea id="address" name="address" class="form-control" placeholder="address"><?php echo $settings->address; ?></textarea>
+                                        </div>
+                                    </div>
 
                                     <div class="row">
                                         <br><br>

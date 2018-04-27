@@ -2,6 +2,24 @@
 $user_data = is_logged();
 $get_settings = getsettingsdetails();
 ?>
+<script src="<?php echo base_url(); ?>assets/js/ajax_jquery.js"></script>
+
+<script type="text/javascript">
+    function checkNotification(){
+        $.post('<?php echo base_url(); ?>welcome/check_notify',
+         {
+            task: 'notification check'
+         }, 
+         function(result){
+            if(result == 'true'){
+                $('#notifyId').hide();
+            }else if(result == 'false'){
+                $('#notifyId').show();
+            }
+        });
+    }
+</script>
+
 <header class="header">
     <nav class="navbar navbar-static-top" role="navigation">
         <a href="<?php echo base_url('welcome/dashboard'); ?>" class="logo">
@@ -35,10 +53,12 @@ $get_settings = getsettingsdetails();
                     </a>
                 </li> -->
                 <!-- User Account: style can be found in dropdown-->
+                
                 <li>
                     <a href="#" class="dropdown-toggle toggle-right" data-toggle="dropdown">
                         <i class="fa fa-fw ti-view-list black"></i>
-                        <span class="label label-danger">9</span>
+                        <span class="label label-success" id="notifyId" style="display: none;"><span class="label label-success label-mini pull-right"><b>New</b></span></span>
+
                     </a>
                 </li>
                 <li class="dropdown user user-menu">

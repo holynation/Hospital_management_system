@@ -106,6 +106,24 @@ class Casenote extends CI_Controller {
 		
 	}
 
+	public function ANC($id = null){
+		// using this id is coming from session if redirect is used
+		if($this->session->has_userdata('patient_anc_id'))
+		{
+			$id = $this->session->userdata('patient_anc_id'); 
+		}
+		// using this id if coming from the view appointment
+		else if(!empty($id))
+		{
+			$id = $id;
+		}
+		
+		$patient_result = $this->Model_patient->get_patient_by_id($id);
+		// print_r($patient_result);
+		$data['patient'] = $patient_result;
+		$this->load->view('casenote/anc', $data);
+	}
+
 	public function load_doctor(){
 		$id = $_POST['department_id'];
 		$data_result = '';

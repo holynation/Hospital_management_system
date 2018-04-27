@@ -529,6 +529,9 @@ class Welcome extends CI_Controller {
 			);
 
 			$posted = $this->Model_staff->put_general('notice_board', $data);
+			// this should only be use when you inserted the data you wanna notify
+			put_notification_json('notice_board','This is a public holiday for government workers.');
+
 			if(!$posted){
 				$data['error'] = 'Error performing the operation...';
 				$this->load->view('noticeboard/notice');
@@ -539,6 +542,38 @@ class Welcome extends CI_Controller {
 		}
 
 		
+	}
+
+	public function notification(){
+		$notify = $this->Model_staff->get_notify();
+		$data['notification'] = $notify;
+		$this->load->view('notification', $data);
+	}
+
+	public function update_notify_status($id){
+		if(isset($_POST['task']) == 'Update Status'){
+			$id = $_POST['notification_id'];
+
+			$data = array(
+				'status' => true
+			);
+			$result = $this->Model_staff->update_general($id,$data,'notification');
+			if($result){
+				echo "updated";
+			}
+		}
+
+		return false;
+	}
+
+	public function check_notify(){
+		$notify = $this->Model_staff->get_notify_where();
+		if($notify == 'no result'){
+			echo 'true';
+		}else{
+			echo 'false';
+		}
+
 	}
 
 	public function view_notice(){
@@ -641,6 +676,8 @@ class Welcome extends CI_Controller {
 	                'smtp_username' => $this->input->post('smtp_username'),
 	                'smtp_password' => $this->input->post('smtp_password'),
 	                'email' => $this->input->post('email'),
+	                'mobile' => $this->input->post('mobile'),
+	                'address' => $this->input->post('address'),
 	                'date_created' => date('Y-m-d H:i:s')
 	            );
 			}else{
@@ -651,6 +688,8 @@ class Welcome extends CI_Controller {
 	                'smtp_username' => $this->input->post('smtp_username'),
 	                'smtp_password' => $this->input->post('smtp_password'),
 	                'email' => $this->input->post('email'),
+	                'mobile' => $this->input->post('mobile'),
+	                'address' => $this->input->post('address'),
 	                'date_created' => date('Y-m-d H:i:s')
 	            );
 			}

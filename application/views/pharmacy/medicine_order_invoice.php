@@ -56,8 +56,12 @@ $get_settings = getsettingsdetails();
                         <i class="fa fa-fw ti-credit-card"></i> Invoice
                     </h3>
                 </div>
+                <?php
+                    $invoice_no = rand(11,1111222);
+                ?>
                 <div class="panel-body">
                     <form action="<?php echo base_url('pharmacy/final_order'); ?>" method="POST">
+                        <input type="hidden" name="invoice_no" value="<?php echo $invoice_no; ?>" />
                     <div class="row">
                         <div class="col-md-12">
                             <div class="col-md-6 col-sm-12 col-xs-12 invoice_bg">
@@ -71,8 +75,8 @@ $get_settings = getsettingsdetails();
                             </div>
                             <div class="col-md-6 col-sm-12 col-xs-12 invoice_bg text-right">
                                 <div class="pull-right">
-                                     <!-- i wanna use the patient id in the rand generatiom -->
-                                    <h4><strong>#<?php echo rand(11,1111222); ?> /
+                                     <!-- i wanna use the patient id in the rand generation -->
+                                    <h4><strong>#<?php echo $invoice_no; ?> /
                                      <?php $this->load->library('dateCreate');
                                         echo dateCreate::dateFormat(date('Y-m-d H:i:s'));
                                     ?>

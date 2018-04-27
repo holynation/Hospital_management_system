@@ -71,7 +71,7 @@ $get_settings = getsettingsdetails();
                         <br />
                         <?php
                             if($this->session->flashdata('success')){ ?>
-                            <div class="alert alert-success col-sm-offset-3" style="padding-left:4.45%;width:50%;"><?php echo $this->session->flashdata('success') ?></div>
+                            <div class="alert alert-success col-sm-offset-3" style="padding-left:4.45%;width:50%;"><?php echo $this->session->flashdata('success'); ?></div>
                             <?php } ?>
                         <div class="panel-body">
                             <table id="table4" data-toolbar="#toolbar" data-search="true" data-show-refresh="false" data-show-toggle="true" data-show-columns="true" data-show-export="true" data-detail-view="false" data-detail-formatter="detailFormatter" data-minimum-count-columns="2" data-show-pagination-switch="true" data-pagination="true" data-id-field="id" data-page-list="[10,20,40,ALL]" data-show-footer="false" data-height="700" data-side-pagination="client">

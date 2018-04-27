@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  			$date = strftime("%B %d, %Y", strtotime($posted));
  		    return $date;
  		}
- 		return False;	
+ 		return false;	
  	} 
 
  	public static function get_time($date){
