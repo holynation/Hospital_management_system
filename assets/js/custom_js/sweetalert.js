@@ -20,22 +20,33 @@ $(document).ready(function () {
         });
     });
 
+  // here i begin the script for backup
     $('.ok_message').on('click', function (e) {
         swal({
             title: 'Are you sure?',
-            text: "You will not be able to recover this imaginary file!",
+            text: "This operation backup the database for the system",
             type: 'warning',
             showCancelButton: true,
+            showLoaderOnConfirm: true,
             confirmButtonColor: '#66cc99',
             cancelButtonColor: '#ff6666',
-            confirmButtonText: 'Yes, delete it!',
+            confirmButtonText: 'Yes, Backup!',
             cancelButtonText: 'No, cancel!',
             confirmButtonClass: 'btn btn-success',
-            cancelButtonClass: 'btn btn-danger'
+            cancelButtonClass: 'btn btn-danger',
+            preConfirm: function () {
+                return new Promise(function (resolve) {
+                    $.get('backup/database')
+                        .done(function (data) {
+                            swal.insertQueueStep(data);
+                            resolve();
+                        });
+                });
+            }
         }).then(function () {
             swal(
-                'Deleted!',
-                'Your file has been deleted.',
+                'Successful!',
+                'Your database has been backup.',
                 'success'
             );
         }, function (dismiss) {
@@ -44,12 +55,14 @@ $(document).ready(function () {
             if (dismiss === 'cancel') {
                 swal(
                     'Cancelled',
-                    'Your imaginary file is safe :)',
+                    'Your operation has been cancelled... :)',
                     'error'
                 );
             }
         })
     });
+ // this is the end for the database backup js alert i wanna use
+
     $('.custom_icon').on('click', function (e) {
         e.preventDefault();
         swal({

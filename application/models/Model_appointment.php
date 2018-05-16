@@ -86,6 +86,7 @@ class Model_appointment extends CI_Model{
 		$this->db->from('appointment');
 		$this->db->where('doctor_name', $id);
 		$this->db->order_by('date_created', 'desc');
+		$this->db->limit(10);
 		$result = $this->db->get();
 		$row = $result->result();
 

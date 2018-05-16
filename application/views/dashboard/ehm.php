@@ -25,7 +25,44 @@ $get_settings = getsettingsdetails();
 
         <section class="content">
             <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="flip">
+                        <div class="widget-bg-color-icon card-box front">
+                            <div class="bg-icon pull-left">
+                                <i class="ti-user text-info" style="margin-top: 10px"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3 class="text-dark"><b><?php  $count_patient = $this->db->count_all('patient');
+                                if($count_patient == ''){ ?>
+                                    <p>No patient yet...</p>
+                              <?php  }else{ ?>
+                                    <?php echo $count_patient; ?>
+                            <?php  } ?></b></h3>
+                                <p>Patients</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div><a href="">
+                        <div class="widget-bg-color-icon card-box back">
+                            <div class="text-center">
+                                 <h5 class="text-dark">Today Stat</h5>
+                                <h5 class="text-dark"><b>
+                                    <?php
+                                        $result = $this->Model_staff->get_today_db('patient');
+                                        if($result == 'no result'){
+                                            echo 'No Patient yet...';
+                                        }else{
+                                            echo $result;
+                                        }
+                                    ?></b></h5>
+                                <hr>
+                                <a href="<?php echo base_url('patient/view_patient'); ?>">View All</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div></a>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="flip">
                         <div class="widget-bg-color-icon card-box front">
                             <div class="bg-icon pull-left">
@@ -63,44 +100,7 @@ $get_settings = getsettingsdetails();
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-md-6 col-lg-4">
-                    <div class="flip">
-                        <div class="widget-bg-color-icon card-box front">
-                            <div class="bg-icon pull-left">
-                                <i class="ti-user text-info" style="margin-top: 10px"></i>
-                            </div>
-                            <div class="text-right">
-                                <h3 class="text-dark"><b><?php  $count_patient = $this->db->count_all('patient');
-                                if($count_patient == ''){ ?>
-                                    <p>No patient yet...</p>
-                              <?php  }else{ ?>
-                                    <?php echo $count_patient; ?>
-                            <?php  } ?></b></h3>
-                                <p>Patients</p>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div><a href="">
-                        <div class="widget-bg-color-icon card-box back">
-                            <div class="text-center">
-                                 <h5 class="text-dark">Today Stat</h5>
-                                <h5 class="text-dark"><b>
-                                    <?php
-                                        $result = $this->Model_staff->get_today_db('patient');
-                                        if($result == 'no result'){
-                                            echo 'No Patient yet...';
-                                        }else{
-                                            echo $result;
-                                        }
-                                    ?></b></h5>
-                                <hr>
-                                <a href="<?php echo base_url('patient/view_patient'); ?>">View All</a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div></a>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-6 col-lg-4">
+                <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="flip">
                         <div class="widget-bg-color-icon card-box front">
                             <div class="bg-icon pull-left">
@@ -147,6 +147,54 @@ $get_settings = getsettingsdetails();
                     </div>
                 </div>
 
+                <div class="col-sm-6 col-md-6 col-lg-3">
+                    <div class="flip">
+                        <div class="widget-bg-color-icon card-box front">
+                            <div class="bg-icon pull-left">
+                               <i class="ti-list"></i>
+                            </div>
+                            <div class="text-right">
+                                <h3><b id="widget_count3">
+                                    <?php
+                                        $this->db->select('*');
+                                        $this->db->from('department');
+                                        $result = $this->db->get();
+                                        $count_department = $result->num_rows();
+                                        if($result->num_rows() > 0){
+                                            echo $count_department;
+                                        }else{
+                                            echo 'No Department yet...';
+                                        }
+                                    ?>
+                                </b></h3>
+                                <p>Department</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div><a href="">
+                        <div class="widget-bg-color-icon card-box back">
+                            <div class="text-center">
+                                <h5 class="text-dark">Department</h5>
+                                <h5 class="text-dark"><b>
+                                    <?php
+                                        $this->db->select('*');
+                                        $this->db->from('department');
+                                        $result = $this->db->get();
+                                        $count_department = $result->num_rows();
+                                        if($result->num_rows() > 0){
+                                            echo $count_department;
+                                        }else{
+                                            echo 'No Department yet...';
+                                        }
+                                    ?>
+                                </b></h5>
+                                <hr>
+                                <a href="<?php echo base_url('department/view_department'); ?>">View All</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div></a>
+                    </div>
+                </div>
+
                 <!-- <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="flip">
                         <div class="widget-bg-color-icon card-box front">
@@ -174,10 +222,20 @@ $get_settings = getsettingsdetails();
             </div>
 
             <div class="row">
-                <div class="col-lg-12 col-sm-6">
+                <div class="col-lg-8 col-xs-12">
                     <div class="panel">
                         <div class="panel-heading">
                             <h3 class="panel-title">New Appointment(s)</h3>
+                            <button type="button" class="btn btn-labeled btn-success">
+                                    <span class="btn-label">
+                                    <i class="ti-check"></i>
+                                </span> Checked
+                            </button>
+                            <button type="button" class="btn btn-labeled btn-danger">
+                                    <span class="btn-label">
+                                    <i class="ti-close"></i>
+                                </span> Unchecked
+                            </button>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -190,6 +248,7 @@ $get_settings = getsettingsdetails();
                                             <th>Appointment Date</th>
                                             <th>Appointment Type</th>
                                             <th>Status</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <?php 
@@ -217,10 +276,20 @@ $get_settings = getsettingsdetails();
 
                                             <td><?php echo $appoint->appointment_date; ?></td>
                                             <td><?php echo $appoint->type; ?></td>
-                                            <td><?php echo $appoint->status; ?></td>
+                                            <td>
+                                                <?php if($appoint->status == 'true'){ ?>
+                                                        <button class="btn btn-success" title="checked"><i class="ti-check"></i></button> 
+                                                <?php }else{  ?>
+                                                    <button class="btn btn-danger" title="Unchecked"><i class="ti-close"></i></button>
+                                             <?php  }  ?>
+                                                
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#viewappoint_<?php echo $appoint->id; ?>" data-placement="top" title="View Appointment" onclick="updateAppointmentStatus(<?php echo $appoint->id; ?>);"><span class="fa fa-fw ti-eye"></span></button>
+                                            </td>
                                         </tr>
                                     </tbody>
-                                    <div class="modal fade" id="viewappoint" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                                    <div class="modal fade" id="viewappoint_<?php echo $appoint->id; ?>" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <form action="" method="post">
@@ -251,12 +320,6 @@ $get_settings = getsettingsdetails();
                                                                     <input type="text" class="form-control" placeholder="" value="<?php echo  $appoint->appointment_date; ?>">
                                                                 </div>
                                                             </div>
-                                                            <div class="col-sm-12">
-                                                                <div class="form-group">
-                                                                    <label class="control-label">Complaint</label>
-                                                                    <input type="text" class="form-control" placeholder="" value="<?php echo $appoint->complaint; ?>">
-                                                                </div>
-                                                            </div>
                                                         </div>
                                                     </form>
                                                 </div>
@@ -276,6 +339,89 @@ $get_settings = getsettingsdetails();
                                     </div>
                                     <?php endforeach; } ?>
                                 </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-6">
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Noticeboard</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div>
+                                        <ul class="timeline timeline-update">
+                                    <!-- this is for notice board section -->
+                                    <?php 
+                                        $table = '';
+                                        $table_id = '';
+                                        foreach($notification as $notify):
+                                            $json_data = $notify->foreign_table_id;
+                                            $json_data = json_decode($json_data);
+                                            // print_r($json_data);
+                                            $table = $json_data->table;
+                                            $table_id = $json_data->id;
+
+                                            if($table == 'notice_board'){
+                                                $notices = $this->Model_staff->get_general_by_id($table,$table_id);
+                                                if($notices == 'no result'){
+                                                    die('No results found from notice Board...');
+                                                }
+
+                                                foreach($notices as $notice): ?>
+                                                <li id="noticeList<?php echo $notify->id; ?>">
+                                                    <div class="timeline-badge center">
+                                                        <i class="fa fa-fw ti-bell fa-2x" style="color:skyblue;"></i>
+                                                    </div>
+                                                    <div class="timeline-panel" style="display:inline-block;">
+                                                        <div class="timeline-heading">
+                                                            <h4 class="timeline-title"><?php echo $notice->title; ?> </h4>
+                                                            <p>
+                                                                <small class="text-default-gray"><?php
+                                                                    // $this->load->library('dateCreate');
+                                                                    echo dateCreate::timeAgo($notify->date_created);
+                                                                 ?></small>
+                                                            </p>
+                                                        </div>
+                                                        <div class="timeline-body">
+                                                            <p>
+                                                                <?php echo wordwrap($notice->description, 50, "<br />\n"); ?>
+                                                                <br />
+                                                                <?php if($notice->start_date){
+                                                                    echo "<b>Start:</b> " . dateCreate::dateFormat($notice->start_date);
+                                                                }
+                                                                 echo "<br />";
+                                                                if($notice->end_date){
+                                                                    echo "<b>End:</b> " . dateCreate::dateFormat($notice->end_date); 
+                                                                }
+
+                                                                ?>
+                                                            </p>    
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <script type="text/javascript">
+                                                    $('.timeline-update #noticeList<?php echo $notify->id; ?> .timeline-panel').on('mouseleave', function(){
+                                                        var id = '<?php echo $notify->id; ?>';
+
+                                                        $.post('<?php echo base_url();?>welcome/update_notify_status/' + id, 
+                                                            {
+                                                                task: 'Update Status',
+                                                                notification_id: id
+                                                            },
+                                                            function(result){
+                                                                // console.log('status change...');
+                                                        });
+                                                    });
+                                                </script>
+                                         <?php  endforeach; } ?>
+                                    
+                                    <?php endforeach; ?>
+                                </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

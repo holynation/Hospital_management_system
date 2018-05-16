@@ -58,6 +58,7 @@ class Welcome extends CI_Controller {
 			$result_appoint = $this->Model_appointment->get_all_appointment();
 			$data['data_cn'] = $cnresult;
 			$data['data_appointment'] = $result_appoint;
+			$data['notification'] = $this->getAllNotice();
 			$this->load->view('templates/header.php');
 			$this->load->view('dashboard/ehm', $data);
 			$this->load->view('templates/footer.php');
@@ -77,6 +78,7 @@ class Welcome extends CI_Controller {
 			$result_appoint = $this->Model_appointment->get_doctor_appointment($id);
 			$data['data_cn'] = $cnresult;
 			$data['data_appointment'] = $result_appoint;
+			$data['notification'] = $this->getAllNotice();
 			$this->load->view('templates/header.php');
 			$this->load->view('dashboard/ehm1', $data);
 			$this->load->view('templates/footer.php');
@@ -97,6 +99,7 @@ class Welcome extends CI_Controller {
 			$result_appoint = $this->Model_appointment->get_all_appointment();
 			$data['data_cn'] = $cnresult;
 			$data['data_appointment'] = $result_appoint;
+			$data['notification'] = $this->getAllNotice();
 			$this->load->view('templates/header.php');
 			$this->load->view('dashboard/ehm_nurse', $data);
 			$this->load->view('templates/footer.php');
@@ -115,6 +118,7 @@ class Welcome extends CI_Controller {
 			$result_appoint = $this->Model_appointment->get_all_appointment();
 			$data['data_cn'] = $cnresult;
 			$data['data_appointment'] = $result_appoint;
+			$data['notification'] = $this->getAllNotice();
 			$this->load->view('templates/header.php');
 			$this->load->view('dashboard/ehmrec', $data);
 			$this->load->view('templates/footer.php');
@@ -530,7 +534,8 @@ class Welcome extends CI_Controller {
 
 			$posted = $this->Model_staff->put_general('notice_board', $data);
 			// this should only be use when you inserted the data you wanna notify
-			put_notification_json('notice_board','This is a public holiday for government workers.');
+			// however this is turn to be a noticeboard for al the users in the system
+			put_notifice_json('notice_board','This is a public holiday for government workers.');
 
 			if(!$posted){
 				$data['error'] = 'Error performing the operation...';
@@ -541,13 +546,21 @@ class Welcome extends CI_Controller {
 			redirect('welcome/view_notice/', 'refresh');
 		}
 
-		
 	}
 
-	public function notification(){
+	public function notifyNotice(){
+		$data['notification'] = $this->getAllNotice();
+		$this->load->view('noticeboard', $data);
+	}
+
+	private function getAllNotice(){
 		$notify = $this->Model_staff->get_notify();
-		$data['notification'] = $notify;
-		$this->load->view('notification', $data);
+		if($notify == 'no result'){
+			die('No result found for noticeboard');
+		}else{
+			return $notify;
+		}
+		
 	}
 
 	public function update_notify_status($id){
@@ -707,6 +720,36 @@ class Welcome extends CI_Controller {
 			redirect('/welcome/settings/', 'refresh');
 		}
 		
+	}
+
+	public function backup($value = null){
+		if($value != null && $value == 'database'){
+			// echo $value;
+			// here is where we perform the backup for the database
+			$this->load->dbutil();
+			if ($this->dbutil->database_exists('ehm_db'))
+			{
+			    // Backup your entire database and assign it to a variable
+				$backup = $this->dbutil->backup();
+
+				// Load the file helper and write the file to your server
+				$this->load->helper('file');
+				$randName = rand(111, 999);
+				$baseName = 'mybackup_'. $randName . '.gz';
+				write_file('sql/backup/'. $baseName , $backup);
+
+				// Load the download helper and send the file to your desktop
+				$this->load->helper('download');
+				force_download($baseName, $backup);
+			}
+			else
+			{
+				// database not exists
+				die('database does not exists');
+			}
+
+		}
+		$this->load->view('backup');
 	}
 
 	public function logout(){
