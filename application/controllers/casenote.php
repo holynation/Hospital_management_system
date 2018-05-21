@@ -77,14 +77,54 @@ class Casenote extends CI_Controller {
 				$urlid = trim($urlid1);
 				$url = "casenote/create/$urlid " ;
 				//echo "$url"; die();
+        $sys= "";  $gen= "";  $card= "";  $resp= "";  $abd= "";  $urea= "";  $cn= "";  $musc= "";
+
+        if(empty($this->input->post('systemic_exm')) ) { $sys = "NAD"; }else{
+            $sys = $this->input->post('systemic_exm');  }
+
+        if(empty($this->input->post('general_exm')) ) {  $gen = "NAD"; }else{
+            $gen = $this->input->post('general_exm'); }
+
+        if(empty($this->input->post('cardio_exm')) ) {    $card = "NAD"; }else{
+            $card =  $this->input->post('cardio_exm'); }
+
+        if(empty($this->input->post('resp_exm')) ) {  $resp = "NAD"; }else{
+            $resp = $this->input->post('resp_exm');  }
+
+        if(empty($this->input->post('abd_exm')) ) {  $abd = "NAD"; }  else{
+            $abd =   $this->input->post('abd_exm');  }
+
+        if(empty($this->input->post('urea_exm')) ) {  $urea = "NAD";   }else{
+            $urea = $this->input->post('urea_exm'); }
+
+        if(empty($this->input->post('cn_exm')) ) {  $cn = "NAD";  }else{
+            $cn =  $this->input->post('cn_exm');  }
+
+        if(empty($this->input->post('musc_exm')) ) {   $musc = "NAD"; }else{
+            $musc =  $this->input->post('musc_exm');  }
+
 		
 			//create casenote
 			$data = array(
 
 				'patient_id' => $this->input->post('patient_id'),
-				'health_status ' => $this->input->post('health_status'),
-                'prescription' => $this->input->post('prescription'),
-				'diagnosis' => $this->input->post('description'),
+				'p_complaint ' => $this->input->post('p_complaint'),
+                'hp_complaint' => $this->input->post('hp_complaint'),
+                'pm_history ' => $this->input->post('pm_history'),
+                'fam_history ' => $this->input->post('fam_history'),
+                'soc_history' => $this->input->post('soc_history'),
+                'drug_history' => $this->input->post('drug_history'),
+                'summary_history ' => $this->input->post('summary_history'),
+                'plan_of_mgt' => $this->input->post('plan_of_mgt'),
+                'general_exm' => $gen,
+                'systemic_exm ' => $sys,
+                'cardio_exm' => $card,
+                'resp_exm' => $resp,
+                'abd_exm ' => $abd,
+                'urea_exm' => $urea,
+                'cn_exm' => $cn,
+                'musc_exm ' => $musc,
+				'diagnosis' => $this->input->post('diagnosis'),
 				'created_by' => $this->input->post('created_by'),
 				'date_created' => date('Y-m-d H:i:s')
 
@@ -117,7 +157,7 @@ class Casenote extends CI_Controller {
 		{
 			$id = $id;
 		}
-		
+
 		$patient_result = $this->Model_patient->get_patient_by_id($id);
 		// print_r($patient_result);
 		$data['patient'] = $patient_result;
@@ -256,8 +296,14 @@ class Casenote extends CI_Controller {
 		$this->load->view('casenote/general_casenote');
 	}
 
+    public function test(){
+        //	$data['data_appointment'] = $result;
+        $this->load->view('casenote/test');
+    }
 
-	public function search_patient(){
+
+
+    public function search_patient(){
 		if(isset($_POST['search'])){
 			$name = $_POST['search'];
 			$name = trim($name);

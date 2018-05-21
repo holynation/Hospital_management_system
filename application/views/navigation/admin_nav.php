@@ -113,7 +113,7 @@ $role = strtolower(get_user_role($user_data)); //this is the only place where i 
                             <li>
                                 <a href="<?php echo base_url('patient/view_patient_admitted'); ?>">
                                     <i class="fa fa-fw ti-eye"></i>
-                                     Admitted Patient
+                                     In Patient
                                 </a>
                             </li>
                         </ul>

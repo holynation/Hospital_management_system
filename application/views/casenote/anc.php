@@ -81,7 +81,131 @@ $get_settings = getsettingsdetails();
                                 <?php echo validation_errors('<div class="alert alert-danger" style="padding-left:40%;">','</div>'); ?>
                          <?php } ?>
                         <div class="panel-body">
-                            
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="panel ">
+                                        <div class="panel-body">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <div class="text-center mbl m-t-10">
+                                                        <img src="<?php echo base_url($patient->picture_path); ?>" alt="img" class="img-circle img-bor"/>
+                                                    </div>
+                                                </div>
+                                                <div class="profile_user">
+                                                    <h3 class="user_name_max"> <?php echo $patient->title; ?> <?php echo $patient->first_name, ' ', $patient->last_name; ?> <?php echo $patient->middle_name; ?></h3>
+
+
+                                                </div>
+
+                                                <div class="profile_user">
+                                                    <h3 style="color: brown"> Complaint </h3>
+                                                    <div class="form-group striped-col">
+                                                        <p>
+                                                            <?php
+                                                            foreach($data_appointment as $appointment):
+                                                            ?>
+                                                            <?php echo $appointment->complaint; ?></p>
+                                                        <?php endforeach; ?>
+
+                                                    </div>
+
+                                                </div>
+
+
+                                                <div class="profile_user">
+                                                    <h3> Personal Info </h3>
+                                                    <div class="form-group striped-col">
+                                                        <p><?php echo get_current_age($patient->dob); ?> | <?php echo $patient->gender; ?> | <?php echo $patient->marital_status ; ?></p>
+                                                        <p><?php echo $patient->email; ?> | <?php echo $patient->phone_no; ?></p>
+                                                        <p><?php echo $patient->lga; ?> | <?php echo $patient->occupation; ?></p>
+                                                        <p><?php echo $patient->address; ?></p>
+
+                                                    </div>
+
+                                                </div>
+                                                &nbsp;&nbsp;
+
+
+
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                        <!-- Nav tabs -->
+                                                        <ul class="nav nav-tabs nav-custom">
+                                                            <li class="active">
+                                                                <a href="#tab-personal" data-toggle="tab">
+                                                                    <strong>Doctor in charge:
+
+                                                                        <?php echo $data_doctor->title; ?> <?php echo $data_doctor->first_name, ' ', $data_doctor->last_name; ?> <?php echo $data_doctor->middle_name; ?>
+
+
+                                                                        <!--        <?php
+                                                                        foreach($data_appointment as $appointment):
+                                                                            ?>
+                                                    <?php echo base_url('casenote/create/'. $appointment->id); ?>
+                                                     <?php endforeach; ?> -->
+                                                                    </strong>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                        <!-- Tab panes -->
+                                                        <div class="tab-content nopadding noborder">
+                                                            <div id="tab-personal" class="tab-pane animated fadeInRight fade in active">
+                                                                <div class="col-sm-12">
+                                                                    <form method="post"
+                                                                          action="<?php echo base_url('casenote/create_direct'); ?>
+                                                    "   class="form-horizontal form-bordered">
+                                                                        <div class="row">
+
+                                                                            <label class="container striped-col">Complaint History</label>
+
+
+                                                                            <div class="form-group">
+                                                                                <label class="col-sm-3 control-label" for="description">
+                                                                                    Presenting complaint
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <textarea id="description" name="description" rows="7" class="form-control resize_vertical" placeholder="Enter the information here ... ..." required="required"></textarea>
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <div class="form-group">
+                                                                                <label class="col-sm-3 control-label" for="description">
+                                                                                    History of presenting complaint
+                                                                                </label>
+                                                                                <div class="col-sm-6">
+                                                                                    <textarea id="description" name="description" rows="7" class="form-control resize_vertical" placeholder="Enter the information here ... ..." required="required"></textarea>
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                        </div>
+                                                                    </form><br/><br/>
+
+
+
+
+                                                                </div> <!-- end of div -->
+                                                            </div>
+
+                                                        </div>
+                                                        <!-- tab-content -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
                         </div>
                     </div>
                 </div>

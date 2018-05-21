@@ -78,9 +78,23 @@ $get_settings = getsettingsdetails();
                                     <tr>
                                         <th>S/N</th>
                                         <th>Patient Name</th>
-                                        <th>Complaint</th>
-                                        <th>Prescription</th>
                                         <th>Diagnosis</th>
+                                        <th>Presenting complaint </th>
+                                        <th>History of presenting complaint</th>
+                                        <th>Past Medical History </th>
+                                        <th>Family History </th>
+                                        <th>Social History </th>
+                                        <th>Drug History </th>
+                                        <th>Summary of all History </th>
+                                        <th>Plan of Management</th>
+                                        <th>General</th>
+                                        <th>Systemic</th>
+                                        <th>Cardiovascular</th>
+                                        <th>Repiratory</th>
+                                        <th>Abdominal</th>
+                                        <th>Urea Genital Tract</th>
+                                        <th>Central Nervous System </th>
+                                        <th>Muscular Skeletal </th>
                                         <th>Managed by</th>
                                         <th>Date Created</th>
                                         <th>Modified by</th>
@@ -106,8 +120,23 @@ $get_settings = getsettingsdetails();
                                         ?> 
                                         </td>
 
-                                        <td><?php echo $cn->health_status ; ?></td>
-                                        <td><?php echo $cn->prescription ; ?></td>
+                                        <td><?php echo $cn->p_complaint ; ?></td>
+                                        <td><?php echo $cn->hp_complaint ; ?></td>
+                                        <td><?php echo $cn->pm_history ; ?></td>
+                                        <td><?php echo $cn->fam_history ; ?></td>
+                                        <td><?php echo $cn->soc_history ; ?></td>
+                                        <td><?php echo $cn->drug_history ; ?></td>
+                                        <td><?php echo $cn->summary_history ; ?></td>
+                                        <td><?php echo $cn->plan_of_mgt ; ?></td>
+                                        <td><?php echo $cn->general_exm ; ?></td>
+                                        <td><?php echo $cn->systemic_exm ; ?></td>
+                                        <td><?php echo $cn->cardio_exm ; ?></td>
+                                        <td><?php echo $cn->resp_exm ; ?></td>
+                                        <td><?php echo $cn->abd_exm ; ?></td>
+                                        <td><?php echo $cn->urea_exm ; ?></td>
+                                        <td><?php echo $cn->cn_exm ; ?></td>
+                                        <td><?php echo $cn->musc_exm ; ?></td>
+
                                         <td><?php echo $cn->diagnosis ; ?></td>
                                         <td> <?php 
                                             $patient_name = $this->Model_casenote->get_doctor_by_id($cn->created_by);
