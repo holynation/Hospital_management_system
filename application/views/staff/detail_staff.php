@@ -32,7 +32,10 @@ $get_settings = getsettingsdetails();
 <?php include 'includes/static-header.php'; ?>
 
 <div class="wrapper row-offcanvas row-offcanvas-left">
-    <?php $this->load->view('navigation/admin_nav'); ?>
+    <?php 
+    include (APPPATH.'views/navigation/admin_nav.php');
+    // $this->load->view('navigation/admin_nav'); 
+    ?>
     <aside class="right-side">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -76,7 +79,7 @@ $get_settings = getsettingsdetails();
                                     <p><?php echo $staff->email; ?> / <?php echo $staff->phone_no; ?></p>
                                     &nbsp;
                                     <div class="profile_user">
-                                        <a href="<?php echo base_url('schedule/create/' . $staff->id); ?>"><button type="button" class="btn btn-info btn-sm"><?php
+                                        <a href=""><button type="button" class="btn btn-info btn-sm"><?php
                                             $depart_name = $this->Model_staff->get_depart_name($staff->department_id)->row();
                                         ?>
                                         <?php echo $depart_name->department_name; ?> Department</button></a>
@@ -105,56 +108,6 @@ $get_settings = getsettingsdetails();
                                 
                                 <br/>
                                 <div class="panel panel-widget panel-default">
-                                    <!-- <div class="panel-heading">
-                                        <span class="panel-title"> <i class="icon-chart icons"></i> Staff Status<i class="icon-settings icons pull-right"></i></span>
-                                    </div> -->
-                                    <!-- <div class="panel-body profile_status">
-                                        <div>
-                                            <p>
-                                                <strong>Admin Template</strong>
-                                                <small class="pull-right text-muted">
-                                                    40% Complete
-                                                </small>
-                                            </p>
-                                            <div class="progress progress-xs progress-striped active">
-                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                                                        <span class="sr-only">
-                                                    40% Complete (success)
-                                                </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                <strong>Wordpress Theme</strong>
-                                                <small class="pull-right text-muted">
-                                                    60% Complete
-                                                </small>
-                                            </p>
-                                            <div class="progress progress-xs progress-striped active">
-                                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                                                        <span class="sr-only">
-                                                    60% Complete (warning)
-                                                </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                <strong>Laravel Project</strong>
-                                                <small class="pull-right text-muted">
-                                                    80% Complete
-                                                </small>
-                                            </p>
-                                            <div class="progress progress-xs progress-striped active">
-                                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                                        <span class="sr-only">
-                                                    80% Complete (info)
-                                                </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> -->
                                 </div>
                             </div>
                             <div class="col-md-8">

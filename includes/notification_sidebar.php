@@ -14,7 +14,7 @@
                         <div id="slim_t1">
                             <h5 class="rightsidebar-right-heading text-uppercase text-xs">
                                 <i class="fa fa-fw ti-list"></i>
-                                Notification
+                                Notice Board
                             </h5>
                             <div>
                                 <ul class="list-unstyled">
@@ -38,7 +38,7 @@
                                     </li>
                                     <hr/>
                                     <?php endforeach; } ?>
-                                    <li class="text-right noti-footer"><a href="<?php echo base_url('welcome/notification'); ?>">View All Notifications <i class="ti-arrow-right"></i></a>
+                                    <li class="text-right noti-footer"><a href="<?php echo base_url('welcome/notifyNotice'); ?>">View All Notice <i class="ti-arrow-right"></i></a>
                                     </li>
                                 </ul>
                             </div>

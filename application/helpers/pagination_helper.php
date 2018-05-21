@@ -23,7 +23,7 @@ function get_last_insert_id($table){
 
 // this should only be used when you've inserted the data you wanna notify
 // so has to get the last insert id of the data in the table...
-function put_notification_json($table, $desc){
+function put_notifice_json($table, $desc){
     if($table){
         $last_insert_id = get_last_insert_id($table);
         // $json_data = array($table => $last_insert_id);

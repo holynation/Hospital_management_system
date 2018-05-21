@@ -170,7 +170,7 @@ $role = strtolower(get_user_role($user_data)); //this is the only place where i 
                              </a>
                             <ul class="sub-menu">
                            <!--      <li>
-                                    <a href="<?php echo base_url('casenote/add_casenote') ?>">
+                                    <a href="<?php //echo base_url('casenote/add_casenote') ?>">
                                         <i class="fa fa-fw ti-marker-alt"></i>
                                          Create Case Note
                                     </a>   
@@ -360,7 +360,14 @@ $role = strtolower(get_user_role($user_data)); //this is the only place where i 
                             <span>Settings</span>
                          </a>
                   </li>
+                  <li>
+                        <a href="<?php echo base_url('welcome/backup'); ?>">
+                            <i class="menu-icon fa fa-fw ti-harddrives" title="backup database"></i>
+                            <span>Backup</span>
+                        </a>
+                    </li>
                 <?php endif; ?>
+                    
                   <li>
                       <a href="<?php echo base_url('staff/logout'); ?>">
                         <i class="menu-icon fa fa-fw ti-shift-right" title="logout"></i>
