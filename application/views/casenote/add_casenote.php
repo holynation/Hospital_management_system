@@ -136,6 +136,7 @@ $this->session->set_userdata('referred_from', current_url());
                                                                 ?>
                                                     <?php echo base_url('casenote/create/'. $appointment->id); ?>
                                                      <?php endforeach; ?> -->
+
                                                         </strong>
                                                     </a>
                                                 </li>
@@ -658,9 +659,11 @@ $this->session->set_userdata('referred_from', current_url());
                                                     <tr>
                                                         <th>S/N</th>
                                                         <th>Patient Name</th>
-                                                        <th>Complaint</th>
-                                                        <th>Prescription</th>
-                                                        <th>Description</th>
+                                                        <th>Presenting complaint</th>
+                                                        <th>History of presenting complaint </th>
+                                                        <th>Summary of all History</th>
+                                                        <th>Diagnosis</th>
+                                                        <th>Plan of Management </th>
                                                         <th>Managed by</th>
                                                         <th>Date Created</th>
                                                         <th>Modified by</th>
@@ -686,21 +689,27 @@ $this->session->set_userdata('referred_from', current_url());
                                                                 ?>
                                                             </td>
 
-                                                            <td><?php echo $cn->health_status ; ?></td>
-                                                            <td><?php echo $cn->prescription ; ?></td>
+                                                            <td><?php echo $cn->p_complaint ; ?></td>
+                                                            <td><?php echo $cn->hp_complaint ; ?></td>
+                                                            <td><?php echo $cn->summary_history ; ?></td>
                                                             <td><?php echo $cn->diagnosis ; ?></td>
+                                                            <td><?php echo $cn->plan_of_mgt ; ?></td>
 
                                                             <td> <?php
                                                                 $patient_name = $this->Model_casenote->get_doctor_by_id($cn->created_by);
                                                                 echo "Dr. ".$patient_name->first_name;
                                                                 ?></td>
                                                             <td><?php echo $cn->date_created ; ?></td>
-                                                            <td><?php if($cn->updated_by == ""){echo "not yet modified";}else{echo $cn->updated_by ;} ?></td>
+                                                            <td><?php if($cn->updated_by == ""){echo "not yet modified";}else{
+                                                                    $doctor_name = $this->Model_casenote->get_doctor_by_id($cn->updated_by);
+                                                                    echo $doctor_name->first_name;
+
+                                                                    ;} ?></td>
 
                                                             <td>
 
                                                                 <a href="
-                                            <?php echo base_url('casenote/edit_casenote/'. $cn->id); ?>">
+                                            <?php echo base_url('casenote/edit_casenote2/'. $cn->id); ?>">
                                                                     <button class="btn btn-primary btn-xs" data-placement="top"><span class="fa fa-fw ti-pencil"></span></button>
                                                                 </a>
                                                                 <button class="btn btn-icon btn-danger btn-xs" data-toggle="modal" data-target="#delete_<?php echo $cn->id; ?>" data-placement="top"><i class="icon fa fa-fw ti-trash" aria-hidden="true" title="Cancel Appointment"></i></button>

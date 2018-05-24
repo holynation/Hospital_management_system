@@ -135,7 +135,7 @@ $get_settings = getsettingsdetails();
                                             </a></p>
                                             <p>
                                             <?php if($appoint->category == 'ANC'): ?>
-                                            <a href="<?php echo base_url('casenote/anc/'. $appoint->patient_id); ?>" class="btn btn-primary"> <span class="fa fa-fw ti-support"></span> ANC
+                                            <a href="<?php echo base_url('casenote/anc/'. $appoint->id ); ?>" class="btn btn-primary"> <span class="fa fa-fw ti-support"></span> ANC
                                             </a></p>
                                             <?php endif; ?>
                                             <p>

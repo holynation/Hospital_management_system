@@ -181,6 +181,20 @@ $role = strtolower(get_user_role($user_data)); //this is the only place where i 
                                          View Case Note
                                     </a>
                                 </li>
+
+                                <li>
+                                    <a href="<?php echo base_url('casenote/view_anc') ?>">
+                                        <i class="fa fa-fw ti-eye"></i>
+                                        View ANC Case Note
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="<?php echo base_url('casenote/view_pcs') ?>">
+                                        <i class="fa fa-fw ti-eye"></i>
+                                         Patient Case Summary
+                                    </a>
+                                </li>
                             </ul>
                     </li>
 

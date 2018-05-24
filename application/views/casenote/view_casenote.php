@@ -119,7 +119,7 @@ $get_settings = getsettingsdetails();
                                             echo $patient_name->first_name;
                                         ?> 
                                         </td>
-
+                                        <td><?php echo $cn->diagnosis ; ?></td>
                                         <td><?php echo $cn->p_complaint ; ?></td>
                                         <td><?php echo $cn->hp_complaint ; ?></td>
                                         <td><?php echo $cn->pm_history ; ?></td>
@@ -137,13 +137,17 @@ $get_settings = getsettingsdetails();
                                         <td><?php echo $cn->cn_exm ; ?></td>
                                         <td><?php echo $cn->musc_exm ; ?></td>
 
-                                        <td><?php echo $cn->diagnosis ; ?></td>
+
                                         <td> <?php 
                                             $patient_name = $this->Model_casenote->get_doctor_by_id($cn->created_by);
                                             echo "Dr. ".$patient_name->first_name;
                                         ?></td>
                                         <td><?php echo $cn->date_created ; ?></td>
-                                        <td><?php if($cn->updated_by == ""){echo "not yet modified";}else{echo $cn->updated_by ;} ?></td>
+                                        <td><?php if($cn->updated_by == ""){echo "not yet modified";}else{
+                                                $doctor_name = $this->Model_casenote->get_doctor_by_id($cn->updated_by);
+                                                echo $doctor_name->first_name;
+
+                                              ;} ?></td>
 
                                         <td>
                                          

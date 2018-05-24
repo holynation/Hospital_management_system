@@ -169,6 +169,20 @@
                                      View Case Note
                                 </a>
                             </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-fw ti-eye"></i>
+                                    View ANC Case Note
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-fw ti-eye"></i>
+                                    View Patient Case Summary
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
