@@ -21,6 +21,11 @@ class Model_casenote extends CI_Model{
  		return ($put) ? true : false; 
  	}
 
+    function put_anc($fields = array()){
+        $put = $this->db->insert('anc', $fields);
+        return ($put) ? true : false;
+    }
+
  	function get_doctor_by_department($id,$doctor){
  		$this->db->select('*');
         $this->db->from('staff');
@@ -102,7 +107,7 @@ class Model_casenote extends CI_Model{
 
 
      function view_appointment_by_id($id){
-	    $sql = " SELECT * FROM appointment WHERE id = '$id' LIMIT 2";
+	    $sql = " SELECT * FROM appointment WHERE id = '$id' ORDER BY date_created DESC  LIMIT 2 ";
 	    $result = $this->db->query($sql);
 	    $row = $result->result();
 
@@ -111,12 +116,13 @@ class Model_casenote extends CI_Model{
 
 
 	   function view_casenote_by_id($id){
-	    $sql = " SELECT * FROM casenote WHERE patient_id = '$id' ";
+	    $sql = " SELECT * FROM casenote WHERE patient_id = '$id'  LIMIT 2";
 	    $result = $this->db->query($sql);
 	    $row = $result->result();
 
 	    return ($result->num_rows() > 0) ? $row : 'no result';
 	}
+
 
 
  	
@@ -136,12 +142,22 @@ class Model_casenote extends CI_Model{
 		$this->db->select();
 		$this->db->from('casenote');
 		$this->db->order_by('date_created', 'desc');
-		$this->db->limit(10);
 		$result = $this->db->get();
 		$row = $result->result();
 
 		return ($result->num_rows() > 0) ? $row : 'no result';
 	}
+
+
+    function get_all_anc(){
+        $this->db->select();
+        $this->db->from('anc');
+        $this->db->order_by('date_created', 'desc');
+        $result = $this->db->get();
+        $row = $result->result();
+
+        return ($result->num_rows() > 0) ? $row : 'no result';
+    }
 
 	function count_doctor_casenote($id){
 		$this->db->select();

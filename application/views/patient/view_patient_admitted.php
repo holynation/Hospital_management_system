@@ -38,7 +38,7 @@ $get_settings = getsettingsdetails();
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Admitted Patient
+                In Patient
             </h1>
             <ol class="breadcrumb">
                 <li>
@@ -50,7 +50,7 @@ $get_settings = getsettingsdetails();
                     Patient
                 </li>
                 <li class="active">
-                    Admitted Patient
+                    In Patient
                 </li>
             </ol>
         </section>
@@ -62,7 +62,7 @@ $get_settings = getsettingsdetails();
                     <div class="panel filterable">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <i class="ti-layout-grid2"></i> View Patient Table
+                                <i class="ti-layout-grid2"></i> View In Patient Table
                             </h3>
                         </div>
                         <div class="col-md-4" style="margin:15px;">

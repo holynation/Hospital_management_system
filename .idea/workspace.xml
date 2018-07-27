@@ -2,118 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="355e8d1b-a949-4cc8-9c4d-09c34b2d0763" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/casenote/view_anc.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Welcome.php" afterPath="$PROJECT_DIR$/application/controllers/Welcome.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/appointment.php" afterPath="$PROJECT_DIR$/application/controllers/appointment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/database.php" afterPath="$PROJECT_DIR$/application/config/database.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/casenote.php" afterPath="$PROJECT_DIR$/application/controllers/casenote.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/department.php" afterPath="$PROJECT_DIR$/application/controllers/department.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/index.html" afterPath="$PROJECT_DIR$/application/controllers/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/insurance.php" afterPath="$PROJECT_DIR$/application/controllers/insurance.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/patient.php" afterPath="$PROJECT_DIR$/application/controllers/patient.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/pharmacy.php" afterPath="$PROJECT_DIR$/application/controllers/pharmacy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/pharmacy_each_discount.php" afterPath="$PROJECT_DIR$/application/controllers/pharmacy_each_discount.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/pharmacy_new_working.php" afterPath="$PROJECT_DIR$/application/controllers/pharmacy_new_working.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/role.php" afterPath="$PROJECT_DIR$/application/controllers/role.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/schedule.php" afterPath="$PROJECT_DIR$/application/controllers/schedule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/staff.php" afterPath="$PROJECT_DIR$/application/controllers/staff.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/ward.php" afterPath="$PROJECT_DIR$/application/controllers/ward.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_appointment.php" afterPath="$PROJECT_DIR$/application/models/Model_appointment.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_casenote.php" afterPath="$PROJECT_DIR$/application/models/Model_casenote.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_department.php" afterPath="$PROJECT_DIR$/application/models/Model_department.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_insurance.php" afterPath="$PROJECT_DIR$/application/models/Model_insurance.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_patient.php" afterPath="$PROJECT_DIR$/application/models/Model_patient.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_pharmacy.php" afterPath="$PROJECT_DIR$/application/models/Model_pharmacy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_pharmacy_working.php" afterPath="$PROJECT_DIR$/application/models/Model_pharmacy_working.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_role.php" afterPath="$PROJECT_DIR$/application/models/Model_role.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_schedule.php" afterPath="$PROJECT_DIR$/application/models/Model_schedule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_staff.php" afterPath="$PROJECT_DIR$/application/models/Model_staff.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/Model_ward.php" afterPath="$PROJECT_DIR$/application/models/Model_ward.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/index.html" afterPath="$PROJECT_DIR$/application/models/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/appointment/add_appointment.php" afterPath="$PROJECT_DIR$/application/views/appointment/add_appointment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/appointment/edit_appointment.php" afterPath="$PROJECT_DIR$/application/views/appointment/edit_appointment.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/appointment/view_appoint.php" afterPath="$PROJECT_DIR$/application/views/appointment/view_appoint.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/add_casenote.php" afterPath="$PROJECT_DIR$/application/views/casenote/add_casenote.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/anc.php" afterPath="$PROJECT_DIR$/application/views/casenote/anc.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/edit_casenote.php" afterPath="$PROJECT_DIR$/application/views/casenote/edit_casenote.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/edit_casenote2.php" afterPath="$PROJECT_DIR$/application/views/casenote/edit_casenote2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/general_casenote.php" afterPath="$PROJECT_DIR$/application/views/casenote/general_casenote.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/casenote/view_casenote.php" afterPath="$PROJECT_DIR$/application/views/casenote/view_casenote.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehm.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehm1.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehm1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehm_nurse.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehm_nurse.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehmcm.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehmcm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/dashboard/ehmrec.php" afterPath="$PROJECT_DIR$/application/views/dashboard/ehmrec.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/department/add_department.php" afterPath="$PROJECT_DIR$/application/views/department/add_department.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/department/view_department.php" afterPath="$PROJECT_DIR$/application/views/department/view_department.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/edit_user.php" afterPath="$PROJECT_DIR$/application/views/edit_user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/cli/error_404.php" afterPath="$PROJECT_DIR$/application/views/errors/cli/error_404.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/cli/error_db.php" afterPath="$PROJECT_DIR$/application/views/errors/cli/error_db.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/cli/error_exception.php" afterPath="$PROJECT_DIR$/application/views/errors/cli/error_exception.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/cli/error_general.php" afterPath="$PROJECT_DIR$/application/views/errors/cli/error_general.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/cli/error_php.php" afterPath="$PROJECT_DIR$/application/views/errors/cli/error_php.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/cli/index.html" afterPath="$PROJECT_DIR$/application/views/errors/cli/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/html/error_404.php" afterPath="$PROJECT_DIR$/application/views/errors/html/error_404.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/html/error_db.php" afterPath="$PROJECT_DIR$/application/views/errors/html/error_db.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/html/error_exception.php" afterPath="$PROJECT_DIR$/application/views/errors/html/error_exception.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/html/error_general.php" afterPath="$PROJECT_DIR$/application/views/errors/html/error_general.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/html/error_php.php" afterPath="$PROJECT_DIR$/application/views/errors/html/error_php.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/html/index.html" afterPath="$PROJECT_DIR$/application/views/errors/html/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/errors/index.html" afterPath="$PROJECT_DIR$/application/views/errors/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/forget/forgot_password.php" afterPath="$PROJECT_DIR$/application/views/forget/forgot_password.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/forget/reset_password.php" afterPath="$PROJECT_DIR$/application/views/forget/reset_password.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/forget/view_password_sent.php" afterPath="$PROJECT_DIR$/application/views/forget/view_password_sent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/forget/view_update_password_success.php" afterPath="$PROJECT_DIR$/application/views/forget/view_update_password_success.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/includes/check_origin.php" afterPath="$PROJECT_DIR$/application/views/includes/check_origin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/index2.html" afterPath="$PROJECT_DIR$/application/views/index2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/insurance/nhis.php" afterPath="$PROJECT_DIR$/application/views/insurance/nhis.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/insurance/packages.php" afterPath="$PROJECT_DIR$/application/views/insurance/packages.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/insurance/view_package.php" afterPath="$PROJECT_DIR$/application/views/insurance/view_package.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/login/login.php" afterPath="$PROJECT_DIR$/application/views/login/login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/navigation/admin_nav.php" afterPath="$PROJECT_DIR$/application/views/navigation/admin_nav.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/navigation/nav_general.php" afterPath="$PROJECT_DIR$/application/views/navigation/nav_general.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/noticeboard/notice.php" afterPath="$PROJECT_DIR$/application/views/noticeboard/notice.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/patient/add_patient.php" afterPath="$PROJECT_DIR$/application/views/patient/add_patient.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/patient/edit_healthdata.php" afterPath="$PROJECT_DIR$/application/views/patient/edit_healthdata.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/patient/single_patient.php" afterPath="$PROJECT_DIR$/application/views/patient/single_patient.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/patient/view_patient.php" afterPath="$PROJECT_DIR$/application/views/patient/view_patient.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/patient/view_patient_full.php" afterPath="$PROJECT_DIR$/application/views/patient/view_patient_full.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/add_category.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/add_category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/add_medicine.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/add_medicine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/administer.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/administer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/edit_medicine.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/edit_medicine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/medicine_order_invoice.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/medicine_order_invoice.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/medicine_order_invoice_each_discount.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/medicine_order_invoice_each_discount.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/pos.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/pos.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/search_result_patient.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/search_result_patient.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/view_category.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/view_category.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/view_form_medicine.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/view_form_medicine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/view_medicine.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/view_medicine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/pharmacy/view_medicine_sold.php" afterPath="$PROJECT_DIR$/application/views/pharmacy/view_medicine_sold.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/restriction/block.php" afterPath="$PROJECT_DIR$/application/views/restriction/block.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/restriction/intrude.php" afterPath="$PROJECT_DIR$/application/views/restriction/intrude.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/role/add_role.php" afterPath="$PROJECT_DIR$/application/views/role/add_role.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/role/create.php" afterPath="$PROJECT_DIR$/application/views/role/create.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/role/single_assign_role.php" afterPath="$PROJECT_DIR$/application/views/role/single_assign_role.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/role/view_role.php" afterPath="$PROJECT_DIR$/application/views/role/view_role.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/schedule/add_schedule.php" afterPath="$PROJECT_DIR$/application/views/schedule/add_schedule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/schedule/view_schedule.php" afterPath="$PROJECT_DIR$/application/views/schedule/view_schedule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/search_result.php" afterPath="$PROJECT_DIR$/application/views/search_result.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/settings.php" afterPath="$PROJECT_DIR$/application/views/settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/staff/add_staff.php" afterPath="$PROJECT_DIR$/application/views/staff/add_staff.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/staff/detail_staff.php" afterPath="$PROJECT_DIR$/application/views/staff/detail_staff.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/staff/edit_staff.php" afterPath="$PROJECT_DIR$/application/views/staff/edit_staff.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/staff/view_staff.php" afterPath="$PROJECT_DIR$/application/views/staff/view_staff.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/email.php" afterPath="$PROJECT_DIR$/application/views/templates/email.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/footer._2php" afterPath="$PROJECT_DIR$/application/views/templates/footer._2php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/footer.php" afterPath="$PROJECT_DIR$/application/views/templates/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/templates/header.php" afterPath="$PROJECT_DIR$/application/views/templates/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/add_ward.php" afterPath="$PROJECT_DIR$/application/views/ward/add_ward.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/bed_assign.php" afterPath="$PROJECT_DIR$/application/views/ward/bed_assign.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/discharge_date.php" afterPath="$PROJECT_DIR$/application/views/ward/discharge_date.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/edit_bed_assign.php" afterPath="$PROJECT_DIR$/application/views/ward/edit_bed_assign.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/edit_ward.php" afterPath="$PROJECT_DIR$/application/views/ward/edit_ward.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/view_bed_assign.php" afterPath="$PROJECT_DIR$/application/views/ward/view_bed_assign.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/ward/view_ward.php" afterPath="$PROJECT_DIR$/application/views/ward/view_ward.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/welcome_message.php" afterPath="$PROJECT_DIR$/application/views/welcome_message.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -122,24 +23,42 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="add_casenote.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/casenote/add_casenote.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="casenote.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/casenote.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="293" column="87" lean-forward="false" selection-start-line="293" selection-start-column="87" selection-end-line="293" selection-end-column="87" />
-              <folding />
+            <state relative-caret-position="421">
+              <caret line="527" column="50" lean-forward="false" selection-start-line="527" selection-start-column="50" selection-end-line="527" selection-end-column="50" />
+              <folding>
+                <element signature="n#ANC#0;n#Casenote#0;n#!!top" expanded="false" />
+                <element signature="n#create_direct_anc#0;n#Casenote#0;n#!!top" expanded="false" />
+                <element signature="n#edit_casenote#0;n#Casenote#0;n#!!top" expanded="false" />
+                <element signature="e#15426#18459#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="casenote.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/casenote.php">
+      <file leaf-file-name="add_casenote.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/casenote/add_casenote.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-280">
-              <caret line="291" column="50" lean-forward="false" selection-start-line="291" selection-start-column="50" selection-end-line="291" selection-end-column="50" />
-              <folding />
+            <state relative-caret-position="204">
+              <caret line="711" column="88" lean-forward="false" selection-start-line="711" selection-start-column="88" selection-end-line="711" selection-end-column="88" />
+              <folding>
+                <element signature="e#33326#33331#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -147,9 +66,34 @@
       <file leaf-file-name="edit_casenote2.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/casenote/edit_casenote2.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1410">
-              <caret line="165" column="7" lean-forward="false" selection-start-line="165" selection-start-column="7" selection-end-line="165" selection-end-column="7" />
+            <state relative-caret-position="204">
+              <caret line="72" column="82" lean-forward="true" selection-start-line="72" selection-start-column="82" selection-end-line="72" selection-end-column="82" />
+              <folding>
+                <element signature="e#38338#38343#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_anc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/casenote/view_anc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="anc.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/casenote/anc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="496" column="0" lean-forward="true" selection-start-line="496" selection-start-column="0" selection-end-line="496" selection-end-column="0" />
+              <folding>
+                <element signature="n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#form#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#29935#29940#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -157,77 +101,28 @@
       <file leaf-file-name="Model_casenote.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/Model_casenote.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+            <state relative-caret-position="208">
+              <caret line="47" column="29" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="29" />
               <folding>
-                <marker date="1523169694000" expanded="true" signature="168:327" ph="SELECT id,fi... patient" />
-                <marker date="1523169694000" expanded="true" signature="1191:1227" ph="SELECT * FRO... staff" />
-                <marker date="1523169694000" expanded="true" signature="1398:1423" ph="SELECT * FRO... appointment" />
-                <marker date="1523169694000" expanded="true" signature="2552:2602" ph="SELECT * FRO... appointment" />
-                <marker date="1523169694000" expanded="true" signature="2794:2841" ph="SELECT * FRO... casenote" />
+                <marker date="1527178964000" expanded="true" signature="168:327" ph="SELECT id,fi... patient" />
+                <marker date="1527178964000" expanded="true" signature="1327:1363" ph="SELECT * FRO... staff" />
+                <marker date="1527178964000" expanded="true" signature="1534:1559" ph="SELECT * FRO... appointment" />
+                <marker date="1527178964000" expanded="true" signature="2688:2766" ph="SELECT * FRO... appointment" />
+                <marker date="1527178964000" expanded="true" signature="2959:3015" ph="SELECT * FRO... casenote" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="patient.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/patient.php">
+      <file leaf-file-name="Model_appointment.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/Model_appointment.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="405" column="8" lean-forward="false" selection-start-line="405" selection-start-column="8" selection-end-line="406" selection-end-column="48" />
+            <state relative-caret-position="313">
+              <caret line="53" column="1" lean-forward="true" selection-start-line="53" selection-start-column="1" selection-end-line="59" selection-end-column="5" />
               <folding>
-                <element signature="n#update_patient#0;n#Patient#0;n#!!top" expanded="false" />
+                <marker date="1526917478000" expanded="true" signature="1386:1422" ph="SELECT * FRO... staff" />
+                <marker date="1526917478000" expanded="true" signature="1593:1635" ph="SELECT * FRO... appointment" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit_casenote.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/casenote/edit_casenote.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="83" column="95" lean-forward="false" selection-start-line="83" selection-start-column="95" selection-end-line="83" selection-end-column="95" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="doctypes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/config/doctypes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/config/database.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ehmcm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehmcm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="169" column="53" lean-forward="false" selection-start-line="169" selection-start-column="53" selection-end-line="169" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ehmrec.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/dashboard/ehmrec.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="220" column="57" lean-forward="false" selection-start-line="220" selection-start-column="57" selection-end-line="220" selection-end-column="57" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -236,66 +131,69 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>view_appointment_by_id</find>
-      <find>pat</find>
-      <find>&lt;?php echo $data_appointment-&gt;type; ?&gt;&quot;</find>
-      <find>btnAppointUpdate</find>
-      <find>get_casenote_by_id</find>
-      <find>$data_appointment</find>
-      <find>update_appointment</find>
-      <find>view</find>
-      <find>description</find>
-      <find>delete</find>
-      <find>view_patient</find>
-      <find>patient_update_id</find>
-      <find>update_patient</find>
       <find>diag</find>
       <find>descri</find>
       <find>health</find>
-      <find>edit</find>
       <find>health state</find>
       <find>edit_</find>
       <find>edit_case</find>
-      <find>update_casenote</find>
+      <find>health cond</find>
       <find>edit_hd</find>
       <find>edit_casenote</find>
-      <find>health cond</find>
+      <find>medicine_order</find>
+      <find>anc</find>
+      <find>admit</find>
+      <find>virw</find>
+      <find>diagnosis</find>
+      <find>put_casenote</find>
+      <find>get_all</find>
+      <find>view</find>
+      <find>repi</find>
+      <find>case</find>
+      <find>get_all_casenote</find>
+      <find>limit</find>
+      <find>view_casenote_by_id</find>
+      <find>data_cn</find>
+      <find>get_</find>
+      <find>get_doctor</find>
+      <find>get_doctor_by_id</find>
+      <find>case_id</find>
+      <find>create</find>
+      <find>update_casenote</find>
+      <find>edit</find>
     </findStrings>
   </component>
   <component name="FrameworkCommandLineHistory">
     <commandsHistory>
-      <command text="git commit -m &quot;dashboard tweak&quot;" />
-      <command text="git push --set-upstream origin master" />
-      <command text="git pull" />
-      <command text="git add ." />
-      <command text="git push --set-upstream origin master" />
-      <command text="git push " />
-      <command text="git add ." />
-      <command text="git commit -m &quot;changed health state to complaint&quot;" />
-      <command text="git push --set-upstream origin master" />
-      <command text="git push " />
-      <command text="git push" />
-      <command text="git commit -m &quot;lastest updates&quot;" />
-      <command text="git add ." />
-      <command text="git push" />
-      <command text="git pull" />
-      <command text="git pull origin master" />
-      <command text="git add ." />
-      <command text="git pull origin master" />
-      <command text="git commit -m &quot;lastest updates&quot;" />
       <command text="git pull origin master" />
       <command text="git push" />
       <command text="git commit &quot;now can login&quot;" />
       <command text="git add ." />
       <command text="git push" />
       <command text="git pull" />
+      <command text="git commit &quot;now can login&quot;" />
+      <command text="git commit -m &quot;now can login&quot;" />
+      <command text="git add ." />
+      <command text="git push --set-upstream origin master" />
+      <command text="git commit -m &quot;now can login&quot;" />
+      <command text="git pull" />
+      <command text="git push" />
+      <command text="git pull origin master" />
+      <command text="git commit -m &quot;in or out patient&quot;" />
+      <command text="git pull origin master" />
+      <command text="git add ." />
+      <command text="git commit -m &quot;in or out patient&quot;" />
+      <command text="git pull origin master" />
+      <command text="git add ." />
+      <command text="git commit -m &quot;case note done&quot;" />
+      <command text="git pull origin master" />
+      <command text="git add ." />
+      <command text="git commit -m &quot;case note done now&quot;" />
+      <command text="git push" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -303,19 +201,28 @@
         <option value="$PROJECT_DIR$/Installer/allDetails.php" />
         <option value="$PROJECT_DIR$/application/views/patient/edit_healthdata.php" />
         <option value="$PROJECT_DIR$/application/views/casenote/general_casenote.php" />
-        <option value="$PROJECT_DIR$/application/views/casenote/view_casenote.php" />
         <option value="$PROJECT_DIR$/application/views/dashboard/ehm.php" />
         <option value="$PROJECT_DIR$/application/views/dashboard/ehm1.php" />
         <option value="$PROJECT_DIR$/application/views/dashboard/ehm_nurse.php" />
         <option value="$PROJECT_DIR$/application/views/dashboard/ehmcm.php" />
         <option value="$PROJECT_DIR$/application/views/dashboard/ehmrec.php" />
         <option value="$PROJECT_DIR$/application/controllers/patient.php" />
-        <option value="$PROJECT_DIR$/application/models/Model_casenote.php" />
-        <option value="$PROJECT_DIR$/application/views/casenote/add_casenote.php" />
-        <option value="$PROJECT_DIR$/application/views/casenote/edit_casenote.php" />
-        <option value="$PROJECT_DIR$/application/views/casenote/edit_casenote2.php" />
-        <option value="$PROJECT_DIR$/application/controllers/casenote.php" />
+        <option value="$PROJECT_DIR$/application/controllers/pharmacy.php" />
+        <option value="$PROJECT_DIR$/application/models/Model_staff.php" />
+        <option value="$PROJECT_DIR$/application/views/casenote/test.php" />
+        <option value="$PROJECT_DIR$/application/views/patient/view_patient_admitted.php" />
         <option value="$PROJECT_DIR$/application/config/database.php" />
+        <option value="$PROJECT_DIR$/application/views/appointment/view_appoint.php" />
+        <option value="$PROJECT_DIR$/application/views/casenote/anc.php" />
+        <option value="$PROJECT_DIR$/application/views/casenote/view_anc.php" />
+        <option value="$PROJECT_DIR$/application/views/navigation/nav_general.php" />
+        <option value="$PROJECT_DIR$/application/views/navigation/admin_nav.php" />
+        <option value="$PROJECT_DIR$/application/views/casenote/edit_casenote.php" />
+        <option value="$PROJECT_DIR$/application/models/Model_casenote.php" />
+        <option value="$PROJECT_DIR$/application/views/casenote/view_casenote.php" />
+        <option value="$PROJECT_DIR$/application/views/casenote/edit_casenote2.php" />
+        <option value="$PROJECT_DIR$/application/views/casenote/add_casenote.php" />
+        <option value="$PROJECT_DIR$/application/controllers/casenote.php" />
       </list>
     </option>
   </component>
@@ -326,9 +233,11 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="37" />
+    <option name="y" value="23" />
+    <option name="width" value="1243" />
+    <option name="height" value="777" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -359,12 +268,6 @@
               <item name="ehmfinal" type="b2602c69:ProjectViewProjectNode" />
               <item name="ehmfinal" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ehmfinal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ehmfinal" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ehmfinal" type="b2602c69:ProjectViewProjectNode" />
@@ -416,22 +319,14 @@
               <item name="ehmfinal" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="navigation" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ehmfinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ehmfinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="patient" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ehmfinal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ehmfinal" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ehmfinal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ehmfinal" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Installer" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ehmfinal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ehmfinal" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sql" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -472,33 +367,41 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523106157868</updated>
-      <workItem from="1523106159188" duration="20381000" />
+      <workItem from="1523106159188" duration="22751000" />
+      <workItem from="1523374779412" duration="238000" />
+      <workItem from="1524568716549" duration="199000" />
+      <workItem from="1524750546546" duration="866000" />
+      <workItem from="1525782660591" duration="1396000" />
+      <workItem from="1525953698549" duration="6621000" />
+      <workItem from="1526730351321" duration="10394000" />
+      <workItem from="1526934682422" duration="11344000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20381000" />
+    <option name="totallyTimeSpent" value="53809000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="726" extended-state="6" />
+    <frame x="37" y="23" width="1243" height="777" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23984376" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2461786" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25993884" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32666665" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32874617" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -515,18 +418,81 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/views/casenote/add_casenote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="69" column="6" lean-forward="true" selection-start-line="69" selection-start-column="6" selection-end-line="187" selection-end-column="0" />
+          <folding>
+            <element signature="e#33326#33331#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/casenote/anc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3045">
+          <caret line="203" column="0" lean-forward="true" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#form#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#29935#29940#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/casenote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1770">
+          <caret line="118" column="9" lean-forward="true" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
+          <folding>
+            <element signature="n#ANC#0;n#Casenote#0;n#!!top" expanded="false" />
+            <element signature="n#create_direct_anc#0;n#Casenote#0;n#!!top" expanded="false" />
+            <element signature="n#edit_casenote#0;n#Casenote#0;n#!!top" expanded="false" />
+            <element signature="e#15426#18459#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/appointment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Model_staff.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1910">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1523128652000" expanded="true" signature="3936:4026" ph="Select * fro... login_attempt" />
-            <marker date="1523128652000" expanded="true" signature="4535:4608" ph="SELECT first... staff" />
-            <marker date="1523128652000" expanded="true" signature="4820:4884" ph="SELECT first... staff" />
-            <marker date="1523128652000" expanded="true" signature="8127:8151" ph="SELECT * FRO... department" />
-            <marker date="1523128652000" expanded="true" signature="8599:8617" ph="SELECT * FRO... role" />
-            <marker date="1523128652000" expanded="true" signature="12262:12298" ph="SELECT * FRO... states" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pharmacy/medicine_order_invoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/pharmacy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5010">
+          <caret line="334" column="35" lean-forward="false" selection-start-line="334" selection-start-column="35" selection-end-line="334" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Model_staff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pharmacy/medicine_order_invoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -534,7 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="12" column="45" lean-forward="true" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -542,7 +507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -550,7 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="514">
           <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -558,9 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3216">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1523108232000" expanded="true" signature="9088:9100" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -568,9 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
           <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-          <folding>
-            <marker date="1523109938000" expanded="true" signature="6576:6714" ph="update setti... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -578,7 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -586,7 +542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="114" column="66" lean-forward="false" selection-start-line="114" selection-start-column="51" selection-end-line="114" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -594,17 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="90" />
-          <folding>
-            <marker date="1523108232000" expanded="true" signature="3555:3572" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/appointment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="340" column="0" lean-forward="true" selection-start-line="340" selection-start-column="0" selection-end-line="351" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -612,7 +556,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-22">
           <caret line="186" column="128" lean-forward="false" selection-start-line="186" selection-start-column="112" selection-end-line="186" selection-end-column="128" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -620,7 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
           <caret line="79" column="28" lean-forward="false" selection-start-line="79" selection-start-column="28" selection-end-line="79" selection-end-column="112" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -628,17 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
           <caret line="34" column="27" lean-forward="false" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="27" />
-          <folding>
-            <marker date="1523108232000" expanded="true" signature="382:420" ph="SELECT * FRO... patient" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/appointment/view_appoint.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1183">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -646,9 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="91" />
-          <folding>
-            <marker date="1523108232000" expanded="true" signature="4071:4088" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -656,7 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="86" column="123" lean-forward="false" selection-start-line="86" selection-start-column="123" selection-end-line="86" selection-end-column="123" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -664,15 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="95" column="74" lean-forward="false" selection-start-line="95" selection-start-column="74" selection-end-line="95" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/casenote/view_casenote.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="80" column="53" lean-forward="false" selection-start-line="80" selection-start-column="53" selection-end-line="80" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -680,7 +598,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
           <caret line="220" column="57" lean-forward="false" selection-start-line="220" selection-start-column="57" selection-end-line="220" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -688,7 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="302" column="57" lean-forward="false" selection-start-line="302" selection-start-column="57" selection-end-line="302" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,7 +612,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
           <caret line="354" column="61" lean-forward="false" selection-start-line="354" selection-start-column="61" selection-end-line="354" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -704,7 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="169" column="53" lean-forward="false" selection-start-line="169" selection-start-column="53" selection-end-line="169" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,63 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="220" column="57" lean-forward="false" selection-start-line="220" selection-start-column="57" selection-end-line="220" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Model_casenote.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
-          <folding>
-            <marker date="1523169694000" expanded="true" signature="168:327" ph="SELECT id,fi... patient" />
-            <marker date="1523169694000" expanded="true" signature="1191:1227" ph="SELECT * FRO... staff" />
-            <marker date="1523169694000" expanded="true" signature="1398:1423" ph="SELECT * FRO... appointment" />
-            <marker date="1523169694000" expanded="true" signature="2552:2602" ph="SELECT * FRO... appointment" />
-            <marker date="1523169694000" expanded="true" signature="2794:2841" ph="SELECT * FRO... casenote" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/casenote/add_casenote.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="293" column="87" lean-forward="false" selection-start-line="293" selection-start-column="87" selection-end-line="293" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/patient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="405" column="8" lean-forward="false" selection-start-line="405" selection-start-column="8" selection-end-line="406" selection-end-column="48" />
-          <folding>
-            <element signature="n#update_patient#0;n#Patient#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/casenote/edit_casenote2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="165" column="7" lean-forward="false" selection-start-line="165" selection-start-column="7" selection-end-line="165" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/casenote.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-280">
-          <caret line="291" column="50" lean-forward="false" selection-start-line="291" selection-start-column="50" selection-end-line="291" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/casenote/edit_casenote.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="83" column="95" lean-forward="false" selection-start-line="83" selection-start-column="95" selection-end-line="83" selection-end-column="95" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,15 +633,213 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/patient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="405" column="8" lean-forward="false" selection-start-line="405" selection-start-column="8" selection-end-line="406" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/pharmacy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5010">
+          <caret line="334" column="35" lean-forward="false" selection-start-line="334" selection-start-column="35" selection-end-line="334" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/pharmacy/medicine_order_invoice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/patient/view_patient_admitted.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="64" column="71" lean-forward="false" selection-start-line="64" selection-start-column="71" selection-end-line="64" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        <state relative-caret-position="105">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/casenote/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="152" column="10" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="502" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/appointment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2561">
+          <caret line="347" column="24" lean-forward="true" selection-start-line="347" selection-start-column="24" selection-end-line="347" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/appointment/view_appoint.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="137" column="103" lean-forward="false" selection-start-line="137" selection-start-column="103" selection-end-line="137" selection-end-column="103" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/patient/add_patient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="132" column="35" lean-forward="true" selection-start-line="132" selection-start-column="35" selection-end-line="133" selection-end-column="35" />
+          <folding>
+            <marker date="1523108232000" expanded="true" signature="4254:4271" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/casenote/anc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="496" column="0" lean-forward="true" selection-start-line="496" selection-start-column="0" selection-end-line="496" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#form#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#29935#29940#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/navigation/admin_nav.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="194" column="40" lean-forward="false" selection-start-line="194" selection-start-column="40" selection-end-line="194" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/navigation/nav_general.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="171" column="0" lean-forward="true" selection-start-line="171" selection-start-column="0" selection-end-line="171" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Model_staff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="491" column="28" lean-forward="false" selection-start-line="491" selection-start-column="24" selection-end-line="491" selection-end-column="28" />
+          <folding>
+            <marker date="1524841883000" expanded="true" signature="411:449" ph="SELECT * FRO... ${$table}" />
+            <marker date="1524841883000" expanded="true" signature="5573:5663" ph="Select * fro... login_attempt" />
+            <marker date="1524841883000" expanded="true" signature="6172:6245" ph="SELECT first... staff" />
+            <marker date="1524841883000" expanded="true" signature="6457:6521" ph="SELECT first... staff" />
+            <marker date="1524841883000" expanded="true" signature="9896:9920" ph="SELECT * FRO... department" />
+            <marker date="1524841883000" expanded="true" signature="10368:10386" ph="SELECT * FRO... role" />
+            <marker date="1524841883000" expanded="true" signature="13919:13955" ph="SELECT * FRO... states" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Model_appointment.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="53" column="1" lean-forward="true" selection-start-line="53" selection-start-column="1" selection-end-line="59" selection-end-column="5" />
+          <folding>
+            <marker date="1526917478000" expanded="true" signature="1386:1422" ph="SELECT * FRO... staff" />
+            <marker date="1526917478000" expanded="true" signature="1593:1635" ph="SELECT * FRO... appointment" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Model_casenote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="47" column="29" lean-forward="false" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="29" />
+          <folding>
+            <marker date="1527178964000" expanded="true" signature="168:327" ph="SELECT id,fi... patient" />
+            <marker date="1527178964000" expanded="true" signature="1327:1363" ph="SELECT * FRO... staff" />
+            <marker date="1527178964000" expanded="true" signature="1534:1559" ph="SELECT * FRO... appointment" />
+            <marker date="1527178964000" expanded="true" signature="2688:2766" ph="SELECT * FRO... appointment" />
+            <marker date="1527178964000" expanded="true" signature="2959:3015" ph="SELECT * FRO... casenote" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helpers/pagination_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="202" column="33" lean-forward="false" selection-start-line="202" selection-start-column="23" selection-end-line="202" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/casenote/view_casenote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1880">
+          <caret line="147" column="53" lean-forward="false" selection-start-line="147" selection-start-column="53" selection-end-line="147" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/casenote/edit_casenote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="638" column="30" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="792" selection-end-column="0" />
+          <folding>
+            <element signature="e#38335#38340#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/casenote/view_anc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/casenote/edit_casenote2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="72" column="82" lean-forward="true" selection-start-line="72" selection-start-column="82" selection-end-line="72" selection-end-column="82" />
+          <folding>
+            <element signature="e#38338#38343#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/casenote/add_casenote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="711" column="88" lean-forward="false" selection-start-line="711" selection-start-column="88" selection-end-line="711" selection-end-column="88" />
+          <folding>
+            <element signature="e#33326#33331#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/casenote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="527" column="50" lean-forward="false" selection-start-line="527" selection-start-column="50" selection-end-line="527" selection-end-column="50" />
+          <folding>
+            <element signature="n#ANC#0;n#Casenote#0;n#!!top" expanded="false" />
+            <element signature="n#create_direct_anc#0;n#Casenote#0;n#!!top" expanded="false" />
+            <element signature="n#edit_casenote#0;n#Casenote#0;n#!!top" expanded="false" />
+            <element signature="e#15426#18459#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

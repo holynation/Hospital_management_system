@@ -113,7 +113,7 @@ $role = strtolower(get_user_role($user_data)); //this is the only place where i 
                             <li>
                                 <a href="<?php echo base_url('patient/view_patient_admitted'); ?>">
                                     <i class="fa fa-fw ti-eye"></i>
-                                     Admitted Patient
+                                     In Patient
                                 </a>
                             </li>
                         </ul>
@@ -179,6 +179,20 @@ $role = strtolower(get_user_role($user_data)); //this is the only place where i 
                                     <a href="<?php echo base_url('casenote/view_casenote') ?>">
                                         <i class="fa fa-fw ti-eye"></i>
                                          View Case Note
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="<?php echo base_url('casenote/view_anc') ?>">
+                                        <i class="fa fa-fw ti-eye"></i>
+                                        View ANC Case Note
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="<?php echo base_url('casenote/view_pcs') ?>">
+                                        <i class="fa fa-fw ti-eye"></i>
+                                         Patient Case Summary
                                     </a>
                                 </li>
                             </ul>

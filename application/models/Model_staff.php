@@ -398,7 +398,7 @@ class Model_staff extends CI_Model{
         $config = Array(
                 'protocol' => 'smtp',
                 'smtp_host' => $row->smtp_host,//'',
-                'smtp_port' => 25,
+                'smtp_port' => 587,
                 'smtp_user' =>  $row->smtp_username,//'', // change it to yours
                 'smtp_pass' =>  $row->smtp_password,//'', // change it to yours
                 'smtp_timeout'=>  20,
