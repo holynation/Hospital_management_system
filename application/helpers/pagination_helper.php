@@ -143,8 +143,8 @@ function get_local_currency(){
 	echo '&#8358;'; // this is a naira currency
 }
 
-function get_date_format($posted){
-    if($posted){
+function get_date_format($posted=''){
+    if(!empty($posted)){
         $date = strftime("%B %d, %Y", strtotime($posted));
         return $date;
     }

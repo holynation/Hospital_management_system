@@ -347,7 +347,7 @@ $role = strtolower(get_user_role($user_data)); //this is the only place where i 
                                 </a>   
                             </li>
                             <li>
-                                <a href="<?php echo base_url('welcome/view_noticeboard'); ?>">
+                                <a href="<?php echo base_url('welcome/view_notice'); ?>">
                                     <i class="fa fa-fw ti-eye"></i>
                                      View Notice
                                 </a>   

@@ -115,14 +115,56 @@ $get_settings = getsettingsdetails();
                                         <td>
                                            <!--  <a href="#">
                                             <button class="btn btn-icon btn-danger btn-xs"><i class="icon fa fa-fw ti-trash" aria-hidden="true"></i></button></a> -->
-                                            <a href="#<?php echo base_url('schedule/edit_schedule/'. $schedule->id); ?>">
-                                                <button class="btn btn-primary btn-xs" data-placement="top"><span class="fa fa-fw ti-pencil"></span></button>
+                                            <a href="<?php echo base_url('schedule/edit_schedule/'. $schedule->id); ?>">
+                                                <button class="btn btn-primary btn-xs" data-placement="top"><span class="fa fa-fw ti-pencil"></span> Edit</button>
+                                            </a>
+                                            <a href="#<?php //echo base_url('schedule/delete/'. $schedule->id); ?>">
+                                                <button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#delete_<?php echo $schedule->id; ?>" data-placement="top"><span class="fa fa-fw ti-close"></span> Delete</button>
                                             </a>
                                         </td>
                                     </tr>
+                                    <div class="modal fade" id="delete_<?php echo $schedule->id; ?>" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <form action="<?php echo base_url('schedule/delete'); ?>" method="post">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    <h4 class="modal-title custom_align" id="Heading5">Delete this entry </h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="alert alert-info">
+                                                        <span class="glyphicon glyphicon-info-sign"></span>&nbsp; Are you sure you want to
+                                                        delete this schedule ?
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer ">
+                                                    <button type="click" class="btn btn-danger" data-dismiss="modal" onclick="deleteSchedule(<?php echo $schedule->id; ?>);">
+                                                        <span class="glyphicon glyphicon-ok-sign"></span> Yes
+                                                    </button>
+                                                    <button type="button" class="btn btn-success" data-dismiss="modal">
+                                                        <span class="glyphicon glyphicon-remove"></span> No
+                                                    </button>
+                                                </div>
+                                                </form>
+                                            </div>
+                                            <!-- /.modal-content -->
+                                        </div>
+                                        <!-- /.modal-dialog -->
+                                    </div>
                                     <?php endforeach; }?>
                                     </tbody>
-                                    
+                                    <script>
+                                        function deleteSchedule(id){
+
+                                            $.post('<?php echo base_url();?>schedule/delete/' + id, { delete: 'deleting' },
+                                              function(result){
+                                                // console.log(result);
+                                                alert(result);
+                                                window.location.reload();
+
+                                            });
+                                        }
+                                    </script>
                                 </table>
                             </div>
                         </div>
@@ -141,23 +183,7 @@ $get_settings = getsettingsdetails();
 <!-- global js -->
 <div id="qn"></div>
 <script src="<?php echo base_url(); ?>assets/js/ajax_jquery.js"></script><!-- end of global js -->
-<script src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script> 
-
-<script src="<?php echo base_url(); ?>assets/js/app.js" type="text/javascript"></script><!-- end of global js -->
-<!-- begining of page level js -->
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/datatables/js/jquery.dataTables.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/datatables/js/dataTables.bootstrap.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/datatables/js/dataTables.buttons.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/datatables/js/dataTables.colReorder.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/datatables/js/dataTables.responsive.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/datatables/js/dataTables.rowReorder.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/datatables/js/buttons.colVis.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/datatables/js/buttons.html5.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/datatables/js/buttons.bootstrap.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/datatables/js/buttons.print.js"></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendors/datatables/js/dataTables.scroller.js"></script>
-<script src="<?php echo base_url(); ?>assets/js/custom_js/advanced_datatables.js" type="text/javascript"></script>
-<!-- end of page level js -->
+<?php include (APPPATH . 'views/templates/footer_view.php'); ?>
 
 </body>
 </html>

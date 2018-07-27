@@ -1,3 +1,4 @@
+
 <?php
 $get_settings = getsettingsdetails();
 ?>
@@ -77,7 +78,7 @@ $get_settings = getsettingsdetails();
                         </div>
                     </div>
                 </div>
-
+                
 
 
 

@@ -64,7 +64,7 @@ $get_settings = getsettingsdetails();
                     Schedule
                 </li>
                 <li class="active">
-                    Create Schedule
+                    Edit Schedule
                 </li>
             </ol>
         </section>
@@ -78,7 +78,7 @@ $get_settings = getsettingsdetails();
                             <h3 class="panel-title">
                                 
                                  <button class="button button-rounded button-primary-flat hvr-hang">
-                                     <i class="fa fa-fw ti-list"></i>  Create Schedule
+                                     <i class="fa fa-fw ti-list"></i>  Edit Schedule
                                 </button>
                             </h3>
                         </div>
@@ -91,29 +91,36 @@ $get_settings = getsettingsdetails();
                             if(validation_errors()){ ?>
                                 <?php echo validation_errors('<div class="alert alert-danger" style="padding-left:40%;">','</div>'); ?>
                          <?php } ?>
+
+                        <?php
+
+                            if(!$data_schedule){
+                                return false;
+                            }
+                        ?>
+
                         <div class="panel-body text-center">
                             <div class="col-md-10 ">
-                                <form id="form-validation5" action="<?php echo base_url('schedule/create'); ?>" method="post" class="form-horizontal">
+                                <form id="form-validation5" action="<?php echo base_url('schedule/update'); ?>" method="post" class="form-horizontal">
                                       <hr>
                                       <b class="text-center">
                                         <h3 class="panel-title"> 
-                                           <i class="fa fa-fw ti-pencil"></i> Add Schedule
+                                           <i class="fa fa-fw ti-pencil"></i> Edit Schedule
                                         </h3>
                                       </b>
                                       <hr>
+                                      <input type="hidden" name="update_schedule_id" value="<?php echo $data_schedule->id; ?>" />
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="doctor_name">
                                             Doctor Name
                                             <span class="text-danger">*</span>
                                         </label>
                                         <div class="col-md-6">
+                                        <?php $doctor = $this->Model_schedule->get_doctor_by_id($data_schedule->doctor_id); 
+                                            $docname = "Dr. " . $doctor->first_name . ' ' .$doctor->last_name;
+                                        ?>
                                             <select id="dynamicnew" class="form-control" name="doctor_name" placeholder="Enter Doctor Name">
-                                                <option value="">  Select option </option>
-                                                <?php foreach($data_doctors as $doctor): 
-                                                    $middle = substr($doctor->middle_name, 0, 1);
-                                                ?>
-                                                <option value="<?php echo $doctor->id; ?>">Dr. <?php echo $doctor->first_name, ' ', $middle , (empty($middle)) ? '' : '. ' ,$doctor->last_name; ?></option>
-                                                <?php endforeach; ?>
+                                                <option value="<?php echo $doctor->id; ?>"> <?php echo $docname; ?> </option>
                                             </select>
                                         </div>
                                     </div>
@@ -124,6 +131,7 @@ $get_settings = getsettingsdetails();
                                         </label>
                                         <div class="col-md-6">
                                             <select id="dynamic" class="form-control" name="available_days">
+                                                <option value="<?php echo $data_schedule->available_days; ?>"><?php echo $data_schedule->available_days; ?></option>
                                                 <option value="">  Select option </option>
                                                 <option value="Sunday">Sunday</option>
                                                 <option value="Monday">Monday</option>
@@ -146,7 +154,7 @@ $get_settings = getsettingsdetails();
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-laptop"></i>
                                                     </div>
-                                                    <input type="text" class="form-control" id="datetime2" name="available_time_start" placeholder="Start-Time" />
+                                                    <input type="text" class="form-control" id="datetime2" name="available_time_start" placeholder="Start-Time" value="<?php echo $data_schedule->available_time_start; ?>" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -154,7 +162,7 @@ $get_settings = getsettingsdetails();
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-laptop"></i>
                                                     </div>
-                                                    <input type="text" class="form-control" id="datetime12" name="available_time_end" placeholder="End-Time"/>
+                                                    <input type="text" class="form-control" id="datetime12" name="available_time_end" placeholder="End-Time" value="<?php echo $data_schedule->available_time_end; ?>" />
                                                 </div>
                                             </div>
                                         </div>
@@ -163,9 +171,9 @@ $get_settings = getsettingsdetails();
                                         <br><br>
                                         <div class="form-group form-actions">
                                             <div class="col-md-8 col-md-offset-2">
-                                                <button type="submit" class="btn btn-effect-ripple btn-primary">Submit</button>
-                                                <button type="reset" class="btn btn-effect-ripple btn-default reset_btn">Reset
-                                                </button>
+                                                <button type="submit" name="btnUpdateSchedule" class="btn btn-effect-ripple btn-primary">Update</button>
+                                                <!-- <button type="reset" class="btn btn-effect-ripple btn-default reset_btn">Reset
+                                                </button> -->
                                             </div>
                                         </div>
                                     </div>
@@ -186,3 +194,6 @@ $get_settings = getsettingsdetails();
 <!-- ./wrapper -->
 <!-- global js -->
 <?php include (APPPATH . 'views/schedule/footer_schedule.php'); ?>
+<!-- end of page level js -->
+</body>
+</html>

@@ -40,4 +40,29 @@ class Model_schedule extends CI_Model{
 		return ($result->num_rows() > 0) ? $row : 'no result';
 	}
 
+	function get_schedule_by_id($id){
+		$sql = 'SELECT * from schedule where id = ?';
+		$result = $this->db->query($sql, array($id));
+		$row = $result->row();
+
+		return ($result->num_rows() > 0) ? $row : 'no result';
+	}
+
+	function update_schedule($id, $data = array()){
+ 		$this->db->where('id', $id);
+		$update = $this->db->update('schedule', $data);
+		return ($update) ? true : false;
+ 	}
+
+ 	function delete_schedule($id){
+		$this->db->where('id', $id);
+		$this->db->delete('schedule');
+
+		if($this->db->affected_rows()){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 }

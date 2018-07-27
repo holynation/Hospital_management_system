@@ -151,6 +151,10 @@ $get_settings = getsettingsdetails();
                                         </div>
                                     </div>
                                 </div>
+                                <!-- <a href="<?php //echo base_url('patient/print/'. $patient->id .'/'. md5($patient->id)); ?>">
+                                    <button class="btn btn-primary">Print Patient Info</button>
+                                </a> -->
+                                
                             </div>
                             <div class="col-md-8">
                                 <div class="row">

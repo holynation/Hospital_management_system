@@ -16,6 +16,7 @@
 
 		public static $pathImage;
 		public static $imgFullPath;
+		public static $imgSize = 5242880;
  			
 /*
 |--------------------------------------------------------------------------------------------------
@@ -24,9 +25,6 @@
 |--------------------------------------------------------------------------------------------------
 |  This class function accept three(3) parameters for it operation
 |  $field_name => this is the name attribute of the Input file field name.
-|  $thumb => this is to check whether to create a thumnail or not.
-|  			 Default value => false: indicating no thumbnail creation
-|			 change value to true if thumbnail is to be generated.
 |  $rename_character => this is the name you want to give the thumbnail created
 |    			NOTE: Name will apply if {$thumb} value is set to true.
 | 
@@ -63,7 +61,7 @@
 	 		
 	 		if(in_array($file_ext, $allowed) === TRUE)
 	 		{
-	 			if($file_size < 5242880) // check image size
+	 			if($file_size < self::$imgSize) // check image size
 	 			{
 	 				if(move_uploaded_file($file_tmp, $upload_image))
 	 				{

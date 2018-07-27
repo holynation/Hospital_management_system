@@ -124,4 +124,57 @@ class Schedule extends CI_Controller {
 		return $this->Model_schedule->get_doctors();
 	}
 
+	public function edit_schedule($id=''){
+		$id = trim($id);
+		$result = $this->Model_schedule->get_schedule_by_id($id);
+		if(!$result){
+			// echo 'There is an error with the info from the db...';
+			$this->show_restrict();
+			exit;
+		}
+
+		$data['data_schedule'] = $result;
+		$this->load->view('schedule/edit_schedule', $data);
+	}
+
+	public function update(){
+		if(isset($_POST['btnUpdateSchedule'])){
+			$id = $this->input->post('update_schedule_id');
+			$data_input = array(
+				'doctor_id' => $this->input->post('doctor_name'),
+				'available_days' => $this->input->post('available_days'),
+				'available_time_start' => $this->input->post('available_time_start'),
+				'available_time_end' => $this->input->post('available_time_end')
+			);
+
+			$updated = $this->Model_schedule->update_schedule($id, $data_input);
+
+	            if(!$updated){
+	            	$data['error'] = 'There is an error updating...';
+	            	$this->load->view('schedule/edit_schedule');
+					exit;
+	            }
+                   
+            $this->session->set_flashdata('success', 'You have successfully updated the schedule...');
+			redirect('/schedule/view_schedule/', 'refresh');
+
+		}
+	}
+
+	public function delete($id=''){
+		$this->check_permission();
+		$task = $_POST['delete'];
+		if(isset($task)){
+			$id = trim($id);
+			$deleted = $this->Model_schedule->delete_schedule($id);
+
+			if(!$deleted){
+				echo 'Error performing the operation';
+				exit;
+			}
+			echo 'Deleted';
+			redirect('schedule/view_schedule/', 'refresh');
+		}
+	}
+
 }

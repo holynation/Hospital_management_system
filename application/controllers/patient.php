@@ -276,8 +276,6 @@ class Patient extends CI_Controller {
 		$this->load->view('patient/view_patient', $data);
 	}
 
-
-
     public function edit_hd($id){
         $id = trim($id);
         $result = $this->Model_patient->view_patient_where($id);
@@ -373,7 +371,6 @@ class Patient extends CI_Controller {
 		$this->load->view('restriction/block');
 	}
 
-
     public function update_patient2(){
         if(isset($_POST['btnPatientUpdate2'])){
             $id = $this->input->post('patient_update_id');
@@ -415,6 +412,17 @@ class Patient extends CI_Controller {
         }
     }
 
+    public function print($id=null, $hash=null){
+    	$id = trim($id);
+    	$hash = trim($hash);
+    	if(!(empty($id) && empty($hash))){
+    		if($hash === md5($id)){
+    			$patient = $this->Model_patient->get_patient_by_id($id);
+    			$data['patient'] = $patient;
+    			$this->load->view('print/patient', $data);
+    		}
+    	}
+    }
 
 
 }

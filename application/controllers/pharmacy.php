@@ -584,7 +584,7 @@ class Pharmacy extends CI_Controller{
 		if(!(empty($id) && empty($hash))){
 			if(md5($id) == $hash){
 				$result = $this->Model_pharmacy->get_invoice_history($id);
-				// print_r($result);
+				// print_r($result);exit;
 				if($result == 'no result'){
 					die("Sorry, your request can't be completed right now.Try again later...");
 				}

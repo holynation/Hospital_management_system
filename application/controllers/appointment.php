@@ -358,8 +358,8 @@ class Appointment extends CI_Controller {
 	}
 
 	public function update_appointment(){
-			$id = $this->input->post('patient_update_id');
 			if(isset($_POST['btnAppointUpdate'])){
+				$id = $this->input->post('patient_update_id');
 				$data = array(
 					'appointment_date' => $this->input->post('appointment_date'),
 					'complaint' => $this->input->post('complaint'),
