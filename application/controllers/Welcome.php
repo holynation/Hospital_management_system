@@ -13,10 +13,9 @@ class Welcome extends CI_Controller {
 		$this->load->model('Model_casenote');
 		$this->load->model('Model_appointment');
 		$this->load->library('hash_created');
-        $this->load->library('cookiecreate');
+        $this->load->library('Cookiecreate');
         $this->load->library('imageCreate');
         $this->load->library('dateCreate');
-
         // this check the remember me functionality being click
         if($this->cookiecreate->exists($this->config->item('cookie_name')) && !$this->session->has_userdata('staff_id')){
             $hash = $this->cookiecreate->get($this->config->item('cookie_name'));

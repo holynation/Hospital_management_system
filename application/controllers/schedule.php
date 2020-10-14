@@ -58,6 +58,7 @@ class Schedule extends CI_Controller {
 	}
 
 	public function create(){
+		echo "git hrere";exit;
 		$this->check_permission();
 
 		$config = array(

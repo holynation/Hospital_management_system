@@ -145,7 +145,7 @@ if(($_POST)){
                 echo "no result";
             }  
          }else{
-          echo "Error";
+          echo "Error performing the query...";
          die(mysqli_connect_error());
          }
       }

@@ -2,7 +2,7 @@
 $config["base_url"] = "http://".$_SERVER["HTTP_HOST"].dirname($_SERVER["SCRIPT_NAME"]);
 $config["index_page"] = "";
 $config["salt"] = "_$2y$12$7";
-$config["hot_email"] = "no-reply@technodesolutions.com";
+$config["hot_email"] = "no-reply@holynationDevelopment@gmail.com";
 $config["uri_protocol"]  = "REQUEST_URI"; 
 $config["url_suffix"] = " ";
 $config["language"]  = "english";

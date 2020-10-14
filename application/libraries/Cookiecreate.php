@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class CookieCreate{
+class Cookiecreate{
 
  	public function exists($name){
  		return (isset($_COOKIE[$name])) ? true : false;
